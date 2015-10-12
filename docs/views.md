@@ -1,22 +1,20 @@
 # View Wireframes
 
-## New User
-![new-user]
 
-## New Session
-![new-session]
+## SignIn
+[sign_in]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## QuestionShow
+[question-show]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## QuestionForm
+[question-form]
 
-## NoteBookForm
-![notebook-form]
+## MainPage
+[main-page] 
 
-## Component Heirarchy
-![component-heirarchy]
+## Component Hierarchy
+[component-hierarchy] 
 
 [sign_in]: ./wireframes/sign_in.png
 [question-show]: ./wireframes/question_show.png
