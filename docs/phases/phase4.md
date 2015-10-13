@@ -1,18 +1,24 @@
-# Phase 4: Allow Complex Styling in Notes (1 day)
+# Phase 4: Tags (1.5 days)
 
 ## Rails
 ### Models
+*Tag
+*Tagging
 
 ### Controllers
+Api::TagController (index) 
 
 ### Views
 
 ## Flux
 ### Views (React Components)
+*Tags
 
 ### Stores
 
+
 ### Actions
 
+
 ## Gems/Libraries
-* Quill.js
+*React-Tags (https://github.com/prakhar1989/react-tags)

@@ -1,7 +1,8 @@
-# Phase 5: Profiles
+# Phase 6: GPS and Search Bar
 
 ## Rails
 ### Models
+
 
 
 ### Controllers
@@ -12,9 +13,12 @@
 
 ## Flux
 ### Views (React Components)
+*GPS
+*Search Bar
 
 
 ### Stores
+*These components will simply add new filters to the question search params. 
 
 
 ### Actions
@@ -22,7 +26,7 @@
 
 
 ### ApiUtil
-*ApiUtil.AddPicture
-*ApiUtil.editBio
+
+
 
 ## Gems/Libraries

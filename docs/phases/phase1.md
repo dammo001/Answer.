@@ -3,25 +3,32 @@
 ## Rails
 ### Models
 * User
-* Note
+* Question
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::NotesController (create, destroy, index, show, update)
+* Api::QuestionsController (create, destroy, index, show, update)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* static_pages/root.html.erb 
+* questions/index.json.jbuilder
+* questions/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
+*app.js.jsx 
+*app_index.js.jsx (index route) 
+*feed.js.jsx
+
 
 ### Stores
+question_store.js
 
 ### Actions
+
 
 ### ApiUtil
 

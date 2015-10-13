@@ -35,45 +35,51 @@ front end, I will begin by setting up a full JSON API for Questions.
 
 [Details][phase-one]
 
-### Phase 2: Flux Architecture and Note CRUD (2.5 days)
+### Phase 2: Flux Architecture and Question CRUD (2.5 days)
 
 Phase 2 is focused on setting up Flux, the React Router, and the React view
 structure for the main application. After the basic Flux architecture has been
 set up, a Question store will be implemented and a set of actions corresponding to
 the needed CRUD functionality created. Once this is done, I will create React
 views for the Question `Index`, `IndexItem` and `Form`. At the end of Phase 2,
-Questions can be created, read, edited and destroyed in the browser. Questions should save to the database when the form loses focus or is left idle after editing.
 Lastly, while constructing the views I will start using basic bootstrap for
 styling.
 
 [Details][phase-two]
 
-### Phase 3: Tags (2 days)
 
-Phase 3 adds organization to the Questions. Questions have Tags. The default index page will contain all Questions which have Tags that the User has selected. Questions can also now be tagged with multiple Tags. When a user clicks on a certain Tag, only questions which contain that Tag will be displayed. Will also add upvotes and allow users to sort by upvotes. 
+### Phase 3: Answers (1.5 days) 
 
-[Details][phase-three]
+Phase 3 will allow users to add Answers to Questions. 
 
-### Phase 4: Profiles (1 day)
+[Details][phase-three] 
 
-Allow users to upload pictures to profiles. Profiles display user images, which will be displayed on all Answers.
+### Phase 4: Tags (1.5 days)
+
+Phase 4 adds organization to the Questions. Questions have Tags. The default index page will contain all Questions which have Tags that the User has selected. Questions can also now be tagged with multiple Tags. When a user clicks on a certain Tag, only questions which contain that Tag will be displayed. Will also add upvotes and allow users to sort by upvotes. 
 
 [Details][phase-four]
 
+### Phase 5: Profiles (1 day)
 
-### Phase 5: GPS implementation (1.5 days) 
-
-Use google Maps API to display Question locations to default index page. 
+Allow users to upload pictures to profiles. Profiles display user images, which will be displayed on all Answers.
 
 [Details][phase-five]
 
-### Phase 6: Styling Cleanup and Seeding (1 day)
 
-Bootstrap will have been used to keep things organized up until now, but in
-Phase 6 I will add styling flourishes and make modals out of some elements (like
-the NotebookForm).
+### Phase 6: GPS and Search Bar implementation (1.5 days) 
+
+Use google Maps API to display Question locations to default index page, as well as create Search bar. 
 
 [Details][phase-six]
+
+### Phase 7: Styling Cleanup and Seeding (1 day)
+
+Bootstrap will have been used to keep things organized up until now, but in
+Phase 7 I will add styling flourishes and make modals out of some elements (like
+the QuestionForm and AnswerForm).
+
+[Details][phase-seven]
 
 ### Bonus Features (TBD)
 - [ ] Prettify transitions
