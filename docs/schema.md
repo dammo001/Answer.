@@ -7,7 +7,6 @@ id          | integer   | not null, primary key
 title       | string    | not null
 body        | text      | 
 author_id   | integer   | not null, foreign key (references users), indexed
-upvotes		| integer   | not null, 
 location    | string    | 
 date        | datetime  | not null
 views       | integer   | default value of 0 

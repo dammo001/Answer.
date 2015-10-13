@@ -48,9 +48,9 @@ styling.
 [Details][phase-two]
 
 
-### Phase 3: Answers (1.5 days) 
+### Phase 3: Answers and Comments(1.5 days) 
 
-Phase 3 will allow users to add Answers to Questions. 
+Phase 3 will allow users to add Answers to Questions, and Comments to Answers. 
 
 [Details][phase-three] 
 
