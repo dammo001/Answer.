@@ -1,3 +1,9 @@
+<div id="landing"> 
+  <h1> Answer. The place to go for answers, period </h1> 
+
+
+
+
 <h2>Sign Up</h2>
 
 <form action="<%= users_url %>" method="post">
@@ -14,3 +20,8 @@
 
   <input type="submit" value="Sign Up">
 </form>
+
+
+<div id="new_user"> 
+  Already a user? <%= link_to "Sign in!", new_session_url %> 
+</div> 
