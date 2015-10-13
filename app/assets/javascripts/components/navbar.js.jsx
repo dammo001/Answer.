@@ -33,26 +33,45 @@ render: function() {
 }
 });
 
+
+var AskQuestion = React.createClass({ 
+  mixins: [ReactRouter.History],
+
+  ask: function(){ 
+    this.history.pushState(null, "/questions/new");
+  },
+
+  render: function(){
+    return(
+      <div className="navaskquestion">
+       <button onClick={this.ask}>New Question</button> 
+        </div> 
+        )
+  }
+});
+
 var SignOut = React.createClass({
   render: function() {
     return(
-      <div className="signoutlink">
+      <div className="signout-link">
         <a href="link_to_destroy">Sign Out</a>
       </div>
   )
   }
 
-})
+});
+
 var Navbar = React.createClass({
 render: function() {
  return(<nav className="navbar navbar-default navbar-fixed-top" role="navigation">
         <div className="container">
         <div className="navbar-header">
-        <a className="navbar-brand" href="{{path('homepage')}}">Answer.</a>
+        <a className="navbar-brand" href="/#/">Answer.</a>
         </div>
         <NavbarLeftMenuBar/>
         <NavbarSearchBar/>
         <SignOut/>
+        <AskQuestion/>
         </div>
         </nav>);
 }  

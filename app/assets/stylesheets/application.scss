@@ -23,11 +23,18 @@
 
 
 
-.feed { 
+.question-main { 
 	position: relative;
 	height: 900px;
 	width: 700px;
 	top: 52px; 
 	left: 300px; 
+}
+
+.ask-question { 
+	left: 300px; 
+	position: relative;
+	top: 100px; 
+	margin: 0 auto; 
 }
 

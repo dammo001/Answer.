@@ -10,8 +10,10 @@ App = React.createClass({
 	render: function(){
 		return (
 			<div className="app">
-			<Navbar/>
-			<Feed/> 
+				<div>
+				<Navbar/>
+				</div> 
+				{this.props.children}
 			</div>
 		)
 	}});
@@ -19,7 +21,10 @@ App = React.createClass({
 
 	React.render((
 		<Router>
-			<Route path="/" component={App} />
+			<Route path="/" component={App}>
+				<IndexRoute component={Questions}/> 
+				<Route path="/questions/new" component={QuestionForm}></Route> 
+			</Route>
 		</Router> 
 		), rootEl); 
 })()
