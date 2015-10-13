@@ -2,17 +2,17 @@
 
 ## Rails
 ### Models
-*Tag
-*Tagging
+* Tag
+* Tagging
 
 ### Controllers
-Api::TagController (index) 
+* Api::TagController (index) 
 
 ### Views
 
 ## Flux
 ### Views (React Components)
-*Tags
+* Tags
 
 ### Stores
 
@@ -21,4 +21,4 @@ Api::TagController (index)
 
 
 ## Gems/Libraries
-*React-Tags (https://github.com/prakhar1989/react-tags)
+* React-Tags (https://github.com/prakhar1989/react-tags)

@@ -22,7 +22,7 @@
 
 
 ### ApiUtil
-*ApiUtil.AddPicture
-*ApiUtil.editBio
+* ApiUtil.AddPicture
+* ApiUtil.editBio
 
 ## Gems/Libraries

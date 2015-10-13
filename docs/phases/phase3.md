@@ -2,8 +2,8 @@
 
 ## Rails
 ### Models
-*Answer
-*Comments
+* Answer
+* Comments
 
 ### Controllers
 * Api::AnswerController  (create, destroy, show)

@@ -19,13 +19,13 @@
 
 ## Flux
 ### Views (React Components)
-*app.js.jsx 
-*app_index.js.jsx (index route) 
-*feed.js.jsx
+* app.js.jsx 
+* app_index.js.jsx (index route) 
+* feed.js.jsx
 
 
 ### Stores
-question_store.js
+* question_store.js
 
 ### Actions
 

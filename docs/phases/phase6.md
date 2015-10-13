@@ -13,12 +13,12 @@
 
 ## Flux
 ### Views (React Components)
-*GPS
-*Search Bar
+* GPS
+* Search Bar
 
 
 ### Stores
-*These components will simply add new filters to the question search params. 
+* These components will simply add new filters to the question search params. 
 
 
 ### Actions
