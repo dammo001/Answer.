@@ -20,19 +20,19 @@
 
     changed: function() {
       root.QuestionStore.emit(CHANGE_EVENT);
-    }
-  });
+    },
 
-  AppDispatcher.register(function(action){
+    DispatcherId: AppDispatcher.register(function(action){
     switch(action.actionType){
 
-      case QuestionConstants.RESET_QUESTIONS:
+     case QuestionConstants.RESET_QUESTIONS:
         _questions = action.questions;
         root.QuestionStore.changed(); 
         break; 
-    }
-
+    }})
   });
+
+  
 
 
 }(this));

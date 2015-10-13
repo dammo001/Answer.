@@ -1,8 +1,8 @@
 ApiUtil = {
 	fetchQuestions: function(){ 
 		$.ajax({
-			url: "api_questions_url",
-			method: "GET",
+			url: "/api/questions",
+			type: "GET",
 			success: function (questions){
 				ApiActions.receiveAllQuestions(questions);
 			}
