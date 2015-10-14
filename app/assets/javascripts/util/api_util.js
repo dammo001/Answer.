@@ -17,7 +17,6 @@ ApiUtil = {
 				ApiActions.receiveQuestion(question);
 			}
 		});
-
 	},
 
 	destroySession: function(id) {
@@ -31,6 +30,16 @@ ApiUtil = {
 		});
 	},
 
+	destroyQuestion: function(id) {
+		$.ajax({
+			url: "/api/questions/" + id,
+			type: "DELETE",
+			success: function(){
+				window.location = "/"; 
+			}
+		});
+	},
+
 
 	createQuestion: function(params){ 
 		$.ajax({
@@ -40,7 +49,6 @@ ApiUtil = {
 			success: function (question){ 
 				ApiActions.createQuestion(question);
 			}
-
 		});
 	}
 };
