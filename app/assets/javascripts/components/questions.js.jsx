@@ -25,7 +25,7 @@ Questions = React.createClass({
 			<ul> 
 			{this.state.questions.map(function(question){
 				return (
-					  <QuestionListItem question={question}/> 
+					  <QuestionListItem key={question.id} question={question}/> 
 					)
 			})}
 			</ul> 

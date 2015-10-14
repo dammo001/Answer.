@@ -24,7 +24,7 @@ App = React.createClass({
 			<Route path="/" component={App}>
 				<IndexRoute component={Questions}/> 
 				<Route path="/questions/new" component={QuestionForm}></Route> 
-				<Route path="questions/:questionId" component={Question}></Route> 
+				<Route path="/questions/:questionId" component={Question}></Route> 
 			</Route>
 		</Router> 
 		), rootEl); 

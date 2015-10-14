@@ -1,7 +1,7 @@
 (function(root) {
   'use strict';
 
-  var _questions = [], CHANGE_EVENT = "CHANGE", QUESTION_DETAIL_CHANGE_EVENT = "QUESTION_DETAIL_CHANGE_EVENT";
+  var _questions = [], CHANGE_EVENT = "CHANGE";
 
 
   root.QuestionStore = $.extend({}, EventEmitter.prototype, {
@@ -24,14 +24,6 @@
       root.QuestionStore.on(CHANGE_EVENT, handler);
     },
 
-    addQuestionDetailChangeHandler: function(handler){
-      root.QuestionStore.on(QUESTION_DETAIL_CHANGE_EVENT, handler);
-    },
-
-    removeQuestionDetailChangeHandler: function(handler){
-      root.QuestionStore.removeListener(QUESTION_DETAIL_CHANGE_EVENT, handler);
-    },
-
     removeChangeHandler: function(handler){
       root.QuestionStore.removeListener(CHANGE_EVENT, handler);
     },
@@ -46,13 +38,9 @@
         break; 
 
       case QuestionConstants.QUESTION_RECEIVED:
-        _questions.push(action.question);
+        _questions = action.question; 
         root.QuestionStore.emit(CHANGE_EVENT);
         break;
-
-      case QuestionConstants.MODIFIED:
-        root.QuestionStore.emit(QUESTION_DETAIL_CHANGE_EVENT);
-        break; 
 
       case QuestionConstants.ADD_QUESTION:
         _questions.push(action.question);

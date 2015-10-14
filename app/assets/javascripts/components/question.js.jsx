@@ -1,36 +1,48 @@
 Question = React.createClass({ 
+
 	getStateFromStore: function(){
-		return { question: QuestionStore.find(parseInt(this.props.params.questionId)) };
+		return { question: ShowQuestionStore.all() };
 	},
 
-	getInitialState: function(){ 
-		return this.getStateFromStore();
-	},
+	
 
 	_onChange: function() { 
 		this.setState(this.getStateFromStore());
 	},
 
-	componentWillReceiveProps: function(newProps) {
-		ApiUtil.fetchSingleQuestion(parseInt(newProps.params.questionId)); 
-	},
 
-	componentDidMount: function() {
-		QuestionStore.addQuestionDetailChangeHandler(this._onChange);
+	componentWillMount: function() {
+		ShowQuestionStore.addChangeHandler(this._onChange);
 		ApiUtil.fetchSingleQuestion(parseInt(this.props.params.questionId));
 	},
 
-	componentWillUnmount: function() { 
-		QuestionStore.removeQuestionDetailChangeHandler(this._onChange);
-	},
-
 	render: function(){ 
-		var display = (
-			this.state.question ? this.state.question.title : "" 
-			);
+		var title = (
+			this.state ? this.state.question.title : "" );
+		var body = (
+			this.state ? this.state.question.body : "" ); 
+	
 
 		return(
-			<div id="single-question"> {display} </div> 
+			<div className="single-question"> <h2> {title} </h2> <br/>
+			<p> {body} </p> 
+			</div> 
 			)
 	}
 });
+
+
+	// var display = (
+	// 		this.state.question ? this.state.question.title : "" 
+	// 		);
+// getInitialState: function(){ 
+	// 	return this.getStateFromStore();
+	// },
+
+	// componentWillReceiveProps: function(newProps) {
+	// 	ApiUtil.fetchSingleQuestion(parseInt(newProps.params.questionId)); 
+	// },
+
+	// componentWillUnmount: function() { 
+	// 	QuestionStore.removeQuestionDetailChangeHandler(this._onChange);
+	// },
