@@ -21,7 +21,6 @@ class Api::QuestionsController < ApplicationController
 
 	def show
 		@question = Question.find(params[:id])
-		@answers = Question.answers.all
 	end
 
 	def update 
@@ -30,7 +29,7 @@ class Api::QuestionsController < ApplicationController
 	private
 
 	def question_params
-		params.require(:question).permit(:title, :body, :author_id, :location, :views) 
+		params.require(:question).permit(:title, :body, :user_id, :location, :views) 
 	end
 
 end
