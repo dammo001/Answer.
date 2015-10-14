@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 	attr_reader :password
 
 	has_many :questions
-	has_many :answers 
+	has_many :answers
+	has_many :answered_questions, through: :answers, source: :question  
 
 	after_initialize :ensure_session_token
 
