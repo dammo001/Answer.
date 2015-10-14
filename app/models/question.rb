@@ -1,8 +1,8 @@
 class Question < ActiveRecord::Base
 	validates :title, :author_id, presence: true 
-	belongs_to :user,
+	belongs_to :author,
 	class_name: "User",
-	foreign_key: :author_id, 
+	foreign_key: :user_id, 
 	primary_key: :id
 
 

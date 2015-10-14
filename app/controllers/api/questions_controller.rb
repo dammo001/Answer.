@@ -21,6 +21,7 @@ class Api::QuestionsController < ApplicationController
 
 	def show
 		@question = Question.find(params[:id])
+		@answers = Question.answers.all
 	end
 
 	def update 

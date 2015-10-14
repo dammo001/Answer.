@@ -11,34 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014170400) do
+ActiveRecord::Schema.define(version: 20151014175326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.integer  "author_id",   null: false
+    t.integer  "user_id",     null: false
     t.text     "body",        null: false
     t.integer  "question_id", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "answers", ["author_id"], name: "index_answers_on_author_id", using: :btree
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
     t.string   "title",                  null: false
     t.text     "body"
-    t.integer  "author_id",              null: false
+    t.integer  "user_id",                null: false
     t.string   "location"
     t.integer  "views",      default: 0
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
-  add_index "questions", ["author_id"], name: "index_questions_on_author_id", using: :btree
   add_index "questions", ["title"], name: "index_questions_on_title", unique: true, using: :btree
+  add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

@@ -1,5 +1,7 @@
 class Answer < ActiveRecord::Base
-	validates :user_id, :body, presence: true 
-	belongs_to :user 
+	validates :author_id, :body, :question_id, presence: true 
+	belongs_to :author,
+	class_name: "User",
+	foreign_key: :user_id
 	belongs_to :question 
 end
