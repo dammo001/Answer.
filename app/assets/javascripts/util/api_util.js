@@ -9,6 +9,17 @@ ApiUtil = {
 		});
 	},
 
+	fetchSingleQuestion: function(id){
+		$.ajax({
+			url: "/api/questions/" + id,
+			type: "GET",
+			success: function(question){
+				ApiActions.receiveQuestion(question);
+			}
+		});
+
+	},
+
 	destroySession: function(id) {
 		$.ajax({
 			url: "/session",

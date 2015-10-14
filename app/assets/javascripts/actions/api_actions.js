@@ -6,6 +6,14 @@ window.ApiActions = {
 		});
 	},
 
+	receiveQuestion: function(question){
+		AppDispatcher.dispatch({
+			actionType: QuestionConstants.QUESTION_RECEIVED,
+			question: question
+		});
+	},
+
+
 	createQuestion: function(question){ 
 		AppDispatcher.dispatch({
 			actionType: QuestionConstants.ADD_QUESTION, 
