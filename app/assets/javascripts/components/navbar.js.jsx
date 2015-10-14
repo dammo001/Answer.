@@ -51,10 +51,17 @@ var AskQuestion = React.createClass({
 });
 
 var SignOut = React.createClass({
+  mixins: [ReactRouter.History],
+  
+  signOut: function(){ 
+    ApiUtil.destroySession(CURRENT_USER_ID);
+  },
+
+
   render: function() {
     return(
       <div className="signout-link">
-        <a href="link_to_destroy">Sign Out</a>
+        <button onClick={this.signOut}>Sign Out</button> 
       </div>
   )
   }
