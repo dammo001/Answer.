@@ -30,6 +30,10 @@
         root.ShowQuestionStore.emit(CHANGE_EVENT);
         break;
 
+      case QuestionConstants.QUESTION_UPDATED:
+        root.ShowQuestionStore.emit(CHANGE_EVENT);
+        break; 
+
     }
      })
   });

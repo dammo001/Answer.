@@ -13,6 +13,11 @@ window.ApiActions = {
 		});
 	},
 
+	updateQuestion: function(){
+		AppDispatcher.dispatch({
+			actionType: QuestionConstants.QUESTION_UPDATED
+		});
+	},
 
 	createQuestion: function(question){ 
 		AppDispatcher.dispatch({

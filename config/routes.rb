@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json} do 
     resources :questions
+    resources :answers, only: [:update, :create, :destroy] 
   end
   
 

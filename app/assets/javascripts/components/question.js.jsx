@@ -2,6 +2,8 @@
 
 Question = React.createClass({ 
 
+	mixins: [ReactRouter.History],
+
 	getStateFromStore: function(){
 		return { question: ShowQuestionStore.all() };
 	},
@@ -18,6 +20,10 @@ Question = React.createClass({
 
 	editQuestion: function(){
 		alert("this feature is not yet implemented");
+	},
+
+	addAnswer: function(){ 
+		this.history.pushState(null, "questions/"+ this.state.question.id +"/answers/new")
 	},
 
 	componentDidMount: function() {
@@ -42,18 +48,22 @@ Question = React.createClass({
 		var editButton = (
 			<button onClick={this.editQuestion}>Edit Question</button>);
 		if (this.state){
-			buttonDelete = (window.CURRENT_USER_ID === this.state.question.author_id ? deleteButton : "");
-			buttonEdit = (window.CURRENT_USER_ID === this.state.question.author_id ? editButton : "" ); 
+			buttonDelete = (window.CURRENT_USER_ID === this.state.question.user_id ? deleteButton : "");
+			buttonEdit = (window.CURRENT_USER_ID === this.state.question.user_id ? editButton : "" ); 
 		};
+		var addNewAnswer = <button onClick={this.addAnswer}>Add New Answer!</button>; 
 
 		
 
 		return(
 			<div className="single-question"> <h2> {title} </h2> <br/>
 			<p> {body} </p> 
-			{buttonDelete}{buttonEdit}
+			{addNewAnswer}{buttonDelete}{buttonEdit} 
 			<h3> Answers</h3> 
 			<AnswerIndex answers={answers} /> 
+			<div>
+				{this.props.children}
+			</div>
 
 			</div> 
 			)

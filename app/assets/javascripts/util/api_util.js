@@ -51,6 +51,18 @@ ApiUtil = {
 		});
 	},
 
+	createAnswer: function(params) {
+		$.ajax({
+			url: "/api/answers/",
+			type: "POST",
+			data: params,
+			success: function (){
+				ApiActions.updateQuestion;
+				location.reload(true);
+			}
+		});
+	},
+
 
 	createQuestion: function(params){ 
 		$.ajax({
