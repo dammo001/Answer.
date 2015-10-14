@@ -27,10 +27,14 @@ Question = React.createClass({
 
 	render: function(){ 
 
+		//refactor later as if... (return empty div) else... (return good stuff) 
+
 		var title = (
 			this.state ? this.state.question.title : "" );
 		var body = (
 			this.state ? this.state.question.body : "" );
+		var answers = (
+			this.state ? this.state.question.answers : ""); 
 		var deleteButton = (
 			<button onClick={this.removeQuestion}>Delete Question</button>);
 		var buttonDelete;
@@ -47,24 +51,14 @@ Question = React.createClass({
 		return(
 			<div className="single-question"> <h2> {title} </h2> <br/>
 			<p> {body} </p> 
-			{buttonDelete}{buttonEdit} 
+			{buttonDelete}{buttonEdit}
+			<h3> Answers</h3> 
+			<AnswerIndex answers={answers} /> 
+
 			</div> 
 			)
 	}
 });
 
 
-	// var display = (
-	// 		this.state.question ? this.state.question.title : "" 
-	// 		);
-// getInitialState: function(){ 
-	// 	return this.getStateFromStore();
-	// },
-
-	// componentWillReceiveProps: function(newProps) {
-	// 	ApiUtil.fetchSingleQuestion(parseInt(newProps.params.questionId)); 
-	// },
-
-	// componentWillUnmount: function() { 
-	// 	QuestionStore.removeQuestionDetailChangeHandler(this._onChange);
-	// },
+	

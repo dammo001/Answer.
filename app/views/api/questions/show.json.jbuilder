@@ -1,1 +1,1 @@
-json.partial!('question', question: @question)
+json.partial!('question', question: @question, show_answers: true)
