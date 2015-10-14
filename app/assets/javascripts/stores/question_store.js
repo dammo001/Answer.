@@ -25,9 +25,15 @@
     DispatcherId: AppDispatcher.register(function(action){
     switch(action.actionType){
 
-     case QuestionConstants.RESET_QUESTIONS:
+      case QuestionConstants.RESET_QUESTIONS:
         _questions = action.questions;
         root.QuestionStore.changed(); 
+        break; 
+
+
+      case QuestionConstants.ADD_QUESTION:
+        _questions.push(action.question);
+        root.QuestionStore.changed();
         break; 
     }})
   });
