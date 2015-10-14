@@ -30,6 +30,17 @@ ApiUtil = {
 		});
 	},
 
+	editQuestion: function(id, params) { 
+		$.ajax({ 
+			url: "/api/questions/" + id + "/edit",
+			type: "PATCH",
+			data: params,
+			success: function(question){ 
+				ApiActions.receiveQuestion(question);
+			} 
+		});
+	},
+
 	destroyQuestion: function(id) {
 		$.ajax({
 			url: "/api/questions/" + id,

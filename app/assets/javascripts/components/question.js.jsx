@@ -16,6 +16,10 @@ Question = React.createClass({
 		}
 	},
 
+	editQuestion: function(){
+		alert("this feature is not yet implemented");
+	},
+
 	componentDidMount: function() {
 		ShowQuestionStore.addChangeHandler(this._onChange);
 		ApiUtil.fetchSingleQuestion(parseInt(this.props.params.questionId));
@@ -29,16 +33,21 @@ Question = React.createClass({
 			this.state ? this.state.question.body : "" );
 		var deleteButton = (
 			<button onClick={this.removeQuestion}>Delete Question</button>);
-		var button;
+		var buttonDelete;
+		var buttonEdit; 
+		var editButton = (
+			<button onClick={this.editQuestion}>Edit Question</button>);
 		if (this.state){
-			button = (window.CURRENT_USER_ID === this.state.question.author_id ? deleteButton : "");
+			buttonDelete = (window.CURRENT_USER_ID === this.state.question.author_id ? deleteButton : "");
+			buttonEdit = (window.CURRENT_USER_ID === this.state.question.author_id ? editButton : "" ); 
 		};
+
 		
 
 		return(
 			<div className="single-question"> <h2> {title} </h2> <br/>
 			<p> {body} </p> 
-			{button} 
+			{buttonDelete}{buttonEdit} 
 			</div> 
 			)
 	}
