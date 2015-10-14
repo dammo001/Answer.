@@ -28,7 +28,7 @@ App = React.createClass({
 			</Route>
 		</Router> 
 		), rootEl); 
-})()
+});
 
 
 

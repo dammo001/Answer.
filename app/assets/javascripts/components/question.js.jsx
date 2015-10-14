@@ -11,7 +11,7 @@ Question = React.createClass({
 	},
 
 
-	componentWillMount: function() {
+	componentDidMount: function() {
 		ShowQuestionStore.addChangeHandler(this._onChange);
 		ApiUtil.fetchSingleQuestion(parseInt(this.props.params.questionId));
 	},
