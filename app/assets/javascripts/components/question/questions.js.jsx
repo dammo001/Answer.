@@ -8,7 +8,7 @@ Questions = React.createClass({
 
 	componentDidMount: function(){
 		this.storeChanged();
-		ApiUtil.fetchQuestions(); 
+		ApiUtil.Question.fetchQuestions(); 
 	},
 
 	storeChanged: function(){

@@ -5,7 +5,7 @@ QuestionForm = React.createClass({
 		event.preventDefault();
 		var title = event.target[0].value;
 		var body = event.target[1].value; 
-		ApiUtil.createQuestion({question: {title: title, body: body} });
+		ApiUtil.Question.createQuestion({question: {title: title, body: body} });
 		this.history.pushState(null, "/");
 	},
 

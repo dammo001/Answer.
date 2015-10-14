@@ -14,7 +14,7 @@ Question = React.createClass({
 
 	removeQuestion: function() { 
 		if (confirm("Are you sure you want to delete this question?")){
-		ApiUtil.destroyQuestion(this.props.params.questionId);
+		ApiUtil.Question.destroyQuestion(this.props.params.questionId);
 		}
 	},
 
@@ -28,7 +28,7 @@ Question = React.createClass({
 
 	componentDidMount: function() {
 		ShowQuestionStore.addChangeHandler(this._onChange);
-		ApiUtil.fetchSingleQuestion(parseInt(this.props.params.questionId));
+		ApiUtil.Question.fetchSingleQuestion(parseInt(this.props.params.questionId));
 	},
 
 	render: function(){ 

@@ -5,7 +5,7 @@ AnswerForm = React.createClass({
 		event.preventDefault();
 		var body = event.target[0].value; 
 		var questionId = this.props.params.questionId;
-		ApiUtil.createAnswer({answer: {body: body, question_id: questionId} });
+		ApiUtil.Answer.createAnswer({answer: {body: body, question_id: questionId} });
 		this.history.pushState(null, "/questions/"+questionId);
 	},
 
