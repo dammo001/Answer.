@@ -1,6 +1,6 @@
 json.extract!(
 	question, 
-	:title, :body, :user_id, :location, :views, :updated_at, :id
+	:title, :body, :user_id, :location, :views, :updated_at, :id, :created_at
 )
 
 if show_answers

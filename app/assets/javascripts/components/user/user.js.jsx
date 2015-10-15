@@ -1,5 +1,6 @@
 ShowUser = React.createClass({ 
-	mixins: [ReactRouter.History], 
+	mixins: [ReactRouter.History],
+
 	getInitialState: function(){
 		return ({
 			user: UserStore.all()
@@ -7,12 +8,13 @@ ShowUser = React.createClass({
 	},
 
 	componentDidMount: function(){ 
-		root.UserStore.addChangeHandler(this.change()); 
+		UserStore.addChangeHandler(this.change); 
 		ApiUtil.User.fetchUser(window.CURRENT_USER_ID); 
 	},
 
 	change: function(){ 
 		this.setState({user: UserStore.all()});
+		debugger;
 	},
 
 	showProfile: function(){
