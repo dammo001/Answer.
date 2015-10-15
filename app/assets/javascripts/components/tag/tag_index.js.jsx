@@ -1,7 +1,45 @@
-// TagIndex = React.createClass({ 
+TagIndex = React.createClass({
+
+	getInitialState: function(){ 
+		return ({
+			tags: userTags
+		});
+	},
+
+	componentDidMount: function(){ 
+		UserStore.addChangeHandler(this.change); 
+	},
+
+	change: function(){
+		this.setState({
+			tags: UserStore.all().tags
+		});
+	},
+
+	render: function(){
+
+	var tagsList; 
+
+	if ( this.state.tags ) {
+		tagsList = ( 
+			this.state.tags.map(function(tag){
+					return( 
+						<TagItem key={tag.id} tag={tag}/> 			
+				)}))
+	} else { 
+		tagsList = ""
+	}
+		return (
+			<div className="container" id="sidebar-container">
+				<ul className="tag-list"> 
+				{tagsList} 
+				</ul> 	
+			</div>
+			)
+	}
+})
 
 
-// })
 
 // When User Logs in, object should be returned containing User's data. On first sign in, they should
 // be forced to pick some number of tags, 6? Whatever number is optimal for tag display 

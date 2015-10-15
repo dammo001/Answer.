@@ -14,7 +14,6 @@ ShowUser = React.createClass({
 
 	change: function(){ 
 		this.setState({user: UserStore.all()});
-		debugger;
 	},
 
 	showProfile: function(){

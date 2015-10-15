@@ -3,7 +3,8 @@ HI!
 </div> 
 				          
 
-<script type="text/javascript">  
+<script type="text/javascript">
+	window.userTags = <%= current_user.tags.pluck(:name).to_s.html_safe %>;
   $('#upload_widget_opener').cloudinary_upload_widget(
     { cloud_name: 'djp2nuknn', upload_preset: 'rmy5aved', 
       cropping: 'server', 'folder': 'user_photos' },
