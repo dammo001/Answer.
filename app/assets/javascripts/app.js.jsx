@@ -9,11 +9,12 @@ $(function() {
 App = React.createClass({ 
 	render: function(){
 		return (
-			<div className="app">
+			<div id="wrapper">
 				<div>
-				<Navbar/>
+				<Navbar/> 
+				<div id="content-wrapper">{this.props.children}</div>
+				<Footer/>
 				</div> 
-				{this.props.children}
 			</div>
 		)
 	}});

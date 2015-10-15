@@ -1,0 +1,31 @@
+.question-main { 
+	position: relative;
+	height: 900px;
+	width: 700px;
+	top: 52px; 
+	left: 300px; 
+}
+
+.ask-question { 
+	left: 300px; 
+	position: relative;
+	top: 100px; 
+	margin: 0 auto; 
+	background-color: yellow; 
+}
+
+.question-item {
+	margin: 10px;
+	list-style-type: none;
+	border-bottom-style: dotted;
+	border-bottom-width: 2px;
+	border-bottom-color: gray; 
+	padding-bottom: 5px; 
+}
+.question-item:hover {
+	text-decoration: underline; 
+}
+.single-question { 
+	background-color: ; 
+
+}

@@ -56,12 +56,12 @@ Question = React.createClass({
 		
 
 		return(
-			<div className="single-question"> <h2> {title} </h2> <br/>
+			<div className="single-question" > <h2> {title} </h2> <br/>
 			<p> {body} </p> 
 			{addNewAnswer}{buttonDelete}{buttonEdit} 
 			<h3> Answers</h3> 
 			<AnswerIndex answers={answers} /> 
-			<div>
+			<div id="answer-list">
 				{this.props.children}
 			</div>
 

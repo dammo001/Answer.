@@ -4,6 +4,8 @@ Feed = React.createClass({
 			HELLO!
 			<Navbar/>
 			<Questions/>
+			<Sidebar/>
+			<Footer/> 
 			</div> )
 	}
 })

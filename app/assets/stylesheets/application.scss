@@ -16,27 +16,6 @@
  @import "bootstrap-sprockets"; 
  @import "bootstrap";
 
-.app {
-	height: 1000px;
-	width: 1000px; 
-}
-
-
-
-.question-main { 
-	position: relative;
-	height: 900px;
-	width: 700px;
-	top: 52px; 
-	left: 300px; 
-}
-
-.ask-question { 
-	left: 300px; 
-	position: relative;
-	top: 100px; 
-	margin: 0 auto; 
-}
 
 .single-question { 
 	position: relative;
@@ -44,5 +23,24 @@
 	width: 200px;
 	top: 70px;
 	margin: 0 auto;
+}
+
+.index-question-box {
+	height: 40px; 
+	width: 100px; 
+	background-color: red; 
+}
+#navaskquestion {
+	position:relative;
+	bottom: 20px;
+	height: 30px;
+	left: 100px;
+}
+
+#signout-link {
+	position: relative;
+	top: 11px;
+	left: 250px; 
+	height: 30px;
 }
 

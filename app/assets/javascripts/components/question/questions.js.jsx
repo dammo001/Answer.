@@ -21,7 +21,7 @@ Questions = React.createClass({
 
 	render: function(){
 		return(
-			<div className="question-main"> <h2> What Do You Want To Know? </h2> 
+			<div className="question-main" > <h2> What Do You Want To Know? </h2> 
 			<ul> 
 			{this.state.questions.map(function(question){
 				return (

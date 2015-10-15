@@ -7,7 +7,13 @@ QuestionListItem = React.createClass({
 
 	render: function(){
 		return (
-			<li onClick={this.showQuestion} className="question-item"> {this.props.question.title} </li> )
+			<li 
+			onClick={this.showQuestion} 
+			className="question-item"> 
+			<h3>{this.props.question.title}</h3>
+			 was asked {jQuery.timeago(this.props.question.updated_at)}
+			</li> 
+		)
 	}
 });
 

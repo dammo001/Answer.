@@ -18,6 +18,7 @@
 //= require react
 //= require react_ujs
 //= require flux
+//= require timeago.js
 //= require eventemitter
 //= require reactrouter.min.js
 //= require components

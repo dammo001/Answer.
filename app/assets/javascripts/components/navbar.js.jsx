@@ -44,7 +44,7 @@ var AskQuestion = React.createClass({
   render: function(){
     return(
       <div className="navaskquestion">
-       <button onClick={this.ask}>New Question</button> 
+       <button className="btn btn-success" id="navaskquestion" onClick={this.ask}>New Question</button> 
         </div> 
         )
   }
@@ -61,7 +61,7 @@ var SignOut = React.createClass({
   render: function() {
     return(
       <div className="signout-link">
-        <button onClick={this.signOut}>Sign Out</button> 
+        <button className="btn btn-danger" id="signout-link" onClick={this.signOut}>Sign Out</button> 
       </div>
   )
   }
