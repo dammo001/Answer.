@@ -38,13 +38,14 @@ var AskQuestion = React.createClass({
   mixins: [ReactRouter.History],
 
   ask: function(){ 
+
     this.history.pushState(null, "/questions/new");
   },
 
   render: function(){
     return(
       <div className="navaskquestion">
-       <button className="btn btn-success" id="navaskquestion" onClick={this.ask}>New Question</button> 
+       <button className="btn" id="navaskquestion" onClick={this.ask}>New Question</button> 
         </div> 
         )
   }
@@ -61,7 +62,7 @@ var SignOut = React.createClass({
   render: function() {
     return(
       <div className="signout-link">
-        <button className="btn btn-danger" id="signout-link" onClick={this.signOut}>Sign Out</button> 
+        <button className="btn" id="signout-link" onClick={this.signOut}>Sign Out</button> 
       </div>
   )
   }

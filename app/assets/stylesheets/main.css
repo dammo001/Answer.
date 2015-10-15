@@ -1,5 +1,18 @@
 #brand{
 	font-size: 35px;
 	font-weight: bold;
-	color: #FF4136;
+	color: #3E88BC; 
 }
+
+#navaskquestion { 
+	background-color: #3E88BC;
+	color: GhostWhite;
+}
+
+#signout-link { 
+	background-color: #3E88BC;
+	color: GhostWhite;
+}
+
+
+	/*color: #FF4136;*/
