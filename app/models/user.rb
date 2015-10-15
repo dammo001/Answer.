@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 	has_many :questions
 	has_many :answers
 	has_many :answered_questions, through: :answers, source: :question  
+	has_many :user_tags
+	has_many :tags, through: :user_tags, source: :tag
 
 	after_initialize :ensure_session_token
 

@@ -13,5 +13,14 @@ q3 = Question.create(title: "q3", body: "SO MANY QUESTIONS", user_id: 2),
 q4 = Question.create(title: "q4", body: "Please give me answers :( !", user_id: 2),
 a1 = Answer.create!(user_id: 2, question_id: 5, body: "I want some chocolate"), 
 a2 = Answer.create!(user_id: 3, question_id: 5, body: "I want some too, damnnn"), 
-a3 = Answer.create!(user_id: 4, question_id: 6, body: "Dum deee dum") 
+a3 = Answer.create!(user_id: 4, question_id: 6, body: "Dum deee dum"),
+t1 = Tag.create!(name: "Sports")
+t2 = Tag.create!(name: "Love")
+t3 = Tag.create!(name: "Psychology")
+t4 = Tag.create!(name: "Food")
+ta1 = Tagging.create!(question_id: 5, tag_id: 2)
+ta2 = Tagging.create!(question_id: 4, tag_id: 2)
+ta3 = Tagging.create!(question_id: 6, tag_id: 2)
+ta4 = Tagging.create!(question_id: 3, tag_id: 3)
+
 
