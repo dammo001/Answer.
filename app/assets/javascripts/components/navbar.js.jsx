@@ -46,7 +46,7 @@ var AskQuestion = React.createClass({
     return(
       <div className="navaskquestion">
        <button className="btn" id="navaskquestion" onClick={this.ask}>New Question</button> 
-        </div> 
+      </div> 
         )
   }
 });
