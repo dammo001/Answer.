@@ -14,5 +14,22 @@
 	color: GhostWhite;
 }
 
+.container#sidebar-container{ 
+	position: fixed;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #3E88BC;
+	top: 61px;
+	height: 300px;
+	width: 300px;
+}
+
+.question-main { 
+	position: relative;
+	height: 900px;
+	width: 700px;
+	top: 52px; 
+	left: 300px; 
+}
 
 	/*color: #FF4136;*/

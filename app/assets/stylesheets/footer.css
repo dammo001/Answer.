@@ -27,8 +27,13 @@ html, body {
 	display: block;
 	height: 140px; 
 }
-
+#wrapper:after {
+	content:"";
+	display: table;
+	clear:both;
+}
 #wrapper {
+	position:relative;
 	height: 100%;
 	background-color: light-gray;
 }

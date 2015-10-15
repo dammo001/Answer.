@@ -12,6 +12,7 @@ App = React.createClass({
 			<div id="wrapper">
 				<div id="outer-content-wrapper">
 				<Navbar/> 
+				<Sidebar/> 
 				<div id="content-wrapper">{this.props.children}</div>
 				<Footer/>
 				</div> 
