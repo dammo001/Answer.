@@ -6,6 +6,9 @@ html, body {
 	height: 100%;
 }
 
+#outer-content-wrapper{
+	height: 100%;
+}
 
 #answer-list {
 	min-height: 100%;
@@ -16,6 +19,9 @@ html, body {
 	margin-bottom: -140px; 
 }
 
+#content{
+	height: 100%;
+}
 #content-wrapper:after {
 	content: "";
 	display: block;
@@ -24,6 +30,7 @@ html, body {
 
 #wrapper {
 	height: 100%;
+	background-color: #eee8d5;
 }
 
 .footer-distributed{

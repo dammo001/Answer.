@@ -10,7 +10,7 @@ App = React.createClass({
 	render: function(){
 		return (
 			<div id="wrapper">
-				<div>
+				<div id="outer-content-wrapper">
 				<Navbar/> 
 				<div id="content-wrapper">{this.props.children}</div>
 				<Footer/>

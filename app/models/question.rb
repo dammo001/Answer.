@@ -6,5 +6,7 @@ class Question < ActiveRecord::Base
 	primary_key: :id
 	has_many :answers
 
+	has_many :taggings
+	has_many :tags, through: :taggings
 
 end
