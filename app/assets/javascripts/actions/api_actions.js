@@ -32,5 +32,12 @@ window.ApiActions = {
 			actionType: QuestionConstants.ADD_QUESTION, 
 			question: question
 		});
+	},
+
+	receiveUser: function(user){
+		AppDispatcher.dispatch({
+			actionType: UserConstants.USER_RECEIVED, 
+			user: user 
+		});
 	}
 	};

@@ -51,6 +51,7 @@ var AskQuestion = React.createClass({
   }
 });
 
+
 var SignOut = React.createClass({
   mixins: [ReactRouter.History],
   
@@ -80,6 +81,7 @@ render: function() {
         <NavbarSearchBar/>
         <SignOut/>
         <AskQuestion/>
+        <ShowUser/>
         </div>
         </nav>);
 }  

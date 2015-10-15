@@ -1,5 +1,11 @@
 <div id="content">
 HI!
 </div> 
+				          
 
-
+<script type="text/javascript">  
+  $('#upload_widget_opener').cloudinary_upload_widget(
+    { cloud_name: 'djp2nuknn', upload_preset: 'rmy5aved', 
+      cropping: 'server', 'folder': 'user_photos' },
+    function(error, result) { console.log(error, result) });
+</script>

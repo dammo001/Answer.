@@ -7,7 +7,7 @@
   root.ShowQuestionStore = $.extend({}, EventEmitter.prototype, {
 
     all: function (){
-      return _question[0];
+      return _question.slice()[0];
     },
 
 

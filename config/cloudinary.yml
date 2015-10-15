@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: djp2nuknn
+  api_key: '372899456623596'
+  api_secret: 8_POPI8YE-0GQ1pOkWGFhB-x-TE
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: djp2nuknn
+  api_key: '372899456623596'
+  api_secret: 8_POPI8YE-0GQ1pOkWGFhB-x-TE
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: djp2nuknn
+  api_key: '372899456623596'
+  api_secret: 8_POPI8YE-0GQ1pOkWGFhB-x-TE
+  enhance_image_tag: true
+  static_image_support: false
