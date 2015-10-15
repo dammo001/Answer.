@@ -7,7 +7,7 @@ class Api::AnswersController < ApplicationController
 	
 		@answer.user_id = current_user.id 
 		if @answer.save
-			render json: {}
+			render json: @answer
 		else
 			render json: @answer.errors.full_messages, status: 422
 		end
@@ -22,7 +22,7 @@ class Api::AnswersController < ApplicationController
 	def destroy
 		@answer = Answer.find(params[:id])
 		@answer.destroy
-		render json: {}
+		render json: @answer
 	end
 
 	private

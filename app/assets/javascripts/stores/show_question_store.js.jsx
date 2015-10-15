@@ -25,15 +25,24 @@
     switch(action.actionType){
 
       case QuestionConstants.QUESTION_RECEIVED:
-      
         _question = [action.question]; 
         root.ShowQuestionStore.emit(CHANGE_EVENT);
         break;
 
-      case QuestionConstants.QUESTION_UPDATED:
+      case QuestionConstants.ANSWER_ADDED:
+        root.ShowQuestionStore.all().answers.push(action.answer)
         root.ShowQuestionStore.emit(CHANGE_EVENT);
         break; 
 
+      case QuestionConstants.ANSWER_REMOVED: 
+        root.ShowQuestionStore.all().answers.forEach(function(answer) {
+          if (answer.id === action.answer.id){
+          var idx = root.ShowQuestionStore.all().answers.indexOf(answer);
+          root.ShowQuestionStore.all().answers.splice(idx, 1); 
+          }
+        });
+        root.ShowQuestionStore.emit(CHANGE_EVENT); 
+        break; 
     }
      })
   });

@@ -5,9 +5,8 @@ ApiUtil.Answer = {
 			url: "/api/answers/",
 			type: "POST",
 			data: params,
-			success: function (){
-				ApiActions.updateQuestion;
-				location.reload(true);
+			success: function (answer){
+				ApiActions.addAnswer(answer);
 			}
 		});
 	},
@@ -16,9 +15,8 @@ ApiUtil.Answer = {
 		$.ajax({
 			url: "/api/answers/" + id,
 			type: "DELETE",
-			success: function(){
-				ApiActions.updateQuestion;
-				location.reload(true);
+			success: function(answer){
+				ApiActions.removeAnswer(answer);
 			}
 		});
 	}

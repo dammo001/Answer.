@@ -13,9 +13,17 @@ window.ApiActions = {
 		});
 	},
 
-	updateQuestion: function(){
+	addAnswer: function(answer){
 		AppDispatcher.dispatch({
-			actionType: QuestionConstants.QUESTION_UPDATED
+			actionType: QuestionConstants.ANSWER_ADDED,
+			answer: answer 
+		});
+	},
+
+	removeAnswer: function(answer){
+		AppDispatcher.dispatch({
+			actionType: QuestionConstants.ANSWER_REMOVED,
+			answer: answer
 		});
 	},
 
