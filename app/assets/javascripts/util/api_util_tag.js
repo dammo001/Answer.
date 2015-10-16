@@ -5,7 +5,7 @@ ApiUtil.Tag = {
 			type: "GET",
 			data: {tag_id: tag},
 			success: function (questions){
-				ApiActions.receiveAllQuestions(questions)
+				ApiActions.receiveAllQuestions(questions);
 			}
 		});
 	}

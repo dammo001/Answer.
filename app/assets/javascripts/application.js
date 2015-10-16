@@ -17,9 +17,12 @@
 //= require react
 //= require react_ujs
 //= require flux
+//= require ReactDnD.min
+//= require reactTags.min
 //= require timeago.js
 //= require cloudinary
 //= require eventemitter
-//= require reactrouter.min.js
+//= require reactrouter.min
 //= require components
+
 //= require_tree .

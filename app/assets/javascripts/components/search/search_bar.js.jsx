@@ -15,8 +15,8 @@ var NavbarSearchBar=React.createClass({
 
     return <form className="navbar-form navbar-left" id="search" role="search">
                 <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Search" value={this.state.value} onChange={this.handleChange} />
-
+                <input type="text" className="form-control" id="form-control-search" placeholder="Search" value={this.state.value} onChange={this.handleChange} />
+                <span id="search-icon" className="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </div>
 
             </form>;

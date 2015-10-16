@@ -53,7 +53,7 @@ var SignOut = React.createClass({
 var Navbar = React.createClass({
 render: function() {
  return(<nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div className="container">
+        <div className="container-navbar">
         <div className="navbar-header">
         <a className="navbar-brand" id="brand" href="/#/">Answer.</a>
         </div>
