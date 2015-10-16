@@ -16,7 +16,11 @@ class Api::QuestionsController < ApplicationController
 	end
 
 	def index
-		@questions = Question.all 
+		if params[:tag_id]
+			@questions = Tag.find(params[:tag_id]).questions
+		else
+			@questions = Question.all 
+		end
 	end
 
 	def show

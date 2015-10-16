@@ -14,6 +14,7 @@
 	color: GhostWhite;
 }
 
+
 .container#sidebar-container{ 
 	position: fixed;
 	border-style: solid;
@@ -45,8 +46,8 @@
 }
 
 .user-profile-link {
-	position: relative
-	left: 900px; 
+  position: relative;
+  left: 900px; 
   width: 79px;
   height: 79px;
   text-align: center;

@@ -4,10 +4,9 @@ class CreateUserTags < ActiveRecord::Migration
     	t.integer :user_id, null: false 
     	t.integer :tag_id, null: false 
 
-
-      t.timestamps null: false
+    	t.timestamps null: false
     end
     add_index :user_tags, :user_id
-    add_index :user_tags, :tag_id
+    add_index :user_tags, :tag_id 
   end
 end
