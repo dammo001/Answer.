@@ -57,6 +57,7 @@ table {
 	color: GhostWhite;
 }
 
+<<<<<<< HEAD
 *{
 	list-style-type: none; 
 }
@@ -74,6 +75,8 @@ table {
 	right: 20px;
 
 }
+=======
+>>>>>>> 1a2e91bf299db1eadce5bcaf4588b14c96152a71
 
 .container#sidebar-container{ 
 	position: fixed;
