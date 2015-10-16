@@ -18,6 +18,8 @@ class Api::QuestionsController < ApplicationController
 	def index
 		if params[:tag_id]
 			@questions = Tag.find(params[:tag_id]).questions
+		elsif params[:search]
+			@questions = Question.find_by_substring(params[:search])
 		else
 			@questions = Question.all 
 		end

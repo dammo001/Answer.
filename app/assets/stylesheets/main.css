@@ -48,11 +48,13 @@ table {
 }
 
 #navaskquestion { 
+	position: absolute;
 	background-color: #3E88BC;
 	color: GhostWhite;
 }
 
 #signout-link { 
+	position: absolute;
 	background-color: #3E88BC;
 	color: GhostWhite;
 }
@@ -60,10 +62,29 @@ table {
 *{
 	list-style-type: none; 
 }
+.search-div {
+	position: absolute; 
+	left: 345px;
+	top: 45px;
+}
 
+#search-holder {
+	margin-bottom: 0px;
+}
 #form-control-search{
 	left: 50px;
 	width: 200px; 
+}
+#search-list-item{
+	margin-top: 0;
+	margin-bottom: 0;
+	width: 200px; 
+	z-index: 500;
+}
+#search-list-item:hover{
+	background-color: black;
+	color: white;
+
 }
 
 #search { 
@@ -74,6 +95,7 @@ table {
 	right: 20px;
 
 }
+
 
 .container#sidebar-container{ 
 	position: fixed;
@@ -97,6 +119,8 @@ table {
 div.container {
 	width: 900px;
 }
+
+
 
 .container-navbar { 
 	height: 59px; }

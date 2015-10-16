@@ -1,0 +1,4 @@
+var SearchConstants = { 
+	SEARCH_RECEIVED: "SEARCH_RECEIVED",
+	CLEAR_SEARCH: "CLEAR_SEARCH"
+};

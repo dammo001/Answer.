@@ -13,10 +13,23 @@ window.ApiActions = {
 		});
 	},
 
+	receiveSearchQuestions: function(questions){
+		AppDispatcher.dispatch({
+			actionType: SearchConstants.SEARCH_RECEIVED,
+			questions: questions
+		});
+	},
+
 	addAnswer: function(answer){
 		AppDispatcher.dispatch({
 			actionType: QuestionConstants.ANSWER_ADDED,
 			answer: answer 
+		});
+	},
+
+	clearSearch: function(){
+		AppDispatcher.dispatch({
+			actionType: SearchConstants.CLEAR_SEARCH
 		});
 	},
 

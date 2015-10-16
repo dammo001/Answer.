@@ -22,6 +22,18 @@ ApiUtil.Question = {
 		});
 	},
 
+	searchQuestions: function(params){
+		$.ajax({
+			url: "/api/questions/",
+			type: "GET",
+			data: params, 
+			success: function(questions){
+				console.log(questions)
+				ApiActions.receiveSearchQuestions(questions); 
+			}
+		});
+	},
+
 	destroyQuestion: function(id) {
 		$.ajax({
 			url: "/api/questions/" + id,

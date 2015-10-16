@@ -58,7 +58,7 @@ render: function() {
         <a className="navbar-brand" id="brand" href="/#/">Answer.</a>
         </div>
         <NavbarLeftMenuBar/>
-        <NavbarSearchBar/>
+        <NavbarSearchIndex/>
         <SignOut/>
         <AskQuestion/>
         <ShowUser/>
