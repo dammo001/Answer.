@@ -25,6 +25,11 @@
         _user = [action.user]; 
         root.UserStore.emit(CHANGE_EVENT);
         break;
+
+      case UserConstants.USER_UPDATED:
+        _user = [action.user];
+        root.UserStore.emit(CHANGE_EVENT);
+        break; 
     }})
   });
 

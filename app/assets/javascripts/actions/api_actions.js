@@ -20,6 +20,7 @@ window.ApiActions = {
 		});
 	},
 
+
 	addAnswer: function(answer){
 		AppDispatcher.dispatch({
 			actionType: QuestionConstants.ANSWER_ADDED,
@@ -44,6 +45,13 @@ window.ApiActions = {
 		AppDispatcher.dispatch({
 			actionType: QuestionConstants.ADD_QUESTION, 
 			question: question
+		});
+	},
+
+	updateUser: function(user){
+		AppDispatcher.dispatch({
+			actionType: UserConstants.USER_UPDATED,
+			user: user 
 		});
 	},
 

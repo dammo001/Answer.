@@ -8,4 +8,15 @@ ApiUtil.User = {
 			}
 		});
 	},
+
+	updateUser: function(params){
+		$.ajax({
+			url: "/users/" + params.user.id,
+			type: "PATCH",
+			data: params,
+			success: function (user){
+				ApiActions.updateUser(user);
+			}
+		});
+	}
 };

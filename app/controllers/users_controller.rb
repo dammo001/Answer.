@@ -18,6 +18,16 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
+	def update
+		@user = User.find(params[:id])
+		if params[:user][:picture_url]
+			@user.picture_url = params[:user][:picture_url]
+			@user.save!
+			render :show
+		end
+	end
+
+
 
 	private
 
