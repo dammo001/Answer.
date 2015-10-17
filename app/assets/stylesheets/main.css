@@ -47,14 +47,8 @@ table {
 	color: #3E88BC; 
 }
 
-#navaskquestion { 
-	position: absolute;
-	background-color: #3E88BC;
-	color: GhostWhite;
-}
-
-#signout-link { 
-	position: absolute;
+#nav-button { 
+	margin: 5px;
 	background-color: #3E88BC;
 	color: GhostWhite;
 }
@@ -64,18 +58,40 @@ table {
 }
 
 .user-profile-link { 
-   width: 40px;
-   height: 40px;
+ /*  width: 40px;
+   height: 40px;*/
 }
 #picture-image{
 	border-radius: 50%;
 	max-height: 100%;
+	max-width: 100%;
 }
 .search-div {
 	position: absolute; 
 	left: 345px;
 	top: 45px;
 }
+
+
+.index-question-box {
+	height: 40px; 
+	width: 100px; 
+	background-color: red; 
+}
+#navaskquestion {
+	position:relative;
+	bottom: 20px;
+	height: 30px;
+	left: 100px;
+}
+
+#signout-link {
+	position: relative;
+	top: 11px;
+	left: 250px; 
+	height: 30px;
+}
+
 
 #search-holder {
 	margin-bottom: 0px;
@@ -98,6 +114,7 @@ table {
 
 #search { 
 	background: transparent;
+
 
 }
 #search-icon {
@@ -152,6 +169,46 @@ table {
 
 }
 
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+#outer-content-wrapper{
+	height: 100%;
+}
+
+#answer-list {
+	min-height: 100%;
+	margin-bottom: -140px;
+}
+#content-wrapper {
+	min-height: 100%;
+	margin-bottom: -140px; 
+}
+
+#content{
+	height: 100%;
+}
+#content-wrapper:after {
+	content: "";
+	display: block;
+	height: 140px; 
+}
+#wrapper:after {
+	content:"";
+	display: table;
+	clear:both;
+}
+#wrapper {
+	position:relative;
+	height: 100%;
+	background-color: light-gray;
+}
+
 div.single-question {
 	position: relative;
 	height: 100%;
@@ -159,6 +216,3 @@ div.single-question {
 	top: 70px;
 	margin-left: 27%;
 }
-
-
-	/*color: #FF4136;*/

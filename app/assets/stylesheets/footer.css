@@ -1,42 +1,6 @@
-* {
-	margin: 0;
-}
+/*footer */
 
-html, body {
-	height: 100%;
-}
 
-#outer-content-wrapper{
-	height: 100%;
-}
-
-#answer-list {
-	min-height: 100%;
-	margin-bottom: -140px;
-}
-#content-wrapper {
-	min-height: 100%;
-	margin-bottom: -140px; 
-}
-
-#content{
-	height: 100%;
-}
-#content-wrapper:after {
-	content: "";
-	display: block;
-	height: 140px; 
-}
-#wrapper:after {
-	content:"";
-	display: table;
-	clear:both;
-}
-#wrapper {
-	position:relative;
-	height: 100%;
-	background-color: light-gray;
-}
 /*background-color: #eee8d5;*/
 
 .footer-distributed{
@@ -113,3 +77,8 @@ html, body {
 		line-height: 1.8;
 	}
 }
+
+
+
+
+	/*color: #FF4136;*/

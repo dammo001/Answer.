@@ -24,10 +24,8 @@ var AskQuestion = React.createClass({
 
   render: function(){
     return(
-      <div className="navaskquestion">
-       <button className="btn" id="navaskquestion" onClick={this.ask}>New Question</button> 
-      </div> 
-        )
+       <button className="btn btn-default navbar-btn pull-right" id="nav-button" onClick={this.ask}>New Question</button> 
+  )
   }
 });
 
@@ -42,9 +40,7 @@ var SignOut = React.createClass({
 
   render: function() {
     return(
-      <div className="signout-link">
-        <button className="btn" id="signout-link" onClick={this.signOut}>Sign Out</button> 
-      </div>
+        <button className="btn btn-default navbar-btn pull-right" id="nav-button" onClick={this.signOut}>Sign Out</button> 
   )
   }
 
@@ -53,16 +49,18 @@ var SignOut = React.createClass({
 var Navbar = React.createClass({
 render: function() {
  return(<nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div className="container-navbar">
-        <div className="navbar-header">
-        <a className="navbar-brand" id="brand" href="/#/">Answer.</a>
-        </div>
-        <NavbarLeftMenuBar/>
-        <NavbarSearchIndex/>
-        <SignOut/>
-        <AskQuestion/>
-        <ShowUser/>
-        </div>
+          <div className="container-navbar">
+            <div className="navbar-header">
+              <a className="navbar-brand" id="brand" href="/#/">Answer.</a>
+            </div>
+            <NavbarLeftMenuBar/>
+            <NavbarSearchIndex/>
+            <div className="navbar-form">
+            <SignOut/>
+            <AskQuestion/>
+            <ShowUser/>
+            </div>
+          </div>
         </nav>);
 }  
 });
