@@ -91,7 +91,18 @@ table {
 	left: 250px; 
 	height: 30px;
 }
-
+.tag-name-list { 
+	float: left;
+	margin: 5px 2px;
+	font-size: 13px;
+	font-weight: 500;
+	color: #808393;
+	background-color: ghostwhite;
+	margin-right: 4px;
+	border-radius: 12px;
+	padding: 4px 8px;
+	border: 0;
+}
 
 #search-holder {
 	margin-bottom: 0px;

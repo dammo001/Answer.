@@ -21,6 +21,8 @@
 //= require reactTags.min
 //= require timeago.js
 //= require cloudinary
+//= require squire.js
+//= require squire-raw.js
 //= require eventemitter
 //= require reactrouter.min
 //= require components

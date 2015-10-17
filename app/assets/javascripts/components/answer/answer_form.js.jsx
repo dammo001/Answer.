@@ -9,6 +9,10 @@ AnswerForm = React.createClass({
 		this.history.pushState(null, "/questions/"+questionId);
 	},
 
+	check: function(event){
+		debugger;
+	},
+
 	render: function(){
 		return(
 			<form className="answer-form" onSubmit={this.createAnswer}> Answer this question!<br/>
@@ -18,4 +22,7 @@ AnswerForm = React.createClass({
 			)
 	}
 })
+
+// not getting the style sheet to load...
+
 
