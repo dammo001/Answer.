@@ -23,20 +23,21 @@ ShowUser = React.createClass({
 	render: function(){
 		var picture; 
 		if (this.state.user){
-			picture = (
-				<img className="user-profile-link" id="profile-pic" src={this.state.user.picture_url}/>
+			return(
+				<div onClick={this.showProfile} className="user-profile-link" id="profile-pic">
+				<img id="picture-image" src={this.state.user.picture_url}/> 
+				</div> 
 				)
 		} else {
-			picture = ""
+			return(<div></div>);
 		}
 
-		return ( 
-			<div> 
-				<button className="btn" id="nav-show-user" onClick={this.showProfile}>User</button> 
-				{picture}
-			</div> 
-		)
+		// return ( 
+		// 		{picture}
+		// )
 	}
 })
 
+				// <button className="btn" id="nav-show-user" onClick={this.showProfile}>User</button> 
 
+	// <img className="user-profile-link" id="profile-pic" src={this.state.user.picture_url}/>

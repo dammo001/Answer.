@@ -56,12 +56,12 @@ Question = React.createClass({
 		
 
 		return(
-			<div className="container-fluid">
+			<div>
 			<div className="single-question" > <h2> {title} </h2> <br/>
 			<p> {body} </p> 
 			{addNewAnswer}{buttonDelete}{buttonEdit} 
 			<h3> Answers</h3> 
-			<div className="container">
+			<div>
 				<div className="row">
 					<div className="col-md4 col"> 
 						<AnswerIndex answers={answers} /> 

@@ -64,8 +64,12 @@ table {
 }
 
 .user-profile-link { 
-	width: 50px;
-	height: 60px;
+   width: 40px;
+   height: 40px;
+}
+#picture-image{
+	border-radius: 50%;
+	max-height: 100%;
 }
 .search-div {
 	position: absolute; 
@@ -121,9 +125,6 @@ table {
     left: 304px;
 }
 
-div.container {
-	width: 900px;
-}
 
 
 
@@ -132,7 +133,7 @@ div.container {
 
 .question-main { 
 	position: relative;
-	height: 900px;
+	height: 100%;
 	width: 700px;
 	top: 52px; 
 	left: 300px; 
@@ -148,11 +149,16 @@ div.container {
   font-size: 30px;
   line-height: 2.00;
   border-radius: 70px;
-  background-color: red;
+
 }
 
 div.single-question {
-	margin-left: 300px;
+	position: relative;
+	height: 100%;
+	width: 73%;
+	top: 70px;
+	margin-left: 27%;
 }
+
 
 	/*color: #FF4136;*/
