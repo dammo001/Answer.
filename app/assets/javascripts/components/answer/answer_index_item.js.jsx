@@ -29,7 +29,7 @@ AnswerIndexItem = React.createClass({
 
 
 		return (
-			<li className="list-group-item"> 
+			<li className="list-group-item answer-list"> 
 			{this.props.answer.updated_at}
 			{this.props.answer.user_id}
 			{this.props.answer.body} 

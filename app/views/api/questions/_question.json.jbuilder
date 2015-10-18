@@ -12,7 +12,15 @@ json.tags do
 	end
 end
 
+json.author do 
+	json.name question.author.username
+end
 
+json.answer do
+	unless question.answers.empty?  
+		json.answer question.answers.first.body 
+	end
+end
 
 if show_answers
 	json.answers do 

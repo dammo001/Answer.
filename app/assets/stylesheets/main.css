@@ -85,6 +85,38 @@ table {
 	left: 100px;
 }
 
+.answer-list { 
+margin: 4px; 
+
+}
+
+button .btn-default.upvote-btn { 
+-webkit-user-select: none;
+color: #2B6DAD;
+cursor: pointer;
+display: inline;
+font-size: 13px;
+font-weight: 500;
+height: auto;
+line-height: 18.2px;
+text-align: center;
+width: auto;
+word-wrap: break-word;
+}
+/*why isn't color working*/
+
+.answer-teaser { 
+  overflow: hidden;
+  overflow: ellipsis;
+  word-wrap: break-word;
+  max-height: 3.6em;
+  line-height: 1.8em;
+}
+
+.question-options { 
+	display: inline-block; 
+}
+
 #signout-link {
 	position: relative;
 	top: 11px;
