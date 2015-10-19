@@ -30,6 +30,13 @@
         _user = [action.user];
         root.UserStore.emit(CHANGE_EVENT);
         break; 
+
+      case UserConstants.TAGS_UPDATED: 
+   
+        _user[0].tags = action.tags;
+
+        root.UserStore.emit(CHANGE_EVENT);
+        break; 
     }})
   });
 

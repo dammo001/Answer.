@@ -18,5 +18,16 @@ ApiUtil.Tag = {
 				ApiActions.receiveAllTags(tags);
 			}
 		});
-	}
+	},
+
+	updateUserTags: function(params){
+		$.ajax({
+			url: "/api/tags",
+			type: "POST",
+			data: {user_tag: {tag_names: params}}, 
+			success: function(tags){
+				ApiActions.updateTags(tags); 
+			}
+		});
+	 }
 };

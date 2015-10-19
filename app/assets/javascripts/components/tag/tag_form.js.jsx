@@ -1,5 +1,5 @@
 TagForm = React.createClass({ 
-	mixins: [React.addons.LinkedStateMixin], 
+	mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
 	getInitialState: function(){
 		var tags = {} ;
@@ -19,18 +19,24 @@ TagForm = React.createClass({
 	},
 
 	change: function(){
-	
-		var tags = {} ;
-		TagStore.all().forEach(function(tag){
+		var tags = {};
+		TagStore.all() && TagStore.all().forEach(function(tag){
 			 (tags[tag.name] = false);
 		});
 		this.setState(tags);
-
 	},
 
 	send: function(){
 		event.preventDefault();
-	
+		var tagParams = [];
+		for (var tag in this.state){
+			if (this.state[tag]){
+				tagParams.push(tag);
+			}
+		}
+		ApiUtil.Tag.updateUserTags(tagParams);
+		this.history.pushState(null, "/"); 
+
 	},
 
 	// pull out values as state with checkedlinked? Combine as one request in componentWillUnmount? 
@@ -38,7 +44,6 @@ TagForm = React.createClass({
 	render: function(){
 		var tags;
 		var that = this; 
-
 		if (Object.keys(this.state)){
 			tags = (
 				Object.keys(this.state).map(function(tag){

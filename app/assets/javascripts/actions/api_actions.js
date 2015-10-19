@@ -20,13 +20,19 @@ window.ApiActions = {
 		});
 	},
 
+	updateTags: function(tags){
+		AppDispatcher.dispatch({
+			actionType: UserConstants.TAGS_UPDATED,
+			tags: tags 
+		});
+	},
+
 	receiveAllTags: function(tags){
 		AppDispatcher.dispatch({
 			actionType: TagConstants.TAGS_RECEIVED,
 			tags: tags 
-		})
+		});
 	},
-
 
 	addAnswer: function(answer){
 		AppDispatcher.dispatch({
