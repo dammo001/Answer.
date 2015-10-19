@@ -160,6 +160,14 @@ word-wrap: break-word;
 
 
 }
+
+.tags-container { 
+height: 500px; 
+width: 300px; 
+position: relative; 
+left: 200px;
+top: 90px; 
+}
 #search-icon {
 	right: 20px;
 

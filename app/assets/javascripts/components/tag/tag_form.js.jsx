@@ -16,25 +16,34 @@ TagForm = React.createClass({
 		this.setState({tags: TagStore.all() });
 	},
 
+	send: function(){
+		debugger; 
+	},
+
 	render: function(){
 		var tags;
 		if (this.state.tags){
 			tags = (
 				this.state.tags.map(function(tag){
-					return (
-						<li> {tag.name} </li>
-						 );
-				}))
+					return (<div>
+						<input key={tag.id} value={tag.name} type="checkbox"/>{tag.name}
+						</div> 
+						 )
+						
+						
+						
+						
+					}))
 		} else { 
-			tags = ""
+			tags = <div/>
 		}
 
 		return (
-			<div className="container" > 
-				<ul>
-				{tags} 
-				</ul> 
+			<div className="container tags-container" onSubmit={this.send}> 
+				<form> 
+					{tags}
+				<input type="submit"/>  
+				</form> 
 			</div> )
 	}
-
 })
