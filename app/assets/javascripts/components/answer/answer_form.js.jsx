@@ -10,7 +10,6 @@ AnswerForm = React.createClass({
 	},
 
 	check: function(event){
-		debugger;
 	},
 
 	render: function(){

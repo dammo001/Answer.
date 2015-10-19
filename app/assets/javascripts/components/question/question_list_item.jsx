@@ -27,10 +27,9 @@ QuestionListItem = React.createClass({
 			className="question-item"> 
 				{tagNames} 
 				<h3 onClick={this.showQuestion}>{this.props.question.title}</h3>
-			 	was asked {jQuery.timeago(this.props.question.updated_at)} by   
-			 	{this.props.question.author.name}
+			 	was asked {jQuery.timeago(this.props.question.updated_at)} by&nbsp;{this.props.question.author.name}
 			 	<br/> 
-			 	<p className="answer-teaser"> {this.props.question.answer} </p>
+			 	<div className="answer-teaser"> {this.props.question.answer && this.props.question.answer.answer} </div>
 			 	<ul className="question-options">  
 			 		<li> <button type="button" className="btn btn-default upvote-btn">Upvote | 0</button> </li>
 			 		<li> <a href="#">Downvote</a></li> 

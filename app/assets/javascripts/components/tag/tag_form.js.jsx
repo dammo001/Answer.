@@ -1,6 +1,12 @@
 TagForm = React.createClass({ 
+	mixins: [React.addons.LinkedStateMixin], 
+
 	getInitialState: function(){
-		return ({ tags: TagStore.all() }); 
+		var tags = {} ;
+		TagStore.all() && TagStore.all().forEach(function(tag){
+			 (tags[tag.name] = false);
+		});
+		return tags; 
 	},
 
 	componentDidMount: function(){ 
@@ -13,26 +19,33 @@ TagForm = React.createClass({
 	},
 
 	change: function(){
-		this.setState({tags: TagStore.all() });
+	
+		var tags = {} ;
+		TagStore.all().forEach(function(tag){
+			 (tags[tag.name] = false);
+		});
+		this.setState(tags);
+
 	},
 
 	send: function(){
-		debugger; 
+		event.preventDefault();
+	
 	},
+
+	// pull out values as state with checkedlinked? Combine as one request in componentWillUnmount? 
 
 	render: function(){
 		var tags;
-		if (this.state.tags){
+		var that = this; 
+
+		if (Object.keys(this.state)){
 			tags = (
-				this.state.tags.map(function(tag){
+				Object.keys(this.state).map(function(tag){
 					return (<div>
-						<input key={tag.id} value={tag.name} type="checkbox"/>{tag.name}
+						<input key={tag} type="checkbox" checkedLink={that.linkState(tag)}/>{tag}
 						</div> 
 						 )
-						
-						
-						
-						
 					}))
 		} else { 
 			tags = <div/>
