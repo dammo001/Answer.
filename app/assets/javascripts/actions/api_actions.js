@@ -20,6 +20,13 @@ window.ApiActions = {
 		});
 	},
 
+	receiveAllTags: function(tags){
+		AppDispatcher.dispatch({
+			actionType: TagConstants.TAGS_RECEIVED,
+			tags: tags 
+		})
+	},
+
 
 	addAnswer: function(answer){
 		AppDispatcher.dispatch({

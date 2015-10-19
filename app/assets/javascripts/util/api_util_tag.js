@@ -8,5 +8,15 @@ ApiUtil.Tag = {
 				ApiActions.receiveAllQuestions(questions);
 			}
 		});
+	},
+
+	getTags: function(){
+		$.ajax({ 
+			url: "/api/tags",
+			type: "GET",
+			success: function(tags){
+				ApiActions.receiveAllTags(tags);
+			}
+		});
 	}
 };
