@@ -17,12 +17,9 @@
 //= require react
 //= require react_ujs
 //= require flux
-//= require ReactDnD.min
-//= require reactTags.min
+//= require quill.js
 //= require timeago.js
 //= require cloudinary
-//= require squire.js
-//= require squire-raw.js
 //= require eventemitter
 //= require reactrouter.min
 //= require components

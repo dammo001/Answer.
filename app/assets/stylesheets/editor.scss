@@ -1,0 +1,39 @@
+#editor {
+  width: 90%;
+  margin: 0px auto;
+  box-shadow: 2px 1px 5px rgba(0,0,0,0.2);
+  border: 1px solid #e5e5e5;
+  height: 300px;
+}
+
+.editor-logo {
+  font-size: 13px;
+}
+
+#toolbar {
+  border: 1px solid #e5e5e5;
+  width: 90%;
+  margin: 20px auto;
+  box-shadow: 2px 1px 5px rgba(0,0,0,0.2);
+}
+
+.toolbar-title {
+  border: none;
+  outline: none;
+  text-align: right;
+  margin-right: 7px;
+  float: right;
+  font-size: 22px;
+  margin-top: -2px;
+}
+
+.editor-container {
+  width: 65%;
+  float: left;
+}
+
+.toolbar-container {
+  width: 65%;
+  float: left;
+  margin-top: 8px
+}
