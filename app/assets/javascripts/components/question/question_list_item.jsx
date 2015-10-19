@@ -35,7 +35,7 @@ QuestionListItem = React.createClass({
 			 		<li> <button type="button" className="btn btn-default upvote-btn">Upvote | 0</button> </li>
 			 		<li> <a href="#">Downvote</a></li> 
 			 		<li> <a href="#">Comments</a></li> 
-			 		<li> <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span> </li> 
+			 		<li> <span className="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span> </li> 
 		 		</ul> 
 			</li> 
 		)

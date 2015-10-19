@@ -11,6 +11,11 @@ var NavbarSearchIndex = React.createClass({
 		SearchStore.addClearHandler(this.change);
 	},
 
+	componentWillUnmount: function(){
+		SearchStore.removeChangeHandler(this.change); 
+		SearchStore.removeClearHandler(this.change); 
+	},
+
 	change: function(){
 		this.setState({results: SearchStore.all()});
 	},

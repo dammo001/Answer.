@@ -9,6 +9,10 @@ var NavbarSearchBar=React.createClass({
     SearchStore.addClearHandler(this.clear);
   },
 
+  componentWillUnmount: function(){ 
+    SearchStore.removeClearHandler(this.clear); 
+  },
+
   clear: function(){
     this.setState({value: "" });
   },

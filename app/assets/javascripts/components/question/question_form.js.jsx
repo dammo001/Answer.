@@ -18,7 +18,7 @@ QuestionForm = React.createClass({
 		return(
 			<form className="modalDialog" id="openModal" onSubmit={this.createQuestion}>Ask a new question!<br/> 
 				<div> 
-				<a href="#close" title="Close" class="close">x</a> 
+				<a href="#close" title="Close" className="close">x</a> 
 				Title: <input type="text" placeholder="title goes here" name="title"></input><br/> 
 				Body: <textarea name="body"></textarea><br/>
 				<input type="submit"></input> 

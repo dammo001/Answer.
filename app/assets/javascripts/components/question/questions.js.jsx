@@ -7,12 +7,12 @@ Questions = React.createClass({
 	},
 
 	componentDidMount: function(){
-		this.storeChanged();
+		QuestionStore.addChangeHandler(this.setQuestions);
 		ApiUtil.Question.fetchQuestions(); 
 	},
 
-	storeChanged: function(){
-		QuestionStore.addChangeHandler(this.setQuestions);
+	componentWillUnmount: function(){
+		QuestionStore.removeChangeHandler(this.setQuestions); 
 	},
 
 	setQuestions: function(){

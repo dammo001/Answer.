@@ -31,6 +31,10 @@ Question = React.createClass({
 		ApiUtil.Question.fetchSingleQuestion(parseInt(this.props.params.questionId));
 	},
 
+	componentWillUnmount: function(){
+		ShowQuestionStore.removeChangeHandler(this._onChange);
+	},
+
 	render: function(){ 
 
 		//refactor later as if... (return empty div) else... (return good stuff) 

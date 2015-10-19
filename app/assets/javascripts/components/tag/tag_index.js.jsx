@@ -1,4 +1,5 @@
 TagIndex = React.createClass({
+    mixins: [ReactRouter.History], 
 
 	getInitialState: function(){ 
 		return ({
@@ -10,10 +11,18 @@ TagIndex = React.createClass({
 		UserStore.addChangeHandler(this.change); 
 	},
 
+	componentWillUnmount: function(){
+		UserStore.removeChangeHandler(this.change); 
+	},
+
 	change: function(){
 		this.setState({
 			tags: UserStore.all().tags
 		});
+	},
+
+	addTags: function(){
+		this.history.pushState(null, "/tags/new", {}); 
 	},
 
 	render: function(){
@@ -27,13 +36,17 @@ TagIndex = React.createClass({
 						<TagItem key={tag.id} tag={tag}/> 			
 				)}))
 	} else { 
-		tagsList = ""
+		tagsList = "";
+		this.addTags; 
 	}
 		return (
 			<div className="container" id="sidebar-container">
 				<ul className="tag-list"> 
 				{tagsList} 
-				</ul> 	
+				</ul>
+				<button onClick={this.addTags} type="button" className="btn btn-default add-tags-btn">
+				Add Tags!
+				</button>  
 			</div>
 			)
 	}
