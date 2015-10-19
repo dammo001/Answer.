@@ -137,6 +137,11 @@ word-wrap: break-word;
 	border: 0;
 }
 
+.tag-name-list:hover { 
+	background-color: black;
+	color: white; 
+}
+
 #search-holder {
 	margin-bottom: 0px;
 }

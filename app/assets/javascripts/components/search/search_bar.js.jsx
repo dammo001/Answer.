@@ -1,8 +1,18 @@
 var NavbarSearchBar=React.createClass({
   getInitialState: function(){
     return({
-        value: "" 
+        value: "", 
+        focus: false 
     });
+  },
+
+  focus: function() {
+    this.setState({focus: true});
+  },
+
+  blur: function(){
+    this.setState({focus: false});
+    ApiActions.clearSearch();
   },
 
   componentDidMount: function(){
@@ -28,11 +38,16 @@ var NavbarSearchBar=React.createClass({
   },
 
   render: function() {
-    var value = this.state.value; 
+    var value; 
+    if (this.state.focus){
+      value = this.state.value;
+    } else {
+      value = "";
+    }
 
     return (<form className="navbar-form navbar-left" id="search" role="search">
                 <div className="form-group">
-                <input type="text" className="form-control" id="form-control-search" placeholder="Search" value={this.state.value} onChange={this.handleChange} />
+                <input onFocus={this.focus} onBlur={this.blur} type="text" className="form-control" id="form-control-search" placeholder="Search" value={value} onChange={this.handleChange} />
                 <span id="search-icon" className="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </div>
 
