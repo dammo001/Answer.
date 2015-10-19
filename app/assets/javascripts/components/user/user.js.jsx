@@ -24,7 +24,7 @@ ShowUser = React.createClass({
 		var picture; 
 		if (this.state.user){
 			return(
-				<div onClick={this.showProfile} className="user-profile-link">
+				<div onClick={this.showProfile} className="user-profile-link pull-right">
 				<img id="picture-image" src={this.state.user.picture_url}/> 
 				</div> 
 				)

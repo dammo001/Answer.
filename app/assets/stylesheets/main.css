@@ -205,15 +205,14 @@ top: 90px;
 }
 
 .user-profile-link {
-  position: relative;
+
   left: 900px; 
-  width: 79px;
-  height: 79px;
+  width: 50px;
+  height: 50px;
   text-align: center;
-  padding: 13px 0;
   font-size: 30px;
-  line-height: 2.00;
   border-radius: 70px;
+  margin-right: 5px; 
 
 }
 
