@@ -285,6 +285,13 @@
   text-align: center;
   width: 24px;
 }
+#ql-list{
+  list-style-type: disc;
+}
+
+#ql-bullet { 
+  list-style-type: decimal; 
+}
 .ql-snow.ql-toolbar .ql-picker {
   box-sizing: border-box;
   color: #444;

@@ -1,16 +1,16 @@
-	var editor = {};
+
 
 var AnswerForm = React.createClass({
 	
 	mixins: [ReactRouter.History],	
 
 	componentDidMount: function() {
-		editor = new Quill('#editor');
-		editor.addModule('toolbar', {
+		this.editor = new Quill('#editor');
+		this.editor.addModule('toolbar', {
 		  container: '#toolbar'
 		});
 		var ed = this;
-		editor.on('text-change', function(delta, source) {
+		this.editor.on('text-change', function(delta, source) {
 		  var body = JSON.stringify(this.getContents());
 		  ed.setState( { body: body } );
 		});
@@ -27,8 +27,8 @@ var AnswerForm = React.createClass({
   	submit: function(event) {
 	    event.preventDefault();
 	    var body = this.state.body;
-	    var answer = { body: body };
-	    ApiUtil.Answer.createAnswer(body); 
+	    var answer = { answer: { body: body, question_id: this.props.params.questionId}};
+	    ApiUtil.Answer.createAnswer(answer); 
 	},
 
   render: function() {
@@ -56,9 +56,9 @@ var AnswerForm = React.createClass({
             </span>
 
         		<span className="ql-format-group">
-        			<span title="List" className="ql-format-button ql-list"></span>
+        			<span title="List" className="ql-format-button ql-list" id="ql-list"></span>
               <span className="ql-format-separator"></span>
-              <span title="Bullet" className="ql-format-button ql-bullet"></span>
+              <span title="Bullet" className="ql-format-button ql-bullet" id="ql-bullet"></span>
             </span>
 
             <span className="ql-format-group">

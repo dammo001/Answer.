@@ -7,33 +7,35 @@ AnswerIndexItem = React.createClass({
 		}
 	},
 
+	getInitialState: function(){
+		return ({
+			editor2: new Quill('#editor2')
+		});
+	},
+
 	editAnswer: function(){
 		alert("this feature is not yet implemented");
 	},
 
 
-
 	render: function(){ 
-
 		var editButton = (
 			<button onClick={this.editAnswer}>Edit Answer</button>);
 		var deleteButton = (
 			<button onClick={this.removeAnswer}>Delete Answer</button>);
-		var buttonDelete;
+		var buttonDelete; 
 		var buttonEdit; 
-		
+		var html;		
 		if (this.props){
 			buttonDelete = (window.CURRENT_USER_ID === this.props.answer.user_id ? deleteButton : "");
 			buttonEdit = (window.CURRENT_USER_ID === this.props.answer.user_id ? editButton : "" ); 
 		};
 
-
 		return (
 			<li className="list-group-item answer-list"> 
-			{this.props.answer.updated_at}
-			{this.props.answer.user_id}
+			{this.props.answer.user_id} answered {jQuery.timeago(this.props.answer.updated_at)}<br/>
 			{this.props.answer.body} 
-			{buttonDelete}{buttonEdit}
+				{buttonDelete}{buttonEdit}
 			</li>
 			)
 	}

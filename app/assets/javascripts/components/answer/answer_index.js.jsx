@@ -3,6 +3,7 @@ AnswerIndex = React.createClass({
 		return(
 			<ul> 
 				{this.props.answers && this.props.answers.map(function (answer){
+					
 				return <AnswerIndexItem key={answer.id} answer={answer} /> 
 				})}
 			</ul> 

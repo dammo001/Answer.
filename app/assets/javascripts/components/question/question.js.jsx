@@ -66,6 +66,7 @@ Question = React.createClass({
 			{addNewAnswer}{buttonDelete}{buttonEdit} 
 			<h3> Answers</h3> 
 			<div>
+				<div id="editor2"/> 
 				<div className="row">
 					<div className="col-md4 col"> 
 						<AnswerIndex answers={answers} /> 
