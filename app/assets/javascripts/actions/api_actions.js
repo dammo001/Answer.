@@ -27,6 +27,13 @@ window.ApiActions = {
 		});
 	},
 
+	createComment: function(comment){
+		AppDispatcher.dispatch({
+			actionType: CommentConstants.COMMENT_ADDED,
+			comment: comment 
+		});
+	},
+
 	receiveAllTags: function(tags){
 		AppDispatcher.dispatch({
 			actionType: TagConstants.TAGS_RECEIVED,

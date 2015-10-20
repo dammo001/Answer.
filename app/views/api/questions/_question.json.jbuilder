@@ -12,6 +12,16 @@ json.tags do
 	end
 end
 
+json.comments do 
+	json.array!(question.comments) do |comment| 
+		json.extract!(
+			comment,
+				:body, :updated_at
+		)
+	end
+end
+
+
 json.author do 
 	json.name question.author.username
 end

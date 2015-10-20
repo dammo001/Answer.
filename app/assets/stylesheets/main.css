@@ -124,6 +124,16 @@ word-wrap: break-word;
 	left: 250px; 
 	height: 30px;
 }
+
+.container-comment{
+	position: relative; 
+	
+	height: 200px;
+	top: 200px;
+	left: 200px;
+	width: 200px;
+
+}
 .tag-name-list { 
 	float: left;
 	margin: 5px 2px;

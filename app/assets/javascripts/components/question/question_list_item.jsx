@@ -7,6 +7,7 @@ QuestionListItem = React.createClass({
 
 
 	render: function(){
+
 		var tagNames; 
 		if (this.props.question.tags){ 
 			tagNames = (
@@ -22,6 +23,20 @@ QuestionListItem = React.createClass({
 			tagNames = ""
 		}
 
+		if (this.props.question.comments){
+			comments = (
+				<ul> 
+				{this.props.question.comments.map(function(comment){
+					return (
+						<li className="comment-list"> {comment.body}{comment.user_id} </li> 
+						)
+				})}
+				<br/></ul> 
+				);
+		} else { 
+			comments = "" 
+		}
+
 		return (
 			<li 
 			className="question-item"> 
@@ -33,11 +48,13 @@ QuestionListItem = React.createClass({
 			 	<ul className="question-options">  
 			 		<li> <button type="button" className="btn btn-default upvote-btn">Upvote | 0</button> </li>
 			 		<li> <a href="#">Downvote</a></li> 
-			 		<li> <a href="#">Comments</a></li> 
+			 		<li> <a href="#">Comments</a> {comments} </li> 
 			 		<li> <span className="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span> </li> 
 		 		</ul> 
 			</li> 
 		)
 	}
 });
+
+
 

@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require react
 //= require react_ujs
+//= require react-bootstrap.min.js
 //= require flux
 //= require quill.js
 //= require timeago.js

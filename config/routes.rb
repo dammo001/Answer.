@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: "static_pages#index"
 
   namespace :api, defaults: { format: :json} do 
+    resources :comments, only: [:create, :destroy] 
     resources :questions
     resources :tags, only: [:index, :create]
     resources :answers, only: [:update, :create, :destroy] 

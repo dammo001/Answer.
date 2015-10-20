@@ -12,6 +12,13 @@ AnswerIndexItem = React.createClass({
 			editor2: new Quill('#editor2')
 		});
 	},
+	// addAnswer: function(){ 
+	// 	this.history.pushState(null, "questions/"+ this.state.question.id +"/answers/new")
+	// },
+
+	addComment: function(){
+		this.history.pushState(null, "answers/" + this.props.answer.id + "/comments/new");
+	},
 
 	editAnswer: function(){
 		alert("this feature is not yet implemented");
@@ -23,19 +30,22 @@ AnswerIndexItem = React.createClass({
 			<button onClick={this.editAnswer}>Edit Answer</button>);
 		var deleteButton = (
 			<button onClick={this.removeAnswer}>Delete Answer</button>);
+		var buttonComment = (
+			<button onClick={this.addComment}>Add Comment</button>); 
 		var buttonDelete; 
-		var buttonEdit; 
+		var buttonEdit;
 		var html;		
 		if (this.props){
 			buttonDelete = (window.CURRENT_USER_ID === this.props.answer.user_id ? deleteButton : "");
 			buttonEdit = (window.CURRENT_USER_ID === this.props.answer.user_id ? editButton : "" ); 
+
 		};
 
 		return (
 			<li className="list-group-item answer-list"> 
 			{this.props.answer.user_id} answered {jQuery.timeago(this.props.answer.updated_at)}<br/>
 			{this.props.answer.body} 
-				{buttonDelete}{buttonEdit}
+				{buttonDelete}{buttonEdit}{buttonComment}
 			</li>
 			)
 	}
