@@ -7,14 +7,12 @@ AnswerIndexItem = React.createClass({
 		}
 	},
 
-	getInitialState: function(){
-		return ({
-			editor2: new Quill('#editor2')
-		});
+	componentDidMount: function(){
+		var a = this.props.answer.id;
+		var b = ("#"+a);
+		var c = $(b).get(0);
+		this.setState({editor: new Quill(c)});
 	},
-	// addAnswer: function(){ 
-	// 	this.history.pushState(null, "questions/"+ this.state.question.id +"/answers/new")
-	// },
 
 	addComment: function(){
 		this.history.pushState(null, "answers/" + this.props.answer.id + "/comments/new");
@@ -22,6 +20,16 @@ AnswerIndexItem = React.createClass({
 
 	editAnswer: function(){
 		alert("this feature is not yet implemented");
+	},
+
+	componentDidUpdate: function(){
+		console.log (this.state) 
+		this.state.editor.setContents(JSON.parse(this.props.answer.body));
+	},
+
+	show: function(){
+		console.log (this.state)
+		this.state.editor.setContents(JSON.parse(this.props.answer.body));
 	},
 
 
@@ -42,9 +50,10 @@ AnswerIndexItem = React.createClass({
 		};
 
 		return (
-			<li className="list-group-item answer-list"> 
+			<li className="list-group-item answer-list">
 			{this.props.answer.user_id} answered {jQuery.timeago(this.props.answer.updated_at)}<br/>
-			{this.props.answer.body} 
+			<div  onClick={this.show} id={this.props.answer.id}>
+			</div> 
 				{buttonDelete}{buttonEdit}{buttonComment}
 			</li>
 			)

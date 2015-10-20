@@ -44,11 +44,11 @@ QuestionListItem = React.createClass({
 				<h3 onClick={this.showQuestion}>{this.props.question.title}</h3>
 			 	was asked {jQuery.timeago(this.props.question.updated_at)} by&nbsp;{this.props.question.author.name}
 			 	<br/> 
-			 	<div className="answer-teaser"> {this.props.question.answer && this.props.question.answer.answer} </div>
+			 	<div className="answer-teaser"> {this.props.question.answer && this.props.question.body} </div>
 			 	<ul className="question-options">  
 			 		<li> <button type="button" className="btn btn-default upvote-btn">Upvote | 0</button> </li>
 			 		<li> <a href="#">Downvote</a></li> 
-			 		<li> <a href="#">Comments</a> {comments} </li> 
+			 		<li> <a href="#">Add Comment</a> {comments} </li> 
 			 		<li> <span className="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span> </li> 
 		 		</ul> 
 			</li> 

@@ -26,7 +26,6 @@ var CommentForm = React.createClass({
 			commentable_id = this.props.params.questionId;
 			commentable_type = "Question" ;
 		}
-		debugger; 
 	    var comment = { comment: { body: this.state.value , commentable_id: commentable_id, commentable_type: commentable_type }};
 	    ApiUtil.Comment.createComment(comment); 
 	},

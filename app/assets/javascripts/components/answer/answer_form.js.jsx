@@ -5,10 +5,14 @@ var AnswerForm = React.createClass({
 	mixins: [ReactRouter.History],	
 
 	componentDidMount: function() {
-		this.editor = new Quill('#editor');
-		this.editor.addModule('toolbar', {
-		  container: '#toolbar'
-		});
+		this.editor = new Quill('#editor', {
+      modules: {
+        'toolbar': { container: '#toolbar' },
+        'image-tooltip': true,
+        'link-tooltip': true
+      },
+      theme: 'snow'
+    });
 		var ed = this;
 		this.editor.on('text-change', function(delta, source) {
 		  var body = JSON.stringify(this.getContents());
@@ -71,11 +75,13 @@ var AnswerForm = React.createClass({
             </span>
 
         		<span className="ql-format-group">
-              <span title="Link" className="ql-format-button ql-link">
-              </span>
+                <span title="Image" className="ql-format-button ql-image"></span>
+              <span title="Link" className="ql-format-button ql-link"></span>
+
             </span>
 
             <span className="ql-format-group">
+
               <span onClick={this.submit} title="Submit" id="save-button" className="ql-format-button">Save
               </span>
             </span>
