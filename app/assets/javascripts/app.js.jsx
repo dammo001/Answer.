@@ -22,7 +22,6 @@ App = React.createClass({
 		<Router>
 			<Route path="/" component={App}>
 				<IndexRoute component={Questions}/> 
-				<Route path="/questions/new" component={QuestionForm}></Route> 
 				<Route path="/tags/new" component={TagForm}></Route> 
 				<Route path="/users" component={UserProfile}></Route> 
 				<Route path="/answers/:answerId/comments/new" component={CommentForm}></Route> 

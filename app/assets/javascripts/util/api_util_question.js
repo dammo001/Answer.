@@ -1,11 +1,13 @@
 ApiUtil.Question = { 
 
 	createQuestion: function(params){ 
+		debugger; 
 		$.ajax({
 			url: "/api/questions",
 			type: "POST",
 			data: params,
 			success: function (question){ 
+				debugger; 
 				ApiActions.createQuestion(question);
 			}
 		});

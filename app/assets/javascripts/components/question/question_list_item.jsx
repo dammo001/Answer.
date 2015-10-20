@@ -1,3 +1,5 @@
+
+
 QuestionListItem = React.createClass({
 	mixins: [ReactRouter.History],
 
@@ -28,8 +30,7 @@ QuestionListItem = React.createClass({
 				<ul> 
 				{this.props.question.comments.map(function(comment){
 					return (
-						<li className="comment-list"> {comment.body}{comment.user_id} </li> 
-						)
+						 <CommentIndexItem comment={comment}/>						)
 				})}
 				<br/></ul> 
 				);
@@ -48,8 +49,7 @@ QuestionListItem = React.createClass({
 			 	<ul className="question-options">  
 			 		<li> <button type="button" className="btn btn-default upvote-btn">Upvote | 0</button> </li>
 			 		<li> <a href="#">Downvote</a></li> 
-			 		<li> <a href="#">Add Comment</a> {comments} </li> 
-			 		<li> <span className="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span> </li> 
+			 		<li> {comments} </li> 
 		 		</ul> 
 			</li> 
 		)

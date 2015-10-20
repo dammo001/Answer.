@@ -63,7 +63,7 @@ window.ApiActions = {
 
 	createQuestion: function(question){ 
 		AppDispatcher.dispatch({
-			actionType: QuestionConstants.ADD_QUESTION, 
+			actionType: QuestionConstants.QUESTION_RECEIVED, 
 			question: question
 		});
 	},

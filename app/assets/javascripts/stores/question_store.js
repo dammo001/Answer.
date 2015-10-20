@@ -38,7 +38,7 @@
         root.QuestionStore.emit(CHANGE_EVENT);
         break; 
 
-      case QuestionConstants.ADD_QUESTION:
+      case QuestionConstants.QUESTION_RECEIVED:
         _questions.push(action.question);
         root.QuestionStore.emit(CHANGE_EVENT);
         break; 

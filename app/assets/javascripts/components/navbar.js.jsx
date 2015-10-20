@@ -13,6 +13,9 @@ render: function() {
 }
 });
 
+
+var Button = ReactBootstrap.Button; 
+
 var SignOut = React.createClass({
   mixins: [ReactRouter.History],
   
@@ -23,7 +26,7 @@ var SignOut = React.createClass({
 
   render: function() {
     return(
-        <button className="btn btn-default navbar-btn pull-right" id="nav-button" onClick={this.signOut}>Sign Out</button> 
+        <Button className="btn btn-default navbar-btn pull-right" bsStyle="primary" id="right-nav-button" onClick={this.signOut}>Sign Out</Button> 
   )
   }
 
