@@ -17,6 +17,7 @@ gem 'rails_12factor'
 # gem 'therubyracer', platforms: :ruby
 gem 'react-rails', '~>1.3.0'
 gem 'flux-rails-assets'
+gem 'react-bootstrap-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
