@@ -47,6 +47,8 @@ Question = React.createClass({
 			this.state ? this.state.question.body : "" );
 		var answers = (
 			this.state ? this.state.question.answers : ""); 
+		var id = (
+			this.state ? this.state.question.id : ""); 
 		var deleteButton = (
 			<button onClick={this.removeQuestion}>Delete Question</button>);
 		var buttonDelete;
@@ -65,7 +67,8 @@ Question = React.createClass({
 			<div>
 			<div className="single-question" > <h2> {title} </h2> <br/>
 			<p> {body} </p> 
-			{addNewAnswer}{buttonDelete}{buttonEdit} 
+			<AnswerForm questionId={id}/> <br/> 
+			{buttonDelete}{buttonEdit} 
 			<h3> Answers</h3> 
 			<div>
 				<div className="row">
