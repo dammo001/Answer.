@@ -13,23 +13,6 @@ render: function() {
 }
 });
 
-
-var AskQuestion = React.createClass({ 
-  mixins: [ReactRouter.History],
-
-  ask: function(){ 
-
-    this.history.pushState(null, "/questions/new");
-  },
-
-  render: function(){
-    return(
-       <button className="btn btn-default navbar-btn pull-right" id="nav-button" onClick={this.ask}>New Question</button> 
-  )
-  }
-});
-
-
 var SignOut = React.createClass({
   mixins: [ReactRouter.History],
   
