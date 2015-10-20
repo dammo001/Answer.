@@ -5,6 +5,7 @@ class Question < ActiveRecord::Base
 	foreign_key: :user_id, 
 	primary_key: :id
 	has_many :answers
+	has_many :comments, as: :commentable  
 
 	has_many :taggings
 	has_many :tags, through: :taggings
