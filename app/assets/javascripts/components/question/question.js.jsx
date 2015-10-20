@@ -1,3 +1,5 @@
+var Panel = ReactBootstrap.Panel;
+var Button = ReactBootstrap.Button; 
 
 
 Question = React.createClass({ 

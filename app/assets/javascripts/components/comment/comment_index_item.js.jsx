@@ -20,7 +20,7 @@ CommentIndexItem = React.createClass({
 
 	render: function(){ 
 		var deleteButton = (
-			<button onClick={this.removeAnswer}>Delete Answer</button>);
+			<button onClick={this.removeAnswer}>Delete Comment</button>);
 		var buttonDelete; 	
 		if (this.props){
 			buttonDelete = (window.CURRENT_USER_ID === this.props.comment.user_id ? deleteButton : "");
@@ -31,7 +31,7 @@ CommentIndexItem = React.createClass({
 				<Button onClick={this.change}> Show Comments </Button> 
 				<Panel collapsible expanded={this.state.open}> 
 					{this.props.comment.user_id} commented {jQuery.timeago(this.props.comment.updated_at)}<br/>
-					{this.props.comment.body} 
+					{this.props.comment.body}<br/> 
 					{buttonDelete}
 				</Panel> 
 			</li>

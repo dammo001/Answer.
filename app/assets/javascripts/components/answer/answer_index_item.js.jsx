@@ -34,6 +34,19 @@ AnswerIndexItem = React.createClass({
 
 
 	render: function(){ 
+		if (this.props.answer.comments){
+			comments = (
+				<ul> 
+				{this.props.answer.comments.map(function(comment){
+					return (
+						 <CommentIndexItem comment={comment}/>						)
+				})}
+				<br/></ul> 
+				);
+		} else { 
+			comments = "" 
+		}
+
 		var editButton = (
 			<button onClick={this.editAnswer}>Edit Answer</button>);
 		var deleteButton = (
@@ -55,6 +68,7 @@ AnswerIndexItem = React.createClass({
 			<div  onClick={this.show} id={this.props.answer.id}>
 			</div> 
 				{buttonDelete}{buttonEdit}{buttonComment}
+				{comments}
 			</li>
 			)
 	}

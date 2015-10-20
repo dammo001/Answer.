@@ -16,7 +16,7 @@ json.comments do
 	json.array!(question.comments) do |comment| 
 		json.extract!(
 			comment,
-				:body, :updated_at
+				:body, :updated_at, :user_id 
 		)
 	end
 end
