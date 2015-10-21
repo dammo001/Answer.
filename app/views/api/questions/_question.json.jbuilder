@@ -24,7 +24,9 @@ end
 
 json.author do 
 	json.name question.author.username
+	json.picture question.author.picture_url 
 end
+
 
 unless question.answers.empty?  
 	json.answer question.answers.first.body 
