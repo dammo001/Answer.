@@ -1,4 +1,5 @@
-
+var Panel = ReactBootstrap.Panel ;
+var ButtonToolbar = ReactBootstrap.ButtonToolbar;
 
 QuestionListItem = React.createClass({
 	mixins: [ReactRouter.History],
@@ -49,7 +50,7 @@ QuestionListItem = React.createClass({
 			 	<ul className="question-options">  
 			 		<li> <button type="button" className="btn btn-default upvote-btn">Upvote | 0</button> </li>
 			 		<li> <a href="#">Downvote</a></li> 
-			 		<li> {comments} </li> 
+			 		<li> <CommentForm questionId={this.props.question.id} />  {comments}</li> 
 		 		</ul> 
 			</li> 
 		)
