@@ -21,7 +21,6 @@ var CommentForm = React.createClass({
 
 
 	submit: function(event) {
-		debugger; 
 	    event.preventDefault();
 		var commentable_id; 
 		var commentable_type; 

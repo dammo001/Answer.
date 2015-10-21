@@ -3,7 +3,6 @@ json.extract!(
 	:body, :user_id, :updated_at, :id, :created_at 
 )
 
-
 json.comments do 
 	json.array!(answer.comments) do |comment| 
 		json.extract!(
@@ -13,4 +12,10 @@ json.comments do
 	end
 end
 
+
+
+json.author do 
+	json.name answer.author.username
+	json.picture answer.author.picture_url 
+end
 

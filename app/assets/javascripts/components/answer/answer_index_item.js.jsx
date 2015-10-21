@@ -55,7 +55,7 @@ AnswerIndexItem = React.createClass({
 
 		return (
 			<li className="list-group-item answer-list">
-			{this.props.answer.user_id} answered {jQuery.timeago(this.props.answer.updated_at)}<br/>
+			{this.props.answer.author.name} answered {jQuery.timeago(this.props.answer.updated_at)} <img id="picture-image-index" src={this.props.answer.author.picture} /> <br/>
 			<div  onClick={this.show} id={this.props.answer.id}>
 			</div> 
 			<CommentForm answerId={this.props.answer.id} /> 

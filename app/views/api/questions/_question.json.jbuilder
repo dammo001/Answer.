@@ -16,8 +16,11 @@ json.comments do
 	json.array!(question.comments) do |comment| 
 		json.extract!(
 			comment,
-				:body, :updated_at, :user_id 
-		)
+				:body, :updated_at, :user_id)
+		json.user do 
+			json.name comment.user.username 
+			json.picture comment.user.picture_url 
+		end
 	end
 end
 

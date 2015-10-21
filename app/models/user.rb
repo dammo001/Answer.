@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 	has_many :answered_questions, through: :answers, source: :question  
 	has_many :user_tags
 	has_many :tags, through: :user_tags, source: :tag
+	has_many :comments 
 
 	after_initialize :ensure_session_token
 

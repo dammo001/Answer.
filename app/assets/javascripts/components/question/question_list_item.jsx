@@ -10,7 +10,7 @@ QuestionListItem = React.createClass({
 
 
 	render: function(){
-		debugger;
+
 
 		var tagNames; 
 		if (this.props.question.tags){ 

@@ -63,8 +63,8 @@ table {
 }
 #picture-image{
 	border-radius: 50%;
-	max-height: 100%;
-	max-width: 100%;
+	max-height: 40px;
+	max-width: 40px;
 }
 #picture-image-index{ 
 	width: 40px;
@@ -241,7 +241,7 @@ top: 90px;
 	position: fixed;
 	top: 100px;
 	height: 300px;
-	width: 23%;
+	width: 25%;
 }
 
 .profile-container {
@@ -282,7 +282,7 @@ p.question-list-details {
 	height: 59px; }
 
 .question-main { 
-	position: relative;
+	float: right; 
 	height: 100%;
 	width: 75%;
 	top: 75px; 
