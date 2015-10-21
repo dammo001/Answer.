@@ -6,12 +6,17 @@ var CommentForm = React.createClass({
 
 	getInitialState: function(){
 		return ({
-			value: "" 
+			value: "",
+			open: true
 		});
 	},
 
 	change: function(event){
 		this.setState({value: event.target.value});
+	},
+
+	flip: function(){
+		this.setState({ open: !this.state.open });
 	},
 
 
@@ -20,10 +25,10 @@ var CommentForm = React.createClass({
 		var commentable_id; 
 		var commentable_type; 
 		if (this.props.params.answerId){
-			commentable_id = this.props.params.answerId; 
+			commentable_id = this.props.answerId; 
 			commentable_type = "Answer";
 		} else { 
-			commentable_id = this.props.params.questionId;
+			commentable_id = this.props.questionId;
 			commentable_type = "Question" ;
 		}
 	    var comment = { comment: { body: this.state.value , commentable_id: commentable_id, commentable_type: commentable_type }};
@@ -32,12 +37,17 @@ var CommentForm = React.createClass({
 
 	render: function() {
 		return (
-			<div className="container container-comment"> 
-				<form onSubmit={this.submit}> 
-					<textarea value={this.state.value} onChange={this.change} placeholder="Comment here"> </textarea> 
-					<input type="submit"> </input> 
-				</form> 
-			</div>
+			<div>
+				<Button onClick={this.flip}>
+					Add Comment 
+				</Button> 
+				<Panel collapsible expanded={this.state.open}> 
+					<form onSubmit={this.submit}> 
+						<textarea value={this.state.value} onChange={this.change} placeholder="Comment here"> </textarea> 
+						<input type="submit"> </input> 
+					</form> 
+				</Panel>
+			</div> 
 		)
 	}
 

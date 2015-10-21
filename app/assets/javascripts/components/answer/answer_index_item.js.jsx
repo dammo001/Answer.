@@ -14,21 +14,15 @@ AnswerIndexItem = React.createClass({
 		this.setState({editor: new Quill(c)});
 	},
 
-	addComment: function(){
-		this.history.pushState(null, "answers/" + this.props.answer.id + "/comments/new");
-	},
-
 	editAnswer: function(){
 		alert("this feature is not yet implemented");
 	},
 
 	componentDidUpdate: function(){
-		console.log (this.state) 
 		this.state.editor.setContents(JSON.parse(this.props.answer.body));
 	},
 
 	show: function(){
-		console.log (this.state)
 		this.state.editor.setContents(JSON.parse(this.props.answer.body));
 	},
 
@@ -39,7 +33,7 @@ AnswerIndexItem = React.createClass({
 				<ul> 
 				{this.props.answer.comments.map(function(comment){
 					return (
-						 <CommentIndexItem comment={comment}/>						)
+						 <CommentIndexItem answerId={this.props.answer.id} comment={comment}/>						)
 				})}
 				<br/></ul> 
 				);
@@ -67,7 +61,8 @@ AnswerIndexItem = React.createClass({
 			{this.props.answer.user_id} answered {jQuery.timeago(this.props.answer.updated_at)}<br/>
 			<div  onClick={this.show} id={this.props.answer.id}>
 			</div> 
-				{buttonDelete}{buttonEdit}{buttonComment}
+				{buttonDelete}{buttonEdit}
+				{CommentForm} 
 				{comments}
 			</li>
 			)
