@@ -2,6 +2,9 @@ class Api::QuestionsController < ApplicationController
 	def create
 		@question = Question.new(question_params)
 		@question.user_id = current_user.id 
+		if params[:question][:tags]
+			@question.assign_tags(params[:question][:tags])
+		end
 		if @question.save
 			render :show
 		else
@@ -35,7 +38,10 @@ class Api::QuestionsController < ApplicationController
 	private
 
 	def question_params
-		params.require(:question).permit(:title, :body, :user_id, :location, :views) 
+		params.require(:question).permit(:title, :body, :user_id, :location, :views, :tags ) 
 	end
 
 end
+
+
+

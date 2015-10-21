@@ -20,6 +20,18 @@ ApiUtil.Tag = {
 		});
 	},
 
+
+	updateQuestionTags: function(params){
+		$.ajax({
+			url:"/api/tags",
+			type: "POST",
+			data: {tagging: {tag_names: params}},
+			success: function(question){ 
+				ApiAction.updateQuestion(question); 
+			}
+		});
+	},
+
 	updateUserTags: function(params){
 		$.ajax({
 			url: "/api/tags",

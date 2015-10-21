@@ -1,10 +1,15 @@
 var Modal = ReactBootstrap.Modal;
 var Button = ReactBootstrap.Button; 
+var Panel = ReactBootstrap.Panel; 
 
 var AskQuestion = React.createClass({ 
 
   getInitialState: function(){
-    return { showModal: false};
+    return { 
+      showModal: false,
+      title: "", 
+      body: "" 
+    };
   },
 
   close: function(){
@@ -23,7 +28,21 @@ var AskQuestion = React.createClass({
     this.close(); 
   },
 
+  changeTitle: function(){
+    this.setState({title: event.target.value});
+  },
+
+  changeBody: function(){
+    this.setState({body: event.target.value});
+  },
+
   render: function(){ 
+    var tags;
+    if (this.state.tags){ 
+      tags = this.state.tags; 
+    } else { 
+      tags = "";
+    }
     return(
       <div> 
         <Button
@@ -38,11 +57,11 @@ var AskQuestion = React.createClass({
           <Modal.Title>Ask a New Question!</Modal.Title> 
         </Modal.Header> 
           <Modal.Body>
-          <form onSubmit={this.createQuestion}> 
-            Title: <input type="text" placeholder="What's the title of your question?"/><br/>
-            Body: <textarea placeholder="What's your question?" name="body"/><br/> 
-            <input type="submit"></input> 
-          </form> 
+            Title: <input type="text" placeholder="Title" onChange={this.changeTitle} value={this.state.title}/><br/>
+            Body: <textarea placeholder="What's your question?" onChange={this.changeBody} value={this.state.body} name="body"/><br/> 
+            <Panel> 
+              <QuestionModalTags title={this.state.title} body={this.state.body} close={this.close}/> 
+            </Panel> 
           </Modal.Body>
         <Modal.Footer>
           <Button onClick={this.close}>Close</Button>

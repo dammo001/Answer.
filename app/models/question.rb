@@ -14,5 +14,9 @@ class Question < ActiveRecord::Base
 		Question.limit(5).where("LOWER(title) LIKE '%#{str.downcase}%'")
 	end
 
+	def assign_tags(tag_names) 
+		tag_names.each {|tag_name| self.tags << Tag.find_or_create_by({name: tag_name})}
+	end
+
 
 end

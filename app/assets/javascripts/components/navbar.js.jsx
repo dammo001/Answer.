@@ -43,7 +43,7 @@ render: function() {
             <NavbarSearchIndex/>
             <div className="navbar-form">
             <SignOut/>
-            <AskQuestion/>
+            <AskQuestion tags={TagStore.all()} />
             <ShowUser/>
             </div>
           </div>
