@@ -38,7 +38,7 @@ var AnswerForm = React.createClass({
 	    var body = this.state.body;
 	    var answer = { answer: { body: body, question_id: this.props.questionId}};
 	    ApiUtil.Answer.createAnswer(answer); 
-      this.change(); 
+      this.change();
 	},
 
   render: function() {

@@ -28,32 +28,29 @@ AnswerIndexItem = React.createClass({
 
 
 	render: function(){ 
+		var that = this; 
 		if (this.props.answer.comments){
 			comments = (
 				<ul> 
 				{this.props.answer.comments.map(function(comment){
 					return (
-						 <CommentIndexItem answerId={this.props.answer.id} comment={comment}/>						)
+						 <CommentIndexItem answerId={that.props.answer.id} comment={comment}/>						)
 				})}
 				<br/></ul> 
 				);
 		} else { 
 			comments = "" 
 		}
-
 		var editButton = (
 			<button onClick={this.editAnswer}>Edit Answer</button>);
 		var deleteButton = (
 			<button onClick={this.removeAnswer}>Delete Answer</button>);
-		var buttonComment = (
-			<button onClick={this.addComment}>Add Comment</button>); 
 		var buttonDelete; 
 		var buttonEdit;
 		var html;		
 		if (this.props){
 			buttonDelete = (window.CURRENT_USER_ID === this.props.answer.user_id ? deleteButton : "");
 			buttonEdit = (window.CURRENT_USER_ID === this.props.answer.user_id ? editButton : "" ); 
-
 		};
 
 		return (
@@ -61,8 +58,8 @@ AnswerIndexItem = React.createClass({
 			{this.props.answer.user_id} answered {jQuery.timeago(this.props.answer.updated_at)}<br/>
 			<div  onClick={this.show} id={this.props.answer.id}>
 			</div> 
+			<CommentForm answerId={this.props.answer.id} /> 
 				{buttonDelete}{buttonEdit}
-				{CommentForm} 
 				{comments}
 			</li>
 			)

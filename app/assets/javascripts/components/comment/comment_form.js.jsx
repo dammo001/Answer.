@@ -7,7 +7,7 @@ var CommentForm = React.createClass({
 	getInitialState: function(){
 		return ({
 			value: "",
-			open: true
+			open: false
 		});
 	},
 
@@ -21,10 +21,11 @@ var CommentForm = React.createClass({
 
 
 	submit: function(event) {
+		debugger; 
 	    event.preventDefault();
 		var commentable_id; 
 		var commentable_type; 
-		if (this.props.params.answerId){
+		if (this.props.answerId){
 			commentable_id = this.props.answerId; 
 			commentable_type = "Answer";
 		} else { 
@@ -52,3 +53,7 @@ var CommentForm = React.createClass({
 	}
 
 });
+
+
+
+	
