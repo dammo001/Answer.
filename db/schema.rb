@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020035510) do
+ActiveRecord::Schema.define(version: 20151021010115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,12 +81,12 @@ ActiveRecord::Schema.define(version: 20151020035510) do
   add_index "user_tags", ["user_id"], name: "index_user_tags_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",        null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "picture_url"
+    t.string   "username",                                                                                                                      null: false
+    t.string   "password_digest",                                                                                                               null: false
+    t.string   "session_token",                                                                                                                 null: false
+    t.datetime "created_at",                                                                                                                    null: false
+    t.datetime "updated_at",                                                                                                                    null: false
+    t.string   "picture_url",     default: "http://res.cloudinary.com/djp2nuknn/image/upload/v1445034090/user_photos/va4gyig8agjmnj4eqaue.jpg"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
