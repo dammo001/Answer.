@@ -45,7 +45,7 @@ TagIndex = React.createClass({
 				{tagsList} 
 				</ul>
 				<button onClick={this.addTags} type="button" className="btn btn-default add-tags-btn">
-				Add Tags!
+				Change Followed Tags
 				</button>  
 			</div>
 			)

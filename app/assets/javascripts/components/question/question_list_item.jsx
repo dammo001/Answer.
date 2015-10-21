@@ -42,8 +42,8 @@ QuestionListItem = React.createClass({
 			<li 
 			className="question-item"> 
 				{tagNames} 
-				<h3 onClick={this.showQuestion}>{this.props.question.title}</h3>
-			 	was asked {jQuery.timeago(this.props.question.updated_at)} by&nbsp;{this.props.question.author.name}
+				<h3 className="question-list-title" onClick={this.showQuestion}>{this.props.question.title}</h3>
+			 	<p className="question-list-details">was asked {jQuery.timeago(this.props.question.updated_at)} by&nbsp;{this.props.question.author.name}</p> 
 			 	<br/> 
 			 	<div className="answer-teaser"> {this.props.question.answer && this.props.question.body} </div>
 			 	<ul className="question-options">  
