@@ -331,7 +331,8 @@ html, body {
 #content-wrapper:after {
 	content: "";
 	display: block;
-	height: 140px; 
+	height: 140px;
+	clear: both;
 }
 #wrapper:after {
 	content:"";
