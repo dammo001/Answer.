@@ -1,4 +1,4 @@
-$(function() { 
+window.createRouter = function () {
 	var Router = ReactRouter.Router;
 	var Route = ReactRouter.Route;
 	var IndexRoute = ReactRouter.IndexRoute;
@@ -33,7 +33,7 @@ App = React.createClass({
 			</Route>
 		</Router> 
 		), rootEl); 
-});
+};
 
 
 

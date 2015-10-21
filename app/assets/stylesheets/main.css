@@ -125,8 +125,13 @@ word-wrap: break-word;
 	height: 30px;
 }
 
+#brand { 
+font-family: 'Abril Fatface', cursive;
+font-weight: 400; 
+}
+
 #right-nav-button { 
-	margin-left: 15px; }
+	margin-left: 15px; }s
 
 .container-comment{
 	position: relative; 
