@@ -33,7 +33,7 @@ AnswerIndexItem = React.createClass({
 				<ul> 
 				{
 					(
-					<CommentIndex questionId={this.props.answer.id} comments={this.props.answer.comments}/>	
+					<CommentIndex questionId={this.props.questionId} comments={this.props.answer.comments}/>	
 					)					
 				}
 				</ul> 
