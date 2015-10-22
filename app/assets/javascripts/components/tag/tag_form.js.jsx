@@ -44,9 +44,9 @@ TagForm = React.createClass({
 		var that = this; 
 		if (Object.keys(this.state)){
 			tags = (
-				Object.keys(this.state).map(function(tag){
+				Object.keys(this.state).map(function(tag, idx){
 					return (<div>
-						<input key={tag} type="checkbox" checkedLink={that.linkState(tag)}/>{tag}
+						<input key={idx} type="checkbox" checkedLink={that.linkState(tag)}/>{tag}
 						</div> 
 						 )
 					}))
