@@ -1,10 +1,12 @@
 ApiUtil.Tag = { 
 	filterByTag: function(tag){ 
+		debugger;
 		$.ajax({
 			url: "/api/questions",
 			type: "GET",
-			data: {tag_id: tag},
+			data: {tags: [tag]},
 			success: function (questions){
+				debugger;
 				ApiActions.receiveAllQuestions(questions);
 			}
 		});
