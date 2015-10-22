@@ -73,7 +73,7 @@ Question = React.createClass({
 			<div>
 				<div className="row">
 					<div className="col-md4 col"> 
-						<AnswerIndex answers={answers} /> 
+						<AnswerIndex questionId={id} answers={answers} /> 
 					</div>
 				</div>
 			</div>

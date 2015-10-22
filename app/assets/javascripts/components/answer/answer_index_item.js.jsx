@@ -34,7 +34,7 @@ AnswerIndexItem = React.createClass({
 				<ul> 
 				{this.props.answer.comments.map(function(comment){
 					return (
-						 <CommentIndexItem answerId={that.props.answer.id} comment={comment}/>						)
+						 <CommentIndexItem answerId={that.props.answer.id} questionId={that.props.questionId} comment={comment}/>						)
 				})}
 				<br/></ul> 
 				);

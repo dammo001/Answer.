@@ -1,7 +1,7 @@
 CommentIndexItem = React.createClass({ 
 	mixins: [ReactRouter.History], 
 
-	removeComment: function() { 
+	removeComment: function() {
 		if (confirm("Are you sure you want to delete this comment?")){
 			ApiUtil.Comment.destroyComment({comment_id: this.props.comment.id, questionId: this.props.questionId} );
 		}
@@ -9,7 +9,7 @@ CommentIndexItem = React.createClass({
 
 	render: function(){ 
 		var deleteButton = (
-			<button onClick={this.removeComment}>Delete Comment</button>);
+			<button className="comment-delete-button" onClick={this.removeComment}>Delete Comment</button>);
 		var buttonDelete; 	
 		if (this.props){
 			buttonDelete = (window.CURRENT_USER_ID === this.props.comment.user_id ? deleteButton : "");

@@ -71,7 +71,12 @@ table {
 	height: 40px;
 	top: -2px;
 	left: 0; 
+	margin-right: 7px ;
 	border-radius: 50%;
+}
+.comment-delete-button{ 
+	margin-top: 5px;
+	margin-bottom: 15px ;
 }
 .search-div {
 	position: absolute; 

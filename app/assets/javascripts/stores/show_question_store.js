@@ -43,6 +43,11 @@
         });
         root.ShowQuestionStore.emit(CHANGE_EVENT); 
         break; 
+
+      case CommentConstants.COMMENT_CHANGED:
+        _question = [action.question]; 
+        root.ShowQuestionStore.emit(CHANGE_EVENT); 
+        break;
     }
      })
   });
