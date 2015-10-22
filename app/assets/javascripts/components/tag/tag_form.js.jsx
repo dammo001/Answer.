@@ -3,8 +3,9 @@ TagForm = React.createClass({
 
 	getInitialState: function(){
 		var tags = {} ;
+		debugger;
 		TagStore.all() && TagStore.all().forEach(function(tag){
-			 (tags[tag.name] = false);
+			 (tags[tag] = false);
 		});
 		return tags; 
 	},
@@ -21,7 +22,7 @@ TagForm = React.createClass({
 	change: function(){
 		var tags = {};
 		TagStore.all() && TagStore.all().forEach(function(tag){
-			 (tags[tag.name] = false);
+			 (tags[tag] = false);
 		});
 		this.setState(tags);
 	},
@@ -34,12 +35,12 @@ TagForm = React.createClass({
 				tagParams.push(tag);
 			}
 		}
+		console.log("tag params")
+		console.log(tagParams)
 		ApiUtil.Tag.updateUserTags(tagParams);
 		this.history.pushState(null, "/"); 
 
 	},
-
-	// pull out values as state with checkedlinked? Combine as one request in componentWillUnmount? 
 
 	render: function(){
 		var tags;

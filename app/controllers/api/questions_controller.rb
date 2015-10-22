@@ -18,13 +18,13 @@ class Api::QuestionsController < ApplicationController
 		render :show
 	end
 
+	# make a sql qry here to lower DB queries
 	def index
 		if params[:tags]
 			@questions = [] 
 			params[:tags].each do |tag_name|
-				@questions.push(Tag.find_by_name(tag_name).questions)
+				@questions += (Tag.find_by_name(tag_name).questions)
 			end
-			@questions = @questions.flatten
 		elsif params[:search]
 			@questions = Question.find_by_substring(params[:search])
 		else

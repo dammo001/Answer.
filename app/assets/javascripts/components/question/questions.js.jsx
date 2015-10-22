@@ -2,23 +2,32 @@ Questions = React.createClass({
 
 	getInitialState: function(){
 		return{
-			questions: QuestionStore.all() 
+			questions: QuestionStore.all()
 		};
 	},
 
 	componentDidMount: function(){
-		var tags;
-		tags = UserStore.all() ? UserStore.all().tags : userTags ;
-		debugger; 
 		QuestionStore.addChangeHandler(this.setQuestions);
-		ApiUtil.Question.fetchQuestionsByTag(tags);
+		UserStore.addTagHandler(this.updateQuestions); 
+		debugger; 
+		this.updateQuestions(); 
 	},
 
 	componentWillUnmount: function(){
 		QuestionStore.removeChangeHandler(this.setQuestions); 
+		UserStore.removeTagHandler(this.updateQuestions);
+	},
+
+	updateQuestions: function(){
+		debugger; 
+		var tags;
+		tags = UserStore.all() ? UserStore.all().tags : userTags;
+		ApiUtil.Question.fetchQuestionsByTag(tags); 
+		
 	},
 
 	setQuestions: function(){
+		debugger; 
 		this.setState({ questions: QuestionStore.all()});
 	},
 

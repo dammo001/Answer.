@@ -16,7 +16,7 @@ class Api::TagsController < ApplicationController
   			@tags.push(Tag.find_by_name(tag_name))
   		end
 
-  		render json: @tags 
+  		render :index 
   	elsif params[:tagging] 
   		params[:tagging][:tag_names].each do |tag_name|
 	  		Tagging.create(tag_id: Tag.find_by_name(tag_name).id, question_id: params[:tagging][:question_id])

@@ -33,7 +33,6 @@
     switch(action.actionType){
 
       case QuestionConstants.RESET_QUESTIONS:
-        console.log(action.questions);
         _questions = action.questions;
         root.QuestionStore.emit(CHANGE_EVENT);
         break; 

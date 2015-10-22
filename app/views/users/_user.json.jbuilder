@@ -5,9 +5,7 @@ json.extract!(
 
 
 json.tags do 
-	json.array!(user.tags) do |tag|
-		json.partial! 'api/tags/tag', tag:tag
-	end
+	json.array!(user.tags.map{|tag| tag.name})
 end
 
 

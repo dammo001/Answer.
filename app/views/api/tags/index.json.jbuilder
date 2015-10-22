@@ -1,4 +1,4 @@
-json.array!(@tags) do |tag|
-	json.partial!('tag', tag: tag)
-end
 
+
+
+json.array!(@tags.map {|tag| tag.name})

@@ -45,7 +45,7 @@ var CommentForm = React.createClass({
 				</Button> 
 				<Panel collapsible expanded={this.state.open}> 
 					<form onSubmit={this.submit}> 
-						<textarea value={this.state.value} onChange={this.change} placeholder="Comment here"> </textarea> 
+						<textarea value={this.state.value} onChange={this.change} placeholder="comment here"></textarea> 
 						<input type="submit"> </input> 
 					</form> 
 				</Panel>

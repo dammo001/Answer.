@@ -28,12 +28,12 @@ TagIndex = React.createClass({
 	render: function(){
 
 	var tagsList; 
-
+// changed TAG_ID 
 	if ( this.state.tags ) {
 		tagsList = ( 
 			this.state.tags.map(function(tag){
 					return( 
-						<TagItem key={tag.id} tag={tag}/> 			
+						<TagItem key={tag} tag={tag}/> 			
 				)}))
 	} else { 
 		tagsList = "";

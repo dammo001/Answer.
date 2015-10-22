@@ -40,6 +40,7 @@ ApiUtil.Tag = {
 			type: "POST",
 			data: {user_tag: {tag_names: params}}, 
 			success: function(tags){
+						console.log(tags)
 				ApiActions.updateTags(tags); 
 			}
 		});

@@ -4,7 +4,7 @@ QuestionModalTags = React.createClass({
 	getInitialState: function(){
 		var tags = {} ;
 		TagStore.all() && TagStore.all().forEach(function(tag){
-			 (tags[tag.name] = false);
+			 (tags[tag] = false);
 		});
 		return tags; 
 	},
@@ -21,7 +21,7 @@ QuestionModalTags = React.createClass({
 	change: function(){
 		var tags = {};
 		TagStore.all() && TagStore.all().forEach(function(tag){
-			 (tags[tag.name] = false);
+			 (tags[tag] = false);
 		});
 		this.setState(tags);
 	},
