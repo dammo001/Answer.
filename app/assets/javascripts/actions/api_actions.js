@@ -27,10 +27,10 @@ window.ApiActions = {
 		});
 	},
 
-	createComment: function(comment){
+	setComment: function(question){
 		AppDispatcher.dispatch({
-			actionType: CommentConstants.COMMENT_ADDED,
-			comment: comment 
+			actionType: CommentConstants.COMMENT_CHANGED,
+			question: question 
 		});
 	},
 

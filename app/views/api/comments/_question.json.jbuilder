@@ -44,4 +44,3 @@ if show_answers
 	end
 end
 
-

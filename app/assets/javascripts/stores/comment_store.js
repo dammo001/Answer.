@@ -16,17 +16,18 @@
 
     removeChangeHandler: function(handler){
       root.CommentStore.removeListener(CHANGE_EVENT, handler);
-    },
+    }
 
-    DispatcherId: AppDispatcher.register(function(action){
-    switch(action.actionType){
+    // DispatcherId: AppDispatcher.register(function(action){
+    // switch(action.actionType){
 
-      case CommentConstants.COMMENT_ADDED:
-        _comments.push(action.comment); 
-        root.CommentStore.emit(CHANGE_EVENT);
-        break;
+      // case CommentConstants.COMMENT_ADDED:
+      //   debugger;
+      //   _comments.push(action.comment); 
+      //   root.CommentStore.emit(CHANGE_EVENT);
+      //   break;
 
-    }})
+    
   });
 
 }(this));

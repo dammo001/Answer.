@@ -1,10 +1,40 @@
-AnswerIndex = React.createClass({ 
+var Panel = ReactBootstrap.Panel;
+var Button = ReactBootstrap.Button; 
+
+CommentIndex = React.createClass({ 
+	getInitialState: function(){
+		return {
+			open: false,
+			comments: ""
+		};	
+	},
+
+	componentDidMount: function(){ 
+		CommentStore.addChangeHandler(this.update); 
+	},
+
+	componentWillUnmount: function(){
+		CommentStore.removeChangeHandler(this.update); 
+	},
+
+	change: function(){
+		this.setState({ open: !this.state.open });
+	},
+
+	update: function(){ 
+		CommentStore.all() && this.setState({ comments: CommentStore.all() });
+	},
+
 	render: function(){ 
+		var that = this; 
 		return(
-			<ul> 
-				{this.props.answers && this.props.answers.map(function (answer){
-				return <AnswerIndexItem key={answer.id} answer={answer} /> 
+			<ul>
+				<Button onClick={this.change}> Show Comments </Button> 
+				<Panel collapsible expanded={this.state.open}> 
+				{this.props.comments && this.props.comments.map(function (comment){
+				return <CommentIndexItem questionId={that.props.questionId} comment={comment} /> 
 				})}
+				</Panel> 
 			</ul> 
 			)
 	}

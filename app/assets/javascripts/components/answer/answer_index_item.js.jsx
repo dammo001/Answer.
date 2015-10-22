@@ -28,7 +28,6 @@ AnswerIndexItem = React.createClass({
 
 
 	render: function(){ 
-		debugger; 
 		var that = this; 
 		if (this.props.answer.comments){
 			comments = (

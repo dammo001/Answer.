@@ -1,4 +1,4 @@
 var CommentConstants = { 
-	COMMENT_ADDED: "COMMENT_ADDED"
+	COMMENT_CHANGED: "COMMENT_CHANGED"
 
 };

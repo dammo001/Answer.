@@ -11,13 +11,13 @@
     },
 
     find: function(id){ 
-      _questions.map(function(question){
+      var idx = -1
+      _questions.forEach(function(question, idx1){
         if (question.id === id){
-          return question;
-        } else{
-          return -1; 
-        }
+          idx = idx1;
+        } 
       });
+      return idx;
     },
 
     addChangeHandler: function(handler){
@@ -42,6 +42,12 @@
         _questions.push(action.question);
         root.QuestionStore.emit(CHANGE_EVENT);
         break; 
+
+      case CommentConstants.COMMENT_CHANGED: 
+        var idx = QuestionStore.find(action.question.id);
+        _questions[idx] = action.question;
+        root.QuestionStore.emit(CHANGE_EVENT);
+        break;  
     }})
   });
 

@@ -28,7 +28,6 @@ ApiUtil.Question = {
 			type: "GET",
 			data: params, 
 			success: function(questions){
-				console.log(questions)
 				ApiActions.receiveSearchQuestions(questions); 
 			}
 		});
@@ -51,17 +50,6 @@ ApiUtil.Question = {
 			success: function (questions){
 				ApiActions.receiveAllQuestions(questions);
 			}
-		});
-	},
-
-	updateQuestion: function(params){
-		$.ajax({ 
-			url: "/api/questions",
-			type: "POST",
-			data: params,
-			success: function(question){ 
-				ApiActions.receiveQuestion(question);
-			} 
 		});
 	},
 

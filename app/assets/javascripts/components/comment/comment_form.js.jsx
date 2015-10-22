@@ -32,7 +32,9 @@ var CommentForm = React.createClass({
 			commentable_type = "Question" ;
 		}
 	    var comment = { comment: { body: this.state.value , commentable_id: commentable_id, commentable_type: commentable_type }};
+	    this.flip; 
 	    ApiUtil.Comment.createComment(comment); 
+
 	},
 
 	render: function() {
