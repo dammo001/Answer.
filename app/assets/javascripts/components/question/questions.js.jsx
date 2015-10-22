@@ -25,16 +25,16 @@ Questions = React.createClass({
 	},
 
 	setQuestions: function(){
-		this.setState({ questions: QuestionStore.all()});
+		this.setState({ questions: QuestionStore.all() });
 	},
 
 	render: function(){
 		return(
 			<div className="question-main" > <h1 className="index-header"> What Do You Want To Know? </h1> 
 			<ul> 
-			{this.state.questions.map(function(question){
+			{this.state.questions.map(function(question, idx){
 				return (
-					  <QuestionListItem key={question.id} question={question}/> 
+					  <QuestionListItem key={idx} question={question}/> 
 					)
 			})}
 			</ul> 

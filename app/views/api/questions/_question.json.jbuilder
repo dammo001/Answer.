@@ -4,12 +4,7 @@ json.extract!(
 )
 
 json.tags do 
-	json.array!(question.tags) do |tag|
-		json.extract!(
-			tag,
-				:name
-		)
-	end
+	json.array!(question.tags.map {|tag| tag.name})
 end
 
 json.comments do 

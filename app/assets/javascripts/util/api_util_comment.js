@@ -5,8 +5,8 @@ ApiUtil.Comment = {
 			url: "/api/comments",
 			type: "POST",
 			data: params,  
-			success: function (Question){
-				ApiActions.setComment(Question);
+			success: function (question){
+				ApiActions.setComment(question);
 			}
 		});
 	},
@@ -16,8 +16,8 @@ ApiUtil.Comment = {
 			url: "api/comments/"+params.comment_id,
 			type: "DELETE",
 			data: params, 
-			success: function (Question){
-				ApiActions.setComment(Question); 
+			success: function (question){
+				ApiActions.setComment(question); 
 			}
 		});
 	}

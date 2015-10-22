@@ -25,6 +25,7 @@ class Api::QuestionsController < ApplicationController
 			params[:tags].each do |tag_name|
 				@questions += (Tag.find_by_name(tag_name).questions)
 			end
+			@questions = @questions.uniq
 		elsif params[:search]
 			@questions = Question.find_by_substring(params[:search])
 		else

@@ -40,7 +40,6 @@ Question = React.createClass({
 	render: function(){ 
 
 		//refactor later as if... (return empty div) else... (return good stuff) 
-
 		var title = (
 			this.state ? this.state.question.title : "" );
 		var body = (

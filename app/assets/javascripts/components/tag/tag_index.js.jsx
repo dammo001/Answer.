@@ -8,11 +8,11 @@ TagIndex = React.createClass({
 	},
 
 	componentDidMount: function(){ 
-		UserStore.addChangeHandler(this.change); 
+		UserStore.addTagHandler(this.change); 
 	},
 
 	componentWillUnmount: function(){
-		UserStore.removeChangeHandler(this.change); 
+		UserStore.removeTagHandler(this.change); 
 	},
 
 	change: function(){

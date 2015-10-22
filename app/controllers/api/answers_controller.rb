@@ -7,7 +7,7 @@ class Api::AnswersController < ApplicationController
 	
 		@answer.user_id = current_user.id 
 		if @answer.save
-			render json: @answer
+			render :show
 		else
 			render json: @answer.errors.full_messages, status: 422
 		end

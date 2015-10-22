@@ -13,9 +13,9 @@ QuestionListItem = React.createClass({
 		if (this.props.question.tags){ 
 			tagNames = (
 				<ul> 
-				{this.props.question.tags.map(function(tag){
+				{this.props.question.tags.map(function(tag, idx){
 					return (
-						<li key={tag} className="tag-name-list"> {tag} </li> 
+						<li key={idx} className="tag-name-list"> {tag} </li> 
 						)
 				})}
 				<br/> </ul> 
