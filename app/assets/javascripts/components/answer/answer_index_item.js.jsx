@@ -26,20 +26,21 @@ AnswerIndexItem = React.createClass({
 		this.state.editor.setContents(JSON.parse(this.props.answer.body));
 	},
 
-
 	render: function(){ 
 		var that = this; 
 		if (this.props.answer.comments){
 			comments = (
 				<ul> 
-				{this.props.answer.comments.map(function(comment){
-					return (
-						 <CommentIndexItem answerId={that.props.answer.id} questionId={that.props.questionId} comment={comment}/>						)
-				})}
-				<br/></ul> 
+				{
+					(
+					<CommentIndex questionId={this.props.answer.id} comments={this.props.answer.comments}/>	
+					)					
+				}
+				</ul> 
 				);
+
 		} else { 
-			comments = "" 
+			comments = ""; 
 		}
 		var editButton = (
 			<button onClick={this.editAnswer}>Edit Answer</button>);
