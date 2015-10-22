@@ -19,8 +19,12 @@ class Api::QuestionsController < ApplicationController
 	end
 
 	def index
-		if params[:tag_id]
-			@questions = Tag.find(params[:tag_id]).questions
+		if params[:tags]
+			@questions = [] 
+			params[:tags].each do |tag_name|
+				@questions.push(Tag.find_by_name(tag_name).questions)
+			end
+			@questions = @questions.flatten
 		elsif params[:search]
 			@questions = Question.find_by_substring(params[:search])
 		else

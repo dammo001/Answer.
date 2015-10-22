@@ -43,11 +43,14 @@ ApiUtil.Question = {
 		});
 	},
 
-	fetchQuestions: function(){ 
+	fetchQuestionsByTag: function(tags){ 
+		debugger;
 		$.ajax({
 			url: "/api/questions",
 			type: "GET",
+			data: {tags: tags}, 
 			success: function (questions){
+				debugger;
 				ApiActions.receiveAllQuestions(questions);
 			}
 		});

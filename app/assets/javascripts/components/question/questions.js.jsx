@@ -7,8 +7,11 @@ Questions = React.createClass({
 	},
 
 	componentDidMount: function(){
+		var tags;
+		tags = UserStore.all() ? UserStore.all().tags : userTags ;
+		debugger; 
 		QuestionStore.addChangeHandler(this.setQuestions);
-		ApiUtil.Question.fetchQuestions(); 
+		ApiUtil.Question.fetchQuestionsByTag(tags);
 	},
 
 	componentWillUnmount: function(){
