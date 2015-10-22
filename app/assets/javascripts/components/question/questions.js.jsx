@@ -9,7 +9,6 @@ Questions = React.createClass({
 	componentDidMount: function(){
 		QuestionStore.addChangeHandler(this.setQuestions);
 		UserStore.addTagHandler(this.updateQuestions); 
-		debugger; 
 		this.updateQuestions(); 
 	},
 
@@ -19,7 +18,6 @@ Questions = React.createClass({
 	},
 
 	updateQuestions: function(){
-		debugger; 
 		var tags;
 		tags = UserStore.all() ? UserStore.all().tags : userTags;
 		ApiUtil.Question.fetchQuestionsByTag(tags); 
@@ -27,7 +25,6 @@ Questions = React.createClass({
 	},
 
 	setQuestions: function(){
-		debugger; 
 		this.setState({ questions: QuestionStore.all()});
 	},
 

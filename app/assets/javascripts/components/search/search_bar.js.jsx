@@ -30,7 +30,6 @@ var NavbarSearchBar=React.createClass({
   handleChange: function(event){
     this.setState({value: event.target.value});
     var params = {search: event.target.value};
-    console.log(event.target.value) 
     if (event.target.value){
       ApiUtil.Question.searchQuestions(params);
     } else { 

@@ -40,7 +40,6 @@
         break; 
 
       case UserConstants.TAGS_UPDATED:
-        debugger;  
         _user[0].tags = action.tags;
         root.UserStore.emit(TAG_EVENT);
         break; 

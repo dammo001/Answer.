@@ -2,7 +2,6 @@
 TagItem = React.createClass({
 
 	filterByTag: function(event){
-		debugger;
 		ApiUtil.Tag.filterByTag(this.props.tag); 
 	},
 

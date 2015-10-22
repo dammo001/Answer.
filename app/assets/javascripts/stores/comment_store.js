@@ -22,7 +22,6 @@
     // switch(action.actionType){
 
       // case CommentConstants.COMMENT_ADDED:
-      //   debugger;
       //   _comments.push(action.comment); 
       //   root.CommentStore.emit(CHANGE_EVENT);
       //   break;

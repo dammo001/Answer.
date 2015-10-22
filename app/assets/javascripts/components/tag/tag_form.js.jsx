@@ -3,7 +3,6 @@ TagForm = React.createClass({
 
 	getInitialState: function(){
 		var tags = {} ;
-		debugger;
 		TagStore.all() && TagStore.all().forEach(function(tag){
 			 (tags[tag] = false);
 		});
@@ -35,8 +34,6 @@ TagForm = React.createClass({
 				tagParams.push(tag);
 			}
 		}
-		console.log("tag params")
-		console.log(tagParams)
 		ApiUtil.Tag.updateUserTags(tagParams);
 		this.history.pushState(null, "/"); 
 

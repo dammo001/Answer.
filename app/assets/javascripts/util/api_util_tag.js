@@ -1,12 +1,10 @@
 ApiUtil.Tag = { 
 	filterByTag: function(tag){ 
-		debugger;
 		$.ajax({
 			url: "/api/questions",
 			type: "GET",
 			data: {tags: [tag]},
 			success: function (questions){
-				debugger;
 				ApiActions.receiveAllQuestions(questions);
 			}
 		});
@@ -40,7 +38,6 @@ ApiUtil.Tag = {
 			type: "POST",
 			data: {user_tag: {tag_names: params}}, 
 			success: function(tags){
-						console.log(tags)
 				ApiActions.updateTags(tags); 
 			}
 		});

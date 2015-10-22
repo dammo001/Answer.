@@ -10,7 +10,6 @@
 // 	},
 
 // 	componentDidMount: function () {
-// 		debugger; 
 // 		document.getElementById('openModal').classList.add('active');
 // 	},
 
