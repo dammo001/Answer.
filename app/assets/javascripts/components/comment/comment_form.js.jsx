@@ -40,7 +40,7 @@ var CommentForm = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<Button onClick={this.flip}>
+				<Button bsSize="small" id="add-comment" onClick={this.flip}>
 					Add Comment 
 				</Button> 
 				<Panel collapsible expanded={this.state.open}> 

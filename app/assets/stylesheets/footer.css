@@ -31,6 +31,7 @@
 	padding: 0;
 }
 
+
 .footer-distributed p.footer-links a{
 	display:inline-block;
 	line-height: 1.8;
@@ -38,6 +39,10 @@
 	color:  inherit;
 }
 
+
+.footer-distributed p.footer-links a:hover{
+	color:  #3E88BC;
+}
 .footer-distributed .footer-right{
 	float: right;
 	margin-top: 6px;
@@ -58,6 +63,11 @@
 
 	margin-left: 3px;
 }
+
+.footer-distributed .footer-right a:hover{
+	color: #3E88BC;
+}
+
 
 /* If you don't want the footer to be responsive, remove these media queries */
 

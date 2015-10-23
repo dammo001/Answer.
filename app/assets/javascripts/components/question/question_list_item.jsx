@@ -51,8 +51,8 @@ QuestionListItem = React.createClass({
 			 	<br/> 
 			 	<div className="answer-teaser"> {this.props.question.answer && this.props.question.body} </div>
 			 	<ul className="question-options">  
-			 		<li className="question-options"> <button type="button" className="btn btn-default upvote-btn">Upvote | 0</button> </li>
-			 		<li className="question-options"> <button type="button" className="btn btn-default upvote-btn">Downvote</button>  </li>
+			 		<li className="question-options"> <button type="button" className="btn btn-default btn-sm upvote-btn">Upvote | 0</button> </li>
+			 		<li className="question-options"> <button type="button" className="btn btn-default btn-sm upvote-btn">Downvote</button>  </li>
 			 		<li className="question-options"> <CommentForm questionId={this.props.question.id} /></li>
 			 		<li className="question-options"> {comments} </li>  
 		 		</ul> 

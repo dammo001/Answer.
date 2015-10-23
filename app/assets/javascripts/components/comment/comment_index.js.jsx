@@ -29,7 +29,7 @@ CommentIndex = React.createClass({
 		var that = this; 
 		return(
 			<ul>
-				<Button onClick={this.change}> Show Comments </Button> 
+				<Button bsSize="small" id="button-index" onClick={this.change}> Show Comments </Button> 
 				<Panel collapsible expanded={this.state.open}> 
 				{this.props.comments && this.props.comments.map(function (comment, idx){
 				return <CommentIndexItem key={idx} questionId={that.props.questionId} comment={comment} /> 

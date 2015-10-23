@@ -287,7 +287,7 @@ h4.title-sign-in{
 }
 #form-control-search{
 	left: 50px;
-	width: 200px; 
+	width: 300px; 
 }
 #search-list-item{
 	margin-top: 0;
@@ -323,7 +323,7 @@ top: 90px;
 .container#sidebar-container{ 
 	position: fixed;
 	top: 100px;
-	height: 300px;
+	height: 400px;
 	width: 25%;
 }
 
@@ -379,7 +379,46 @@ p.question-list-details {
 }
 li.question-options {
 	display: inline-block;
+}
+.sidebar-header { 
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: gray;
+	width: 100%;
+}
+.sidebar-body {
+	width: 100%;
+	min-height: 50%;
+	border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: gray; 
+}
 
+.sidebar-footer { 
+width: 100%;
+margin-top: 15px;
+}
+#main-tags-button { 
+	
+	color: #3E88BC; 
+}
+
+#add-comment { 
+	background-color: #26B9AC;
+	color: white;
+}
+#add-comment:hover {
+	background-color: #1B8E84;
+	color: white;
+}
+
+#button-index { 
+	color: #26B9AC;
+}
+#button-index:hover{ 
+	border-width: 1px;
+	border-color: #26B9AC;
+	background-color: white; 
 }
 .user-profile-link {
 

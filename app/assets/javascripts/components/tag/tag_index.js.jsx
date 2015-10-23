@@ -40,12 +40,19 @@ TagIndex = React.createClass({
 	}
 		return (
 			<div className="container" id="sidebar-container">
-				<ul className="tag-list"> 
-				{tagsList} 
-				</ul>
-				<button onClick={this.addTags} type="button" className="btn btn-default add-tags-btn">
-				Change Followed Tags
-				</button>  
+				<div className="sidebar-header"> 
+					<h3> Pinned Tags </h3> 
+				</div> 
+				<div className="sidebar-body"> 
+					<ul className="tag-list"> 
+					{tagsList} 
+					</ul>
+				</div> 
+				<div className="sidebar-footer">
+					<button onClick={this.addTags} type="button" className="btn btn-default add-tags-btn" id="main-tags-button">
+					Edit Tags   <span className="glyphicon glyphicon-edit"/> 
+					</button> 
+				</div> 
 			</div>
 			)
 	}
