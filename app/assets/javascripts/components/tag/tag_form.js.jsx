@@ -1,3 +1,5 @@
+var Button = ReactBootstrap.Button;
+
 TagForm = React.createClass({ 
 	mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
@@ -39,26 +41,40 @@ TagForm = React.createClass({
 
 	},
 
+
+	update: function(event){
+
+	},
+
 	render: function(){
 		var tags;
 		var that = this; 
+	
 		if (Object.keys(this.state)){
-			tags = (
+			tagsAll = (
 				Object.keys(this.state).map(function(tag, idx){
-					return (<div>
-						<input key={idx} type="checkbox" checkedLink={that.linkState(tag)}/>{tag}
-						</div> 
+					var checked; 
+					if (that.state[tag]){
+						checked = "checked";
+					} else {
+						checked = "";
+					}
+					return (
+						<li className="tag-name-list tag-choose"> <input style={{display:"none"}} key={idx} type="checkbox" checkedLink={that.linkState(tag)}/>{tag}
+						<span  className="glyphicon glyphicon-tag" aria-hidden="true"></span>
+						</li> 
+						
 						 )
 					}))
 		} else { 
-			tags = <div/>
+			tagsAll = <div/>
 		}
 
 		return (
 			<div className="container tags-container" onSubmit={this.send}> 
-				<form> 
-					{tags}
-				<input type="submit"/>  
+				<form className="tags-list-form"><ul>  
+					{tagsAll}</ul> 
+				<Button bsStyle="primary" bsSize="large" type="submit"> Submit</Button>   
 				</form> 
 			</div> )
 	}
