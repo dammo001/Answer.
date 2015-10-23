@@ -6,6 +6,7 @@ QuestionListItem = React.createClass({
 
 	showQuestion: function() {
 		this.history.pushState(null, '/questions/' + this.props.question.id, {});
+		window.scrollTo(0,0); 
 	},
 
 	render: function(){
@@ -41,7 +42,6 @@ QuestionListItem = React.createClass({
 		}
 
 
-
 		return (
 			<li className="question-item"> 
 				{tagNames} 
@@ -59,7 +59,7 @@ QuestionListItem = React.createClass({
 						</div> 
 					</div> 
 				</div> 
-			 	<div className="answer-teaser"> {this.props.question.answer && this.props.question.body} </div>
+			 	<div className="answer-teaser"> {this.props.question.body} </div>
 			 	<ul className="question-options">  
 			 		<li className="question-options"> <button type="button" id="vote" className="btn btn-default btn-sm upvote-btn">Upvote | 0</button> </li>
 			 		<li className="question-options"> <button type="button" id="vote" className="btn btn-default btn-sm upvote-btn">Downvote</button>  </li>
