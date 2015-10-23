@@ -20,6 +20,6 @@ end
 json.author do 
 	json.name answer.author.username
 	json.picture answer.author.picture_url 
-	json.tagline question.author.tagline  
+	json.tagline answer.author.tagline  
 end
 

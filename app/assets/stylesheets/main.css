@@ -401,25 +401,24 @@ p.question-list-details {
 	height: 10%; 
 	width: 100%;
 }
-
-.profile-picture { 
-	position:relative; 
-	height: 50% ;
-	width: 30%;
+.profile-left-div { 
+	width: 50%;
 	float: left;
 }
+
+.profile-picture { 
+	height: 50% ;
+	width: 100%;
+}
 .profile-information {
-	width: 30%; 
-	float: left;
+	width: 100%;
 	height: 50%;
-	position: relative;
 }
 
 .profile-other-details { 
-	width: 70%; 
-	float: right; 
+	width: 50%; 
+	float: left; 
 	height: 100%; 
-	position: relative;
 }
 
 

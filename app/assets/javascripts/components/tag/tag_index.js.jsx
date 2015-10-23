@@ -43,7 +43,7 @@ TagIndex = React.createClass({
 				<div className="sidebar-header"> 
 					<h3> Pinned Tags </h3> 
 				</div> 
-				<div className="sidebar-body"> 
+				<div className="sidebar-body clearfix"> 
 					<ul className="tag-list"> 
 					{tagsList} 
 					</ul>

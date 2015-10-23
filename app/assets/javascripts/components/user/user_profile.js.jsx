@@ -30,19 +30,21 @@ UserProfile = React.createClass({
 				<div className="profile-header"> 
 				</div> 
 				<div className="profile-body"> 
-					<div className="profile-picture"> 
-						<image src={UserStore.all().picture_url}> </image>
-						<div className="profile-upload-widget"> <a href="/#/addpicture" id="upload_widget_opener">Upload image</a> </div> 
-					</div> 
-					<div className="profile-information">
-						<div className="profile-biography"> 
-							Biography: {this.state.user.bio} 
+					<div className="profile-left-div">
+						<div className="profile-picture"> 
+							<image src={UserStore.all().picture_url}> </image>
+							<div className="profile-upload-widget"> <a href="/#/addpicture" id="upload_widget_opener">Upload image</a> </div> 
 						</div> 
-						<div className="profile-other-details"> 
-							Tagline: {this.state.user.tagline}
-							Display name: {this.state.user.display_name}
-							User since:  {jQuery.timeago(this.state.user.created_at)}
-							Update your information: <UpdateUser user={this.state.user} /> 
+						<div className="profile-information">
+							<div className="profile-biography"> 
+								Biography: {this.state.user.bio} 
+							</div> 
+							<div className="profile-other-details"> 
+								Tagline: {this.state.user.tagline}
+								Display name: {this.state.user.display_name}
+								User since:  {jQuery.timeago(this.state.user.created_at)}
+								Update your information: <UpdateUser user={this.state.user} /> 
+							</div> 
 						</div> 
 					</div> 
 					<div className="profile-statistics"> 
