@@ -56,7 +56,19 @@ AnswerIndexItem = React.createClass({
 
 		return (
 			<li className="list-group-item answer-list">
-			{this.props.answer.author.name} answered {jQuery.timeago(this.props.answer.updated_at)} <img id="picture-image-index" src={this.props.answer.author.picture} /> <br/>
+				<div className="question-list-body"> 
+					<div className="question-list-picture">
+						<img id="picture-image-index" src={this.props.answer.author.picture}/>
+					</div>
+					<div className="question-list-side-body"> 
+						<div className="question-list-username"> 
+							<span className="author-name"> {this.props.answer.author.name} </span> , <span className="author-tagline"> user-tagline </span> 
+						</div> 
+						<div className="question-list-time">
+							answered {jQuery.timeago(this.props.answer.updated_at)}
+						</div> 
+					</div> 
+				</div> 
 			<div  onClick={this.show} id={this.props.answer.id}>
 			</div> 
 			<CommentForm answerId={this.props.answer.id} /> 

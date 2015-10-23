@@ -21,6 +21,7 @@ var AskQuestion = React.createClass({
   },
   
   createQuestion: function(event){
+    debugger;
     event.preventDefault();
     var title = event.target[0].value;
     var body = event.target[1].value; 

@@ -29,6 +29,7 @@ QuestionModalTags = React.createClass({
 	},
 
 	send: function(){
+		debugger; 
 		event.preventDefault();
 		var tagParams = [];
 		for (var tag in this.state.tags){
@@ -66,12 +67,12 @@ QuestionModalTags = React.createClass({
 		}
 
 		return (
-			<div className="container tags-container-form" onSubmit={this.send}> 
+			<div className="container tags-container-form"> 
 				<div className="tags-list-form">
 					<ul>  
 						{tagsAll} 
 					</ul> 
-					<Button bsStyle="primary" bsSize="large" type="submit"> Submit</Button>   
+					<Button onClick={this.send}  bsStyle="primary" bsSize="large" type="submit"> Submit</Button>   
 				</div> 
 			</div> )
 	}

@@ -376,14 +376,20 @@ p.question-list-details {
 
 .question-list-username { 
 	width:100%;
-	color: gray;
+	color: black; 
+	
 	
 }
 
-.question-list-tagline { 
+.question-list-time{ 
 	width: 100%;
+	color: gray;
+	font-style: italic; 
+
 
 }
+
+
 
 
 .container-navbar { 
