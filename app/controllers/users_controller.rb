@@ -25,6 +25,9 @@ class UsersController < ApplicationController
 			@user.picture_url = params[:user][:picture_url]
 			@user.save!
 			render :show
+		else 
+			@user.update!(user_params)
+			render :show 
 		end
 	end
 
@@ -33,6 +36,6 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:password, :username, :picture_url)
+		params.require(:user).permit(:password, :username, :picture_url, :email, :bio, :tagline, :display_name)
 	end
 end

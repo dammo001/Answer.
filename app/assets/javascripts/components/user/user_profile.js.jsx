@@ -42,6 +42,7 @@ UserProfile = React.createClass({
 							Tagline: {this.state.user.tagline}
 							Display name: {this.state.user.display_name}
 							User since:  {jQuery.timeago(this.state.user.created_at)}
+							Update your information: <UpdateUser user={this.state.user} /> 
 						</div> 
 					</div> 
 					<div className="profile-statistics"> 

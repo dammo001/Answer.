@@ -28,6 +28,7 @@ end
 json.author do 
 	json.name question.author.username
 	json.picture question.author.picture_url 
+	json.display_name question.author.display_name 
 end
 
 
