@@ -201,10 +201,18 @@ div.sign-in-line-up{
 
 button#sign-in{ 
 	max-height: 100%;
-	
+	border-width: 2px;
+	background-color: #fff;
+    color: #428bca;
     left: 60%;
     top: 31%;
     display: inline-block;
+}
+
+button#guest-login{
+	color: white; 
+	background: #26B9AC;
+
 }
 
 button#sign-up{ 
@@ -248,20 +256,19 @@ h4.title-sign-in{
     margin: 5px 2px;
     font-size: 13px;
     font-weight: 500;
-    color: #808393;
+    color: #3E88BC;
     background-color: ghostwhite;
     margin-right: 4px;
     border-radius: 12px;
     padding: 4px 8px;
     border: 0;
-    border-color: aliceblue;
+    border-color: #EEEEEE;
     border-style: solid;
     border-width: 1px;;
 }
 
 .tag-name-list:hover { 
-	background-color: black;
-	color: white; 
+	border-color: #3E88BC;
 }
 
 .tags-list-form { 
@@ -398,7 +405,7 @@ html, body {
 	height: 100%;
 }
 
-#panel-clear{
+div .panel-default{
 	border-color: white; 
 }
 

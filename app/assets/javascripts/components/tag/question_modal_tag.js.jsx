@@ -1,3 +1,5 @@
+var Button = ReactBootstrap.Button;
+
 QuestionModalTags = React.createClass({ 
 	mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
@@ -6,7 +8,7 @@ QuestionModalTags = React.createClass({
 		TagStore.all() && TagStore.all().forEach(function(tag){
 			 (tags[tag] = false);
 		});
-		return tags; 
+		return ({ tags: tags }); 
 	},
 
 	componentDidMount: function(){ 
@@ -23,14 +25,14 @@ QuestionModalTags = React.createClass({
 		TagStore.all() && TagStore.all().forEach(function(tag){
 			 (tags[tag] = false);
 		});
-		this.setState(tags);
+		this.setState({tags: tags });
 	},
 
 	send: function(){
 		event.preventDefault();
 		var tagParams = [];
-		for (var tag in this.state){
-			if (this.state[tag]){
+		for (var tag in this.state.tags){
+			if (this.state.tags[tag]){
 				tagParams.push(tag);
 			}
 		}
@@ -39,25 +41,38 @@ QuestionModalTags = React.createClass({
 		this.props.close(); 
 	},
 
+
+	toggle: function(tag){
+		var key = tag;
+		var tags = this.state.tags;
+		tags[key] = !tags[key]; 
+		this.setState({ tags: tags });
+	},
+
 	render: function(){
 		var tags;
 		var that = this; 
-		if (Object.keys(this.state)){
-			tags = (
-				Object.keys(this.state).map(function(tag){
-					return (<div>
-						<input key={tag} type="checkbox" checkedLink={that.linkState(tag)}/>{tag}
-						</div> 
+	
+		if (Object.keys(this.state.tags)){
+			tagsAll = (
+				Object.keys(this.state.tags).map(function(tag, idx){
+					
+					return (
+						<TagListItem key={idx} tag={tag} value={that.state.tags[tag]} toggle={that.toggle}/> 
 						 )
 					}))
 		} else { 
-			tags = <div/>
+			tagsAll = <div/>
 		}
 
 		return (
-			<div className="container tags-container"> 
-					{tags}
-					<input onClick={this.send} type="submit"/> 
+			<div className="container tags-container-form" onSubmit={this.send}> 
+				<div className="tags-list-form">
+					<ul>  
+						{tagsAll} 
+					</ul> 
+					<Button bsStyle="primary" bsSize="large" type="submit"> Submit</Button>   
+				</div> 
 			</div> )
 	}
 })

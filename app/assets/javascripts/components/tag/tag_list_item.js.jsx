@@ -23,7 +23,7 @@ TagListItem = React.createClass({
 		return 	(
 			<li className="tag-name-list tag-choose" id={checked} onClick={this.change} > 
 				{this.props.tag}
-				<span className="glyphicon glyphicon-tag" aria-hidden="true"></span>
+				&nbsp; <span className="glyphicon glyphicon-tag" aria-hidden="true"></span>
 			</li>
 			); 
 	}

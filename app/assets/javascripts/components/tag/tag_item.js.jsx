@@ -6,9 +6,9 @@ TagItem = React.createClass({
 
 	render: function(){
 		return ( 
-			<li className="tag-name-list" onClick={this.filterByTag} data={this.props.tag}>     {this.props.tag} &nbsp;
+			<li className="tag-name-list" onClick={this.filterByTag} data={this.props.tag}>     
+				{this.props.tag} &nbsp;
 			    <span className="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
-			
 			</li> 
 			)
 	}
