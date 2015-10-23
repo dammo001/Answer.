@@ -101,6 +101,7 @@ margin: 4px;
 }
 
 h1.index-header { 
+
 	border-bottom: 1px dotted #e2e2e2;
 	font-weight: 500;
 	letter-spacing: -0.5px;
@@ -264,7 +265,9 @@ h4.title-sign-in{
 }
 
 .tags-list-form { 
+
 	width: 40% ;
+	text-align: center; 
 }
 
 #checked { 
@@ -358,10 +361,19 @@ p.question-list-details {
 	float: right; 
 	height: 100%;
 	width: 75%;
-	top: 75px; 
-	left: 270px; 
+	top: 70px; 
+	position: relative; 
 }
 
+.flash-error {
+	z-index: 10;
+	color: black;
+	text: blue; 
+}
+li.question-options {
+	display: inline-block;
+
+}
 .user-profile-link {
 
   left: 900px; 
@@ -386,8 +398,13 @@ html, body {
 	height: 100%;
 }
 
-#answer-list {
+#panel-clear{
+	border-color: white; 
+}
+
+.answer-list {
 	min-height: 100%;
+	width: 80%;
 
 }
 #content-wrapper {

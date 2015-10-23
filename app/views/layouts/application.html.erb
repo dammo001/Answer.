@@ -33,12 +33,13 @@
 
 </head>
 <body>
-
+<div class="flash-error"> 
 <% if flash[:errors] %> 
 <% flash[:errors].each do |error| %> 
 <%= error %>  
 <% end %> 
 <% end %> 
+</div> 
 
 <%= yield %>
 

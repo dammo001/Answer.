@@ -45,7 +45,7 @@ var AnswerForm = React.createClass({
     return (
       <div> 
         <Button onClick={this.change}> Answer this Question </Button>  
-        <Panel collapsible expanded={this.state.open}> 
+        <Panel id="panel-clear" collapsible expanded={this.state.open}> 
           <div className="quill-wrapper">
             <div className="toolbar-container">
             	<div id="toolbar" className="toolbar ql-toolbar ql-snow">
