@@ -195,7 +195,7 @@ div.sign-in-line-up{
 	position: relative;
     height: 60px;
     top: 30%;
-    left: 29%;
+	text-align: center;
 }
 
 button#sign-in{ 
@@ -271,7 +271,6 @@ h4.title-sign-in{
 	background-color: black;
 	color: white; 
 }
-
 
 #search-holder {
 	margin-bottom: 0px;

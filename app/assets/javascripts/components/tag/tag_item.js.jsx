@@ -1,4 +1,3 @@
-
 TagItem = React.createClass({
 
 	filterByTag: function(event){

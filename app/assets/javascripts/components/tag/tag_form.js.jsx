@@ -8,7 +8,7 @@ TagForm = React.createClass({
 		TagStore.all() && TagStore.all().forEach(function(tag){
 			 (tags[tag] = false);
 		});
-		return tags; 
+		return ({ tags: tags }); 
 	},
 
 	componentDidMount: function(){ 
@@ -25,45 +25,39 @@ TagForm = React.createClass({
 		TagStore.all() && TagStore.all().forEach(function(tag){
 			 (tags[tag] = false);
 		});
-		this.setState(tags);
+		this.setState({tags: tags });
 	},
 
 	send: function(){
 		event.preventDefault();
 		var tagParams = [];
-		for (var tag in this.state){
-			if (this.state[tag]){
+		for (var tag in this.state.tags){
+			if (this.state.tags[tag]){
 				tagParams.push(tag);
 			}
 		}
 		ApiUtil.Tag.updateUserTags(tagParams);
 		this.history.pushState(null, "/"); 
-
 	},
 
 
-	update: function(event){
-
+	toggle: function(tag){
+		var key = tag;
+		var tags = this.state.tags;
+		tags[key] = !tags[key]; 
+		this.setState({ tags: tags });
 	},
 
 	render: function(){
 		var tags;
 		var that = this; 
 	
-		if (Object.keys(this.state)){
+		if (Object.keys(this.state.tags)){
 			tagsAll = (
-				Object.keys(this.state).map(function(tag, idx){
-					var checked; 
-					if (that.state[tag]){
-						checked = "checked";
-					} else {
-						checked = "";
-					}
+				Object.keys(this.state.tags).map(function(tag, idx){
+					
 					return (
-						<li className="tag-name-list tag-choose"> <input style={{display:"none"}} key={idx} type="checkbox" checkedLink={that.linkState(tag)}/>{tag}
-						<span  className="glyphicon glyphicon-tag" aria-hidden="true"></span>
-						</li> 
-						
+						<TagListItem key={idx} tag={tag} value={that.state.tags[tag]} toggle={that.toggle}/> 
 						 )
 					}))
 		} else { 
@@ -72,9 +66,11 @@ TagForm = React.createClass({
 
 		return (
 			<div className="container tags-container" onSubmit={this.send}> 
-				<form className="tags-list-form"><ul>  
-					{tagsAll}</ul> 
-				<Button bsStyle="primary" bsSize="large" type="submit"> Submit</Button>   
+				<form className="tags-list-form">
+					<ul>  
+						{tagsAll} 
+					</ul> 
+					<Button bsStyle="primary" bsSize="large" type="submit"> Submit</Button>   
 				</form> 
 			</div> )
 	}
