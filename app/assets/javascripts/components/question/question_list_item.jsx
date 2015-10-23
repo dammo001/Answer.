@@ -43,12 +43,22 @@ QuestionListItem = React.createClass({
 
 
 		return (
-			<li 
-			className="question-item"> 
+			<li className="question-item"> 
 				{tagNames} 
 				<h3 className="question-list-title" onClick={this.showQuestion}>{this.props.question.title}</h3>
-			 	<p className="question-list-details">was asked {jQuery.timeago(this.props.question.updated_at)} by&nbsp; <img id="picture-image-index" src={this.props.question.author.picture}/> </p> 
-			 	<br/> 
+				<div className="question-list-body"> 
+					<div className="question-list-picture">
+						<img id="picture-image-index" src={this.props.question.author.picture}/>
+					</div>
+					<div className="question-list-side-body"> 
+						<div className="question-list-username"> 
+							was asked by {this.props.question.author.name} {jQuery.timeago(this.props.question.updated_at)}
+						</div> 
+						<div className="question-list-tagline">
+							user-tagline
+						</div> 
+					</div> 
+				</div> 
 			 	<div className="answer-teaser"> {this.props.question.answer && this.props.question.body} </div>
 			 	<ul className="question-options">  
 			 		<li className="question-options"> <button type="button" id="vote" className="btn btn-default btn-sm upvote-btn">Upvote | 0</button> </li>

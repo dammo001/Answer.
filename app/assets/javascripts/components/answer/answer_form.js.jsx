@@ -91,7 +91,7 @@ var AnswerForm = React.createClass({
 
                 <span className="ql-format-group">
 
-                  <span onClick={this.submit} title="Submit" id="save-button" className="ql-format-button">Save
+                  <span className="glyphicon glyphicon-save ql-format-button"  aria-hidden="true" onClick={this.submit} title="Submit" id="save-button">Submit
                   </span>
                 </span>
             	</div>

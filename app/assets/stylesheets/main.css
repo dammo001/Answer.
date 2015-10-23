@@ -360,6 +360,31 @@ p.question-list-details {
 	color: gray; 
 }
 
+.question-list-body { 
+	width: 100%; 
+	height: 68px;
+}
+.question-list-picture { 
+	width: 60px;
+	float: left; 
+}
+
+.question-list-side-body { 
+	width: 68% ;
+	float: left; 
+}
+
+.question-list-username { 
+	width:100%;
+	color: gray;
+	
+}
+
+.question-list-tagline { 
+	width: 100%;
+
+}
+
 
 .container-navbar { 
 	height: 59px; }
