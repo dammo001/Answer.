@@ -8,7 +8,12 @@
   <h4 class="title-sign-in">The place to go for answers... period.</h4> 
   <button type="button" class="btn btn-primary btn-lg" id="sign-in" data-toggle="modal" data-target="#SignIn">Sign in</button>
   <button type="button" class="btn btn-primary btn-lg" id="sign-up" data-toggle="modal" data-target="#SignUp">Sign up</button>
-  <button type="button" class="btn btn-primary btn-lg" id="guest-login">Guest Login</button> 
+  <form action="<%= session_url %>" method="post"> 
+    <%= auth_token_input %> 
+    <input type="hidden" name="user[username]" value="guest">
+    <input type="hidden" name="user[password]" value="password"> 
+    <button class="btn btn-primary btn-lg" id="guest-login" type="submit" value="Guest Login">Guest Login</button>
+  </form> 
 </div> 
 
   <div class="modal fade" id="SignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
