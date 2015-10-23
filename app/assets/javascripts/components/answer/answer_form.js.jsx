@@ -33,12 +33,19 @@ var AnswerForm = React.createClass({
     this.setState({ open: !this.state.open });
   },
 
-  	submit: function(event) {
+  clear: function(){
+    this.setState({ 
+      open: !this.state.open,
+      body: ""
+    });
+  },
+
+  submit: function(event) {
 	    event.preventDefault();
 	    var body = this.state.body;
 	    var answer = { answer: { body: body, question_id: this.props.questionId}};
 	    ApiUtil.Answer.createAnswer(answer); 
-      this.change();
+      this.clear(); 
 	},
 
   render: function() {

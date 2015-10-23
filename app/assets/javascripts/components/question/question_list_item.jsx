@@ -41,6 +41,14 @@ QuestionListItem = React.createClass({
 			comments = ""; 
 		}
 
+		var tagline; 
+
+		if (this.props.question.author.tagline){
+			tagline = this.props.question.author.tagline; 
+		} else {
+			tagline = "user-tagline"
+		}
+
 
 		return (
 			<li className="question-item"> 
@@ -52,7 +60,7 @@ QuestionListItem = React.createClass({
 					</div>
 					<div className="question-list-side-body"> 
 						<div className="question-list-username"> 
-							<span className="author-name"> {this.props.question.author.name} </span> , <span className="author-tagline"> user-tagline </span> 
+							<span className="author-name"> {this.props.question.author.name} </span> , <span className="author-tagline"> {tagline} </span> 
 						</div> 
 						<div className="question-list-time">
 							asked {jQuery.timeago(this.props.question.updated_at)}

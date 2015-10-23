@@ -1,6 +1,6 @@
 json.extract!(
 	user, 
-	:username, :created_at, :updated_at, :picture_url, :id
+	:username, :created_at, :updated_at, :picture_url, :id, :email, :bio, :tagline, :display_name  
 )
 
 

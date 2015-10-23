@@ -377,7 +377,7 @@ p.question-list-details {
 .question-list-username { 
 	width:100%;
 	color: black; 
-	
+
 	
 }
 
@@ -385,8 +385,41 @@ p.question-list-details {
 	width: 100%;
 	color: gray;
 	font-style: italic; 
+}
+
+.profile-body { 
+	height: 100%;
+	width: 70%; 
+	float: left; 
+}
+
+.profile-other-details { 
 
 
+}
+.profile-header { 
+	height: 10%; 
+	width: 100%;
+}
+
+.profile-picture { 
+	position:relative; 
+	height: 50% ;
+	width: 30%;
+	float: left;
+}
+.profile-information {
+	width: 30%; 
+	float: left;
+	height: 50%;
+	position: relative;
+}
+
+.profile-other-details { 
+	width: 70%; 
+	float: right; 
+	height: 100%; 
+	position: relative;
 }
 
 
