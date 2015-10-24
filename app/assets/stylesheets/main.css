@@ -330,10 +330,10 @@ top: 90px;
 .profile-container {
     position: relative;
 
-    height: 100px;
+    height: 100%;
     top: 70px;
-    width: 600px;
-    left: 304px;
+    width: 70%;
+    left: 27%
 }
 
 
@@ -397,6 +397,11 @@ p.question-list-details {
 
 
 }
+
+img.profile-picture{
+	max-height: 100%;
+	max-width: 100%;
+}
 .profile-header { 
 	height: 10%; 
 	width: 100%;
@@ -421,6 +426,17 @@ p.question-list-details {
 	height: 100%; 
 }
 
+.profile-statistics { 
+	width: 50%;
+	height: 100%;
+	float: right; 
+}
+h2.profile-statistics { 
+border-bottom: 1px solid black; 
+width: 80%
+text-align: center;
+
+}
 
 
 

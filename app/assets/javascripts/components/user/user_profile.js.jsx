@@ -24,33 +24,64 @@ UserProfile = React.createClass({
 	},
 
 	render: function(){
+		var picture_url; 
+		var bio;
+		var tagline; 
+		var created_at;
+		var display_name; 
+		var update_user
+
+		if (this.state.user){
+			picture_url = this.state.user.picture_url; 
+			bio = this.state.user.bio;
+			tagline = this.state.user.tagline;
+			created_at = this.state.user.created_at;
+			display_name = this.state.user.display_name;
+			update_user = <UpdateUser user={this.state.user}/> 
+		} else { 
+			picture_url = "";
+			bio = "";
+			tagline = "";
+			created_at = "";
+			display_name = ""; 
+			update_user = "" 
+		}
+
 
 		return (
-			<div className="profile-container">
+			<div className="profile-container clearfix">
 				<div className="profile-header"> 
 				</div> 
 				<div className="profile-body"> 
 					<div className="profile-left-div">
 						<div className="profile-picture"> 
-							<image src={UserStore.all().picture_url}> </image>
+							<image className="profile-picture" src={picture_url}> </image>
 							<div className="profile-upload-widget"> <a href="/#/addpicture" id="upload_widget_opener">Upload image</a> </div> 
 						</div> 
 						<div className="profile-information">
 							<div className="profile-biography"> 
-								Biography: {this.state.user.bio} 
+								Biography: {bio} 
 							</div> 
 							<div className="profile-other-details"> 
-								Tagline: {this.state.user.tagline}
-								Display name: {this.state.user.display_name}
-								User since:  {jQuery.timeago(this.state.user.created_at)}
-								Update your information: <UpdateUser user={this.state.user} /> 
+								Tagline: {tagline}<br/> 
+								Display name: {display_name}<br/> 
+								User since:  {jQuery.timeago(created_at)}<br/> 
+								Update your information: {update_user}
 							</div> 
 						</div> 
 					</div> 
 					<div className="profile-statistics"> 
-						<h2 className="profile-statistics"> 
+						<div className="profile-statistics-header"> 
 							Your History 
-						</h2> 
+						</div> 
+						<div className="profile-statistics-body">
+							Questions you have asked:   <br/> 
+							Answers you have written: <br/> 
+							Users following you: <br/> 
+							Users you are following: 
+						</div> 
+						<div className="profile-statistics-footer">
+						</div> 
 					</div> 
 				</div> 
 				<div className="profile-footer"> 
