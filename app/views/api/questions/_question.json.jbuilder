@@ -28,6 +28,11 @@ json.author do
 end
 
 
+json.upvotes do 
+	json.array!(question.upvotes.map {|upvote| upvote.value}) 
+end
+
+
 unless question.answers.empty?  
 	json.answer question.answers.first.body 
 end

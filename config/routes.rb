@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :questions
     resources :tags, only: [:index, :create]
     resources :answers, only: [:update, :create, :destroy] 
+    resources :question_upvotes, only: [:create, :destroy] 
   end
   
 
