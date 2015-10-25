@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
 	foreign_key: :user_id,
 	primary_key: :id 
 
+	has_many :voted_questions, through: :q_upvotes, source: :question 
+
 	after_initialize :ensure_session_token
 
 	def self.find_by_credentials(username, password)

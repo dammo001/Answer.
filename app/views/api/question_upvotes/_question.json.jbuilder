@@ -27,10 +27,12 @@ json.author do
 	json.display_name question.author.display_name 
 end
 
-
 json.upvotes do 
 	json.array!(question.upvotes.map {|upvote| upvote.value}) 
 end
+
+
+json.set! :isVoted, question.voters.include?(current_user) 
 
 
 unless question.answers.empty?  

@@ -13,9 +13,11 @@ class Api::QuestionUpvotesController < ApplicationController
 	end
 
 	def destroy 
-		@upvote = QuestionUpvote.find(params[:upvote][:id])
-		@upvote.destroy 
-		@question = Question.find(params[:upvote][:q_id])
+		user_id = current_user.id
+		question_id = params[:upvote][:id]
+		@upvote = QuestionUpvote.where(user_id: user_id, question_id: question_id)
+		@upvote.destroy(@upvote.first.id)
+		@question = Question.find(question_id)
 		render template: "api/questions/show" 
 	end
 

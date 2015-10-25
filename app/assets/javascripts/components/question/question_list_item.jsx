@@ -9,15 +9,15 @@ QuestionListItem = React.createClass({
 		window.scrollTo(0,0); 
 	},
 
-	upvote: function(){
-		params = {upvote: {id: this.props.question.id, value: 1 }};
-		ApiUtil.Upvote.voteQuestion(params); 
+	vote: function(value){
+		params = {upvote: {id: this.props.question.id, value: value }};
+		if (this.props.question.isVoted){
+			ApiUtil.Upvote.unVoteQuestion(params);
+		} else { 
+			ApiUtil.Upvote.voteQuestion(params); 
+		}
 	},
 
-	downvote: function(){
-		params = {upvote: {id: this.props.question.id, value: -1 }};
-		ApiUtil.Upvote.voteQuestion(params); 
-	},
 	render: function(){
 		var voteTally = 0;
 		if (this.props.question && this.props.question.upvotes){
@@ -25,8 +25,6 @@ QuestionListItem = React.createClass({
 				voteTally += value; 
 			});
 		}
-
-
 		var tagNames; 
 		if (this.props.question.tags){ 
 			tagNames = (
@@ -85,8 +83,8 @@ QuestionListItem = React.createClass({
 				</div> 
 			 	<div className="answer-teaser"> {this.props.question.body} </div>
 			 	<ul className="question-options">  
-			 		<li className="question-options"> <button onClick={this.upvote} type="button" id="vote" className="btn btn-default btn-sm upvote-btn">Upvote | {voteTally} </button> </li>
-			 		<li className="question-options"> <button onClick={this.downvote} type="button" id="vote" className="btn btn-default btn-sm upvote-btn">Downvote</button>  </li>
+			 		<li className="question-options"> <button onClick={this.vote.bind(null, 1)} type="button" id="vote" className="btn btn-default btn-sm upvote-btn">Upvote | {voteTally} </button> </li>
+			 		<li className="question-options"> <button onClick={this.vote.bind(null, -1)} type="button" id="vote" className="btn btn-default btn-sm upvote-btn">Downvote</button>  </li>
 			 		<li className="question-options"> <CommentForm questionId={this.props.question.id} /></li>
 			 		<li className="question-options"> {comments} </li>  
 		 		</ul> 

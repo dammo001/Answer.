@@ -13,6 +13,7 @@ class Question < ActiveRecord::Base
 	class_name: "QuestionUpvote",
 	foreign_key: :question_id,
 	primary_key: :id 
+	has_many :voters, through: :upvotes, source: :user  
 
 	def self.find_by_substring(str)
 		Question.limit(5).where("LOWER(title) LIKE '%#{str.downcase}%'")
