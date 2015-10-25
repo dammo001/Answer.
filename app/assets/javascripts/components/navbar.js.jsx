@@ -1,16 +1,35 @@
 var NavbarLeftMenuBar=React.createClass({
-render: function() {
-    return(<ul className="nav navbar-nav">
-                <li><a data-toggle="modal" href="#myModal" id="help">Help</a></li>
-                <li> <a href="" className="dropdown-toggle" data-toggle="dropdown">UserName<b className="caret"></b></a>
-                    <ul className="dropdown-menu">
-                        <li><a href="">Profile</a></li>
-                        <li><a href="">Settings</a></li>
-                        <li><a href="">History </a></li>
-                    </ul>
-                </li>
-           </ul>);
-}
+
+  getInitialState: function(){
+    return ({
+      username: ""
+    });
+  },
+
+  componentDidMount: function(){
+    UserStore.addChangeHandler(this.change);
+  },
+
+
+  change: function(){
+    this.setState({
+      username: UserStore.all().username
+    });
+  },
+
+  render: function() {
+
+      return(<ul className="nav navbar-nav">
+                  <li><a data-toggle="modal" href="#myModal" id="help">Help</a></li>
+                  <li> <a href="" className="dropdown-toggle" data-toggle="dropdown">{this.state.username}<b className="caret"></b></a>
+                      <ul className="dropdown-menu">
+                          <li><a href="">Profile</a></li>
+                          <li><a href="">Settings</a></li>
+                          <li><a href="">History </a></li>
+                      </ul>
+                  </li>
+             </ul>);
+  }
 });
 
 

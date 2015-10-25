@@ -66,7 +66,7 @@ UserProfile = React.createClass({
 								Tagline: {tagline}<br/> 
 								Display name: {display_name}<br/> 
 								User since:  {jQuery.timeago(created_at)}<br/> 
-								Update your information: {update_user}
+								{update_user}
 							</div> 
 						</div> 
 					</div> 
