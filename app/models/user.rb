@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
 	has_many :user_tags
 	has_many :tags, through: :user_tags, source: :tag
 	has_many :comments 
+	has_many :q_upvotes,
+	class_name: "QuestionUpvote",
+	foreign_key: :user_id,
+	primary_key: :id 
 
 	after_initialize :ensure_session_token
 

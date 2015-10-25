@@ -9,6 +9,10 @@ class Question < ActiveRecord::Base
 
 	has_many :taggings
 	has_many :tags, through: :taggings
+	has_many :upvotes,
+	class_name: "QuestionUpvote",
+	foreign_key: :question_id,
+	primary_key: :id 
 
 	def self.find_by_substring(str)
 		Question.limit(5).where("LOWER(title) LIKE '%#{str.downcase}%'")
