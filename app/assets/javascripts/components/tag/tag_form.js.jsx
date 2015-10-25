@@ -72,7 +72,6 @@ TagForm = React.createClass({
 		if (Object.keys(this.state.tags)){
 			tagsAll = (
 				Object.keys(this.state.tags).map(function(tag, idx){
-					
 					return (
 						<TagListItem key={idx} tag={tag} value={that.state.tags[tag]} toggle={that.toggle}/> 
 						 )
@@ -80,7 +79,7 @@ TagForm = React.createClass({
 		} else { 
 			tagsAll = <div/>
 		}
-
+		
 		return(
 	    	<div> 
 		        <Button
