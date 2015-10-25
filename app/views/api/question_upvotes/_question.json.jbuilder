@@ -4,12 +4,7 @@ json.extract!(
 )
 
 json.tags do 
-	json.array!(question.tags) do |tag|
-		json.extract!(
-			tag,
-				:name
-		)
-	end
+	json.array!(question.tags.map {|tag| tag.name})
 end
 
 json.comments do 
@@ -27,7 +22,8 @@ end
 
 json.author do 
 	json.name question.author.username
-	json.picture question.author.picture_url 
+	json.picture question.author.picture_url
+	json.tagline question.author.tagline 
 	json.display_name question.author.display_name 
 end
 
@@ -35,7 +31,6 @@ end
 json.upvotes do 
 	json.array!(question.upvotes.map {|upvote| upvote.value}) 
 end
-
 
 
 unless question.answers.empty?  
