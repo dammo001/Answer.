@@ -29,7 +29,7 @@ UserProfile = React.createClass({
 		var tagline; 
 		var created_at;
 		var display_name; 
-		var update_user
+		var update_user;
 
 		if (this.state.user){
 			picture_url = this.state.user.picture_url; 
