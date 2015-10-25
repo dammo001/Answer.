@@ -19,5 +19,27 @@ ApiUtil.Upvote = {
 				ApiActions.setComment(question);
 			}
 		});
+	},
+
+	voteAnswer: function(params){ 
+		$.ajax({
+			url: "/api/answer_upvotes",
+			type: "POST",
+			data: params,
+			success: function (answer){
+				ApiActions.setComment(answer);
+			}
+		});
+	},
+
+	unVoteAnswer: function(params){
+		$.ajax({
+			url: "/api/answer_upvotes",
+			type: "GET",
+			data: params,
+			success: function (answer){
+				ApiActions.setComment(answer);
+			}
+		});
 	}
 };

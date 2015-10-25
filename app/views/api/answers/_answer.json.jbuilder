@@ -15,6 +15,13 @@ json.comments do
 	end
 end
 
+json.upvotes do 
+	json.array!(answer.upvotes.map {|upvote| upvote.value}) 
+end
+
+
+json.set! :isVoted, answer.voters.include?(current_user) 
+
 
 
 json.author do 

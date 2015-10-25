@@ -480,7 +480,10 @@ margin-top: 15px;
 	
 	color: #3E88BC; 
 }
-
+span.vote-tally { 
+	margin-left: 2px;
+	margin-right: 2px;
+}
 div.body-header { 
 	position: absolute;
     right: 49%;

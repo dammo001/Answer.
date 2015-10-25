@@ -68,7 +68,7 @@ QuestionListItem = React.createClass({
 				</div> 
 			 	<div className="answer-teaser"> {this.props.question.body} </div>
 			 	<ul className="question-options">  
-			 		<li className="question-options"> <Upvote question={this.props.question}/> </li> 
+			 		<li className="question-options"> <QuestionUpvote question={this.props.question}/> </li> 
 			 		<li className="question-options"> <CommentForm questionId={this.props.question.id} /></li>
 			 		<li className="question-options"> {comments} </li>  
 		 		</ul> 

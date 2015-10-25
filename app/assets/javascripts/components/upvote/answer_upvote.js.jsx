@@ -1,4 +1,4 @@
-Upvote = React.createClass({
+AnswerUpvote = React.createClass({
 
 	getInitialState: function(){
 		return({
@@ -8,18 +8,18 @@ Upvote = React.createClass({
 	},
 
 	vote: function(value){
-		params = {upvote: {id: this.props.question.id, value: value }};
-		if (this.props.question.isVoted){
-			ApiUtil.Upvote.unVoteQuestion(params);
+		params = {upvote: {id: this.props.answer.id, value: value, q_id: this.props.questionId}};
+		if (this.props.answer.isVoted){
+			ApiUtil.Upvote.unVoteAnswer(params);
 		} else { 
-			ApiUtil.Upvote.voteQuestion(params); 
+			ApiUtil.Upvote.voteAnswer(params); 
 		}
 	},
 	
 	render: function(){
 		var voteTally = 0;
-		if (this.props.question && this.props.question.upvotes){
-			this.props.question.upvotes.forEach(function(value){
+		if (this.props.answer && this.props.answer.upvotes){
+			this.props.answer.upvotes.forEach(function(value){
 				voteTally += value; 
 			});
 		}

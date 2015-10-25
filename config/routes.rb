@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     resources :tags, only: [:index, :create]
     resources :answers, only: [:update, :create, :destroy] 
     resources :question_upvotes, only: [:create]
-    get 'question_upvotes/', :to => 'question_upvotes#destroy'  
+    get 'question_upvotes/', :to => 'question_upvotes#destroy' 
+    resources :answer_upvotes, only: [:create]
+    get 'answer_upvotes/', :to => 'answer_upvotes#destroy' 
   end
   
 

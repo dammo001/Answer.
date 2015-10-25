@@ -71,6 +71,9 @@ AnswerIndexItem = React.createClass({
 				</div> 
 			<div  onClick={this.show} id={this.props.answer.id}>
 			</div> 
+			<div className="answer-upvote-index">
+				<AnswerUpvote questionId={this.props.questionId} answer={this.props.answer}/>
+				</div>  
 			<CommentForm answerId={this.props.answer.id} /> 
 				{buttonDelete}{buttonEdit}
 				{comments}
