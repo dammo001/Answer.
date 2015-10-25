@@ -481,6 +481,17 @@ margin-top: 15px;
 	color: #3E88BC; 
 }
 
+div.body-header { 
+	position: absolute;
+    right: 49%;
+    bottom: 48%;
+}
+
+.question-form-tag-submit { 
+    position: absolute;
+    top: 80%;
+    left: 83%;
+    }
 #add-comment { 
     background-color: white;
     color: #6F99D2;
@@ -525,7 +536,7 @@ html, body {
 }
 
 div .panel-default{
-	border-color: white; 
+	border: none; 
 }
 
 .answer-list {
@@ -540,7 +551,9 @@ div .panel-default{
 .comment-list-panel {
 	display: inline-block;
 }
-
+.question-modal { 
+	position: relative; 
+}
 #content{
 	height: 100%;
 }

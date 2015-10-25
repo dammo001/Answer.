@@ -71,7 +71,7 @@ QuestionModalTags = React.createClass({
 					<ul>  
 						{tagsAll} 
 					</ul> 
-					<Button onClick={this.send}  bsStyle="primary" bsSize="large" type="submit"> Submit</Button>   
+					<Button onClick={this.send} className="question-form-tag-submit" bsStyle="primary" bsSize="medium" type="submit"> Submit</Button>   
 				</div> 
 			</div> )
 	}

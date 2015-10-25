@@ -79,7 +79,7 @@ TagForm = React.createClass({
 		} else { 
 			tagsAll = <div/>
 		}
-		
+
 		return(
 	    	<div> 
 		        <Button
@@ -88,7 +88,7 @@ TagForm = React.createClass({
 		        id="main-tags-button"
 		        onClick={this.open}
 		        id="right-nav-button"
-		        ><span className="glyphicon glyphicon-edit"/>Edit Tags
+		        ><span className="glyphicon glyphicon-edit"/>&nbsp; Edit Tags
 		        </Button> 
 		        <Modal show={this.state.showModal} onHide={this.close}>
 			        <Modal.Header closeButton> 

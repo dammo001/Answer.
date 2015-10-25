@@ -1,6 +1,7 @@
 var Modal = ReactBootstrap.Modal;
 var Button = ReactBootstrap.Button; 
 var Panel = ReactBootstrap.Panel; 
+var Input = ReactBootstrap.Input; 
 
 var AskQuestion = React.createClass({ 
 
@@ -53,20 +54,21 @@ var AskQuestion = React.createClass({
         id="right-nav-button"
         > New Question
         </Button> 
-        <Modal show={this.state.showModal} onHide={this.close}>
+        <Modal className="question-modal" show={this.state.showModal} onHide={this.close}>
         <Modal.Header closeButton> 
           <Modal.Title>Ask a New Question!</Modal.Title> 
         </Modal.Header> 
           <Modal.Body>
-            Title: <input type="text" placeholder="Title" onChange={this.changeTitle} value={this.state.title}/><br/>
-            Body: <textarea placeholder="What's your question?" onChange={this.changeBody} value={this.state.body} name="body"/><br/> 
+            Title: <Input type="text" placeholder="Title" onChange={this.changeTitle} value={this.state.title}/>
+            Extra Details: <Input type="textarea" placeholder="Supply additional context for your question" onChange={this.changeBody} value={this.state.body} name="body"/>
             <Panel> 
+              <div className="body-header"> 
+              What topics is your question associated with? 
+              </div> 
               <QuestionModalTags title={this.state.title} body={this.state.body} close={this.close}/> 
+
             </Panel> 
           </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={this.close}>Close</Button>
-        </Modal.Footer>
         </Modal> 
       </div>  
       )
