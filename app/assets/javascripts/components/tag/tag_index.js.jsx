@@ -49,9 +49,7 @@ TagIndex = React.createClass({
 					</ul>
 				</div> 
 				<div className="sidebar-footer">
-					<button onClick={this.addTags} type="button" className="btn btn-default add-tags-btn" id="main-tags-button">
-					Edit Tags   <span className="glyphicon glyphicon-edit"/> 
-					</button> 
+					<TagForm/>    
 				</div> 
 			</div>
 			)

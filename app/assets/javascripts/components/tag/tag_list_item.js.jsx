@@ -2,7 +2,7 @@ TagListItem = React.createClass({
 
 	getInitialState: function(){ 
 		return ({
-			checked: false 
+			checked: this.props.value 
 		});
 	},
 

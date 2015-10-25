@@ -1,4 +1,6 @@
-var Button = ReactBootstrap.Button;
+var Modal = ReactBootstrap.Modal;
+var Button = ReactBootstrap.Button; 
+var Panel = ReactBootstrap.Panel; 
 
 TagForm = React.createClass({ 
 	mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
@@ -8,8 +10,19 @@ TagForm = React.createClass({
 		TagStore.all() && TagStore.all().forEach(function(tag){
 			 (tags[tag] = false);
 		});
-		return ({ tags: tags }); 
+		return ({ 
+			tags: tags,
+			showModal: false
+			}); 
 	},
+
+	close: function(){
+    this.setState({ showModal: false });
+  	},
+
+  	open: function(){
+    this.setState({ showModal: true }); 
+  	},
 
 	componentDidMount: function(){ 
 		ApiUtil.Tag.getTags();
@@ -21,9 +34,12 @@ TagForm = React.createClass({
 	},
 
 	change: function(){
-		var tags = {};
+		var tags = {}; 
+		userTags && userTags.forEach(function(userTag){
+			tags[userTag] = true;
+		});
 		TagStore.all() && TagStore.all().forEach(function(tag){
-			 (tags[tag] = false);
+			 if (tags[tag] !== true){tags[tag] = false;}
 		});
 		this.setState({tags: tags });
 	},
@@ -37,7 +53,7 @@ TagForm = React.createClass({
 			}
 		}
 		ApiUtil.Tag.updateUserTags(tagParams);
-		this.history.pushState(null, "/"); 
+		this.close(); 
 	},
 
 
@@ -46,6 +62,7 @@ TagForm = React.createClass({
 		var tags = this.state.tags;
 		tags[key] = !tags[key]; 
 		this.setState({ tags: tags });
+		console.log(this.state.tags);
 	},
 
 	render: function(){
@@ -64,14 +81,30 @@ TagForm = React.createClass({
 			tagsAll = <div/>
 		}
 
-		return (
-			<div className="container tags-container" onSubmit={this.send}> 
-				<form className="tags-list-form">
-					<ul>  
-						{tagsAll} 
-					</ul> 
-					<Button bsStyle="primary" bsSize="large" type="submit"> Submit</Button>   
-				</form> 
-			</div> )
+		return(
+	    	<div> 
+		        <Button
+		        bsStyle="primary"
+		        className="btn btn-default add-tags-btn navbar-btn pull-left"
+		        id="main-tags-button"
+		        onClick={this.open}
+		        id="right-nav-button"
+		        ><span className="glyphicon glyphicon-edit"/>Edit Tags
+		        </Button> 
+		        <Modal show={this.state.showModal} onHide={this.close}>
+			        <Modal.Header closeButton> 
+			          <Modal.Title>What Topics are you interested in Today?</Modal.Title> 
+			        </Modal.Header> 
+			          <Modal.Body>
+			            <Panel> 
+			              {tagsAll}
+			            </Panel> 
+			          </Modal.Body>
+			        <Modal.Footer>
+			          <Button onClick={this.send}>Submit your tags</Button>
+			        </Modal.Footer>
+		        </Modal> 
+	     	</div>  
+      )
 	}
 })
