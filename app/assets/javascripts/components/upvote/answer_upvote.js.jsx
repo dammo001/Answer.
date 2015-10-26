@@ -8,7 +8,7 @@ AnswerUpvote = React.createClass({
 	},
 
 	vote: function(value){
-		params = {upvote: {id: this.props.answer.id, value: value, q_id: this.props.questionId}};
+		params = {upvote: {id: this.props.answer.id, value: value, q_id: this.props.question}};
 		if (this.props.answer.isVoted){
 			ApiUtil.Upvote.unVoteAnswer(params);
 		} else { 
