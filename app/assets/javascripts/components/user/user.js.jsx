@@ -12,6 +12,10 @@ ShowUser = React.createClass({
 		ApiUtil.User.fetchUser(window.CURRENT_USER_ID); 
 	},
 
+	componentWillUnmount: function(){
+		UserStore.removeChangeHandler(this.change);
+	},
+
 	change: function(){ 
 		this.setState({user: UserStore.user()});
 	},

@@ -33,6 +33,13 @@ TagForm = React.createClass({
 		TagStore.removeChangeHandler(this.change);
 	},
 
+
+	getQuestions: function(){
+		var tags;
+		tags = UserStore.user() ? UserStore.user().tags : userTags;
+		ApiUtil.Question.fetchQuestionsByTag(tags);
+	},
+
 	change: function(){
 		var tags = {}; 
 		userTags && userTags.forEach(function(userTag){
@@ -89,6 +96,14 @@ TagForm = React.createClass({
 		        onClick={this.open}
 		        id="right-nav-button"
 		        ><span className="glyphicon glyphicon-edit"/>&nbsp; Edit Tags
+		        </Button> 
+		        <Button
+		        bsStyle="primary"
+		        className="btn btn-default add-tags-btn navbar-btn pull-left"
+		        id="get-questions-button"
+		        onClick={this.getQuestions}
+		        id="right-nav-button"
+		        >&nbsp; All Questions
 		        </Button> 
 		        <Modal show={this.state.showModal} onHide={this.close}>
 			        <Modal.Header closeButton> 

@@ -12,6 +12,10 @@ UserProfile = React.createClass({
 		UserStore.addChangeHandler(this.change);
 	},
 
+	componentWillUnmount: function(){
+		UserStore.removeChangeHandler(this.change);
+	},
+
 	change: function(){
 		
 		this.setState({ 
@@ -21,8 +25,7 @@ UserProfile = React.createClass({
 
 	componentDidUpdate: function(){
 		$('#upload_widget_opener').cloudinary_upload_widget(
-		    { cloud_name: 'djp2nuknn', upload_preset: 'rmy5aved', 
-		      cropping: 'server', 'folder': 'user_photos' },
+		    { cloud_name: 'djp2nuknn', upload_preset: 'rmy5aved', theme: 'minimal', cropping: 'server', 'folder': 'user_photos' },
 		    function(error, result) { 
 		    	if (!error){
 		    	ApiUtil.User.updateUser({user: {id: UserStore.show().id , picture_url: result[0].url}});} 

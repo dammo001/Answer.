@@ -37,7 +37,6 @@ json.upvotes do
 end
 
 
-
 unless question.answers.empty?  
 	json.answer question.answers.first.body 
 end

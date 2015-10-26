@@ -11,7 +11,7 @@ Footer = React.createClass({
 				<p className="footer-links">
 					<a href="">Home</a>&nbsp; 
 					<a href="http://dammo001.tumblr.com/">Blog</a>&nbsp;
-					<a href="">	Contact</a>
+					<a href="mailto:dammo001@gmail.com">Contact</a>
 				</p>
 			</div>
 		</footer> 

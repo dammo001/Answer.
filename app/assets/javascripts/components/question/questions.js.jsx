@@ -21,7 +21,6 @@ Questions = React.createClass({
 		var tags;
 		tags = UserStore.user() ? UserStore.user().tags : userTags;
 		ApiUtil.Question.fetchQuestionsByTag(tags); 
-		
 	},
 
 	setQuestions: function(){
