@@ -1,6 +1,7 @@
 var Modal = ReactBootstrap.Modal;
 var Button = ReactBootstrap.Button; 
 var Panel = ReactBootstrap.Panel; 
+var Input = ReactBootstrap.Input; 
 
 var UpdateUser = React.createClass({ 
 
@@ -59,10 +60,10 @@ var UpdateUser = React.createClass({
           <Modal.Title>Update Your Information</Modal.Title> 
         </Modal.Header> 
           <Modal.Body>
-            Name: <input type="text" placeholder="Name" onChange={this.changeName} value={this.state.display_name}/><br/>
-            E-mail: <input type="text" placeholder="E-mail" onChange={this.changeEmail} value={this.state.email}/><br/>
-            Tagline: <input type="text" placeholder="Tagline" onChange={this.changeTagline} value={this.state.tagline}/><br/>
-            Biography: <textarea placeholder="Tell people a little about yourself" onChange={this.changeBio} value={this.state.bio} name="bio"/><br/> 
+            Name: <Input type="text" placeholder="Name" onChange={this.changeName} value={this.state.display_name}/>
+            E-mail: <Input type="text" placeholder="E-mail" onChange={this.changeEmail} value={this.state.email}/>
+            Tagline: <Input type="text" placeholder="Tagline" onChange={this.changeTagline} value={this.state.tagline}/>
+            Biography: <Input type="textarea" placeholder="Tell people a little about yourself" onChange={this.changeBio} value={this.state.bio} name="bio"/>
           </Modal.Body>
         <Modal.Footer>
           <Button onClick={this.updateUser}>Update Info</Button> <Button onClick={this.close}>Close</Button>

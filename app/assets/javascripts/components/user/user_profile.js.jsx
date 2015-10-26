@@ -72,10 +72,12 @@ UserProfile = React.createClass({
 					</div> 
 					<div className="profile-statistics"> 
 						<div className="profile-statistics-header"> 
-							Your History 
+							<h2>Your History </h2> 
 						</div> 
 						<div className="profile-statistics-body">
-							Questions you have asked:   <br/> 
+							<div className="user-profile-questions"> 
+								Questions you have asked:   <br/> 
+							</div> 
 							Answers you have written: <br/> 
 							Users following you: <br/> 
 							Users you are following: 
