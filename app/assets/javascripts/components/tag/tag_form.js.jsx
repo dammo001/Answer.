@@ -35,6 +35,7 @@ TagForm = React.createClass({
 
 
 	getQuestions: function(){
+		this.history.pushState(null, "/");
 		var tags;
 		tags = UserStore.user() ? UserStore.user().tags : userTags;
 		ApiUtil.Question.fetchQuestionsByTag(tags);
