@@ -51,7 +51,7 @@ var AnswerForm = React.createClass({
 
   render: function() {
     return (
-      <div> 
+      <div id="answer-form"> 
         <Button onClick={this.change}> Answer this Question </Button>  
         <Panel id="panel-clear" collapsible expanded={this.state.open}> 
           <div className="quill-wrapper">
@@ -75,13 +75,7 @@ var AnswerForm = React.createClass({
                   <span className="ql-format-separator"></span>
                   <span title="Strikethrough" className="ql-format-button ql-strike"></span>
                 </span>
-
-            		<span className="ql-format-group">
-            			<span title="List" className="ql-format-button ql-list" id="ql-list"></span>
-                  <span className="ql-format-separator"></span>
-                  <span title="Bullet" className="ql-format-button ql-bullet" id="ql-bullet"></span>
-                </span>
-
+                
                 <span className="ql-format-group">
             			<select title="Text Alignment" className="ql-align">
             				<option value="left" label="Left" defaultValue=""></option>

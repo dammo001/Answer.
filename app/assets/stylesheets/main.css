@@ -563,6 +563,14 @@ div .panel-default{
 	min-height: 100%;
 
 }
+
+#answer-form ul{
+	list-style: circle outside none;
+}
+
+#answer-form ol {
+	list-style: decimal outside none;
+}
 .comment-list-panel {
 	display: inline-block;
 }
