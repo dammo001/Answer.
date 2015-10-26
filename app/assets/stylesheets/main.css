@@ -130,8 +130,8 @@ word-wrap: break-word;
   line-height: 1.8em;
 }
 
-.question-options { 
-	display: inline-block; 
+ul.question-options { 
+	float: left; 
 }
 h1 {
 	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
@@ -311,7 +311,14 @@ h4.title-sign-in{
 #search { 
 	background: transparent;
 }
+div.question-index-comments-holder{
+	width: 100%;
+}
 
+div.question-index-comments{
+	width: 60%;
+	float: left;
+}
 .tags-container { 
 height: 500px; 
 width: 300px; 

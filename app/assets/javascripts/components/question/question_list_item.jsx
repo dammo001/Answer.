@@ -71,11 +71,14 @@ QuestionListItem = React.createClass({
 					</div> 
 				</div> 
 			 	<div className="answer-teaser"> {this.props.question.body} </div>
-			 	<ul className="question-options">  
-			 		<li className="question-options"> <QuestionUpvote question={this.props.question}/> </li> 
-			 		<li className="question-options"> <CommentForm questionId={this.props.question.id} /></li>
-			 		<li className="question-options"> {comments} </li>  
-		 		</ul> 
+				<div className="question-index-comments-holder clearfix">
+			 		<ul className="question-options">  
+				 		<li className="question-options"> <QuestionUpvote question={this.props.question}/> </li> 
+				 		<li className="question-options"> <CommentForm questionId={this.props.question.id} /></li>
+			 		</ul> 
+			 		<div className="question-index-comments"> {comments}</div> 
+			 	</div> 
+			
 			</li> 
 		)
 	}

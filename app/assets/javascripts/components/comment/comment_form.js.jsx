@@ -59,7 +59,7 @@ var CommentForm = React.createClass({
 						<Input type="textarea" value={this.state.value} onChange={this.change} placeholder="comment here"></Input> 
 					</Modal.Body> 
 					<Modal.Footer>
-						<Button bsSize="large" onClick={this.submit}> Add new comment </Button> 
+						<Button className="comment-submit-button" bsSize="medium" onClick={this.submit}> Add new comment </Button> 
 					</Modal.Footer>
 				</Modal> 
 			</div> 
