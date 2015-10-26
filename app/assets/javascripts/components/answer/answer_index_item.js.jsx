@@ -47,9 +47,9 @@ AnswerIndexItem = React.createClass({
 			comments = ""; 
 		}
 		var editButton = (
-			<button onClick={this.editAnswer}>Edit Answer</button>);
+			<Button  bsSize="small" id="add-comment" onClick={this.editAnswer}>Edit Answer</Button>);
 		var deleteButton = (
-			<button onClick={this.removeAnswer}>Delete Answer</button>);
+			<Button bsSize="small" id="add-comment" onClick={this.removeAnswer}>Delete Answer</Button>);
 		var buttonDelete; 
 		var buttonEdit;
 		var html;		

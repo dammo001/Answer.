@@ -556,6 +556,7 @@ div .panel-default{
 .answer-list {
 	min-height: 100%;
 	width: 80%;
+	margin-left: 3%;
 
 }
 #content-wrapper {
