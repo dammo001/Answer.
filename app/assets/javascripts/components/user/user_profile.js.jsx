@@ -38,13 +38,17 @@ UserProfile = React.createClass({
 			tagline = this.state.user.tagline;
 			created_at = this.state.user.created_at;
 			display_name = this.state.user.display_name;
-			update_user = <UpdateUser user={this.state.user}/> 
 		} else { 
 			picture_url = "";
 			bio = "";
 			tagline = "";
 			created_at = "";
 			display_name = ""; 
+		}
+
+		if (this.state.user && (parseInt(this.props.params.userId) === UserStore.user().id )){
+			update_user = <UpdateUser user={this.state.user}/>;
+		} else {
 			update_user = "" 
 		}
 

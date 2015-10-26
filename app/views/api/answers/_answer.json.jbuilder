@@ -25,6 +25,7 @@ json.set! :isVoted, answer.voters.include?(current_user)
 
 
 json.author do 
+	json.id answer.author.id 
 	json.name answer.author.username
 	json.picture answer.author.picture_url 
 	json.tagline answer.author.tagline  

@@ -7,6 +7,10 @@ AnswerIndexItem = React.createClass({
 		}
 	},
 
+	showUser: function(){
+		this.history.pushState(null, '/users/' + this.props.answer.author.id);
+	},
+
 	componentDidMount: function(){
 		var a = this.props.answer.id;
 		var b = ("#"+a);
@@ -58,7 +62,7 @@ AnswerIndexItem = React.createClass({
 			<li className="list-group-item answer-list">
 				<div className="question-list-body"> 
 					<div className="question-list-picture">
-						<img id="picture-image-index" src={this.props.answer.author.picture}/>
+						<img onClick={this.showUser} id="picture-image-index" src={this.props.answer.author.picture}/>
 					</div>
 					<div className="question-list-side-body"> 
 						<div className="question-list-username"> 
