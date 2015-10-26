@@ -9,6 +9,10 @@ QuestionListItem = React.createClass({
 		window.scrollTo(0,0); 
 	},
 
+	showUser: function(){
+		this.history.pushState(null, '/users/' + this.props.question.author.id);
+	},
+
 	render: function(){
 		var tagNames; 
 		if (this.props.question.tags){ 
@@ -55,7 +59,7 @@ QuestionListItem = React.createClass({
 				<h3 className="question-list-title" onClick={this.showQuestion}>{this.props.question.title}</h3>
 				<div className="question-list-body"> 
 					<div className="question-list-picture">
-						<img id="picture-image-index" src={this.props.question.author.picture}/>
+						<img onClick={this.showUser} id="picture-image-index" src={this.props.question.author.picture}/>
 					</div>
 					<div className="question-list-side-body"> 
 						<div className="question-list-username"> 

@@ -24,6 +24,7 @@ json.author do
 	json.name question.author.username
 	json.picture question.author.picture_url
 	json.tagline question.author.tagline 
+	json.id question.author.id
 	json.display_name question.author.display_name 
 end
 

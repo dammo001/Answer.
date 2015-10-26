@@ -13,7 +13,7 @@ var NavbarLeftMenuBar=React.createClass({
 
   change: function(){
     this.setState({
-      username: UserStore.all().username
+      username: UserStore.user().username
     });
   },
 

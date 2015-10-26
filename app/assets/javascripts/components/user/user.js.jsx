@@ -3,7 +3,7 @@ ShowUser = React.createClass({
 
 	getInitialState: function(){
 		return ({
-			user: UserStore.all()
+			user: UserStore.user()
 		});
 	},
 
@@ -13,11 +13,11 @@ ShowUser = React.createClass({
 	},
 
 	change: function(){ 
-		this.setState({user: UserStore.all()});
+		this.setState({user: UserStore.user()});
 	},
 
 	showProfile: function(){
-		this.history.pushState(null, "/users"); 
+		this.history.pushState(null, "/users/"+ this.state.user.id); 
 	},
 
 	render: function(){

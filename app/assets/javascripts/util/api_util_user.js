@@ -9,6 +9,16 @@ ApiUtil.User = {
 		});
 	},
 
+	showUser: function(id){ 
+		$.ajax({
+			url: "/users/"+ id,
+			type: "GET",
+			success: function (user){
+				ApiActions.showUser(user);
+			}
+		});
+	},
+
 	updateUser: function(params){
 		$.ajax({
 			url: "/users/" + params.user.id,

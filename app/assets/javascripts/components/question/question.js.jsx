@@ -25,7 +25,7 @@ Question = React.createClass({
 	},
 
 	addAnswer: function(){ 
-		this.history.pushState(null, "questions/"+ this.state.question.id +"/answers/new")
+		this.history.pushState(null, "questions/"+ this.state.question.id +"/answers/new");
 	},
 
 	componentDidMount: function() {

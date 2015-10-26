@@ -19,7 +19,7 @@ Questions = React.createClass({
 
 	updateQuestions: function(){
 		var tags;
-		tags = UserStore.all() ? UserStore.all().tags : userTags;
+		tags = UserStore.user() ? UserStore.user().tags : userTags;
 		ApiUtil.Question.fetchQuestionsByTag(tags); 
 		
 	},

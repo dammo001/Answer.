@@ -1,13 +1,17 @@
 (function(root) {
   'use strict';
 
-  var _user = [], CHANGE_EVENT = "CHANGE", TAG_EVENT = "TAG_EVENT";
+  var _user = [], _show_user = [], CHANGE_EVENT = "CHANGE", TAG_EVENT = "TAG_EVENT";
 
 
   root.UserStore = $.extend({}, EventEmitter.prototype, {
 
-    all: function (){
+    user: function (){
       return _user.slice()[0];
+    },
+
+    show: function(){
+      return _show_user.slice()[0]; 
     },
 
     addChangeHandler: function(handler){
@@ -42,6 +46,11 @@
       case UserConstants.TAGS_UPDATED:
         _user[0].tags = action.tags;
         root.UserStore.emit(TAG_EVENT);
+        break; 
+
+      case UserConstants.SHOW_USER:
+        _show_user = [action.user]; 
+        root.UserStore.emit(CHANGE_EVENT)
         break; 
     }})
   });

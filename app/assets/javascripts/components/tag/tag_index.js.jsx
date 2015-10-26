@@ -17,7 +17,7 @@ TagIndex = React.createClass({
 
 	change: function(){
 		this.setState({
-			tags: UserStore.all().tags
+			tags: UserStore.user().tags
 		});
 	},
 

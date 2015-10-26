@@ -75,6 +75,13 @@ window.ApiActions = {
 		});
 	},
 
+	showUser: function(user){
+		AppDispatcher.dispatch({
+			actionType: UserConstants.SHOW_USER,
+			user: user
+		});
+	},
+
 	receiveUser: function(user){
 		AppDispatcher.dispatch({
 			actionType: UserConstants.USER_RECEIVED, 

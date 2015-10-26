@@ -2,24 +2,25 @@ UserProfile = React.createClass({
 
 	getInitialState: function(){
 		return ({
-			user: UserStore.all()
+			user: UserStore.show()
 		});
 	},
 
 	componentDidMount: function(){
+		ApiUtil.User.showUser(this.props.params.userId); 
 		UserStore.addChangeHandler(this.change);
 		$('#upload_widget_opener').cloudinary_upload_widget(
 		    { cloud_name: 'djp2nuknn', upload_preset: 'rmy5aved', 
 		      cropping: 'server', 'folder': 'user_photos' },
 		    function(error, result) { 
 		    	if (!error){
-		    	ApiUtil.User.updateUser({user: {id: UserStore.all().id , picture_url: result[0].url}});} 
+		    	ApiUtil.User.updateUser({user: {id: UserStore.show().id , picture_url: result[0].url}});} 
 		    });
 	},
 
 	change: function(){
 		this.setState({ 
-			user: UserStore.all()
+			user: UserStore.show()
 		});
 	},
 
