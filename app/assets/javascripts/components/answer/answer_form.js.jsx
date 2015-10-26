@@ -34,8 +34,9 @@ var AnswerForm = React.createClass({
   },
 
   clear: function(){
+    this.editor.setContents([]);
     this.setState({ 
-      open: !this.state.open,
+      open: false, 
       body: ""
     });
   },

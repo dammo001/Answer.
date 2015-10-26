@@ -38,6 +38,36 @@ UserProfile = React.createClass({
 		var update_user;
 		var answered_questions;
 		var questions; 
+		var that = this;
+		if (this.state.user){ 
+			questions = (
+				<ul> 
+				{this.state.user.questions.map(function(question, idx){
+					var id = question.id
+					return (
+						<li onClick={that.showQuestion.bind(null,id)} key={idx}> {question.title} </li> 
+						)
+				})}
+				<br/> </ul> 
+			);
+		} else { 
+			questions= ""
+		}
+
+		if (this.state.user){ 
+			answered_questions = (
+				<ul> 
+				{this.state.user.answered_questions.map(function(question, idx){
+					var id = question.id
+					return (
+						<li onClick={that.showQuestion.bind(null,id)} key={idx}> {question.title} </li> 
+						)
+				})}
+				<br/> </ul> 
+			);
+		} else { 
+			answered_questions= ""
+		}
 
 		if (this.state.user){
 			picture_url = this.state.user.picture_url; 
@@ -45,39 +75,12 @@ UserProfile = React.createClass({
 			tagline = this.state.user.tagline;
 			created_at = this.state.user.created_at;
 			display_name = this.state.user.display_name;
-			answered_questions = this.state.user.answered_questions;
-			questions = (
-				this.state.user.questions.map(function(question,idx){
-					return
-						(
-						<li key={idx}>
-							{question.title}
-						</li> 
-						);
-					})
-			); 
-			console.log(questions)
-			answered_questions = (
-			<ul> 
-			
-				{this.state.user.answered_questions.map(function(question){
-					return
-						(<li onClick={this.showQuestion(question.id)}>
-							{question.title} 
-						</li> 
-						)
-					}
-				)}
-			</ul>
-		); 
 		} else { 
 			picture_url = "";
 			bio = "";
 			tagline = "";
 			created_at = "";
 			display_name = ""; 
-			answered_questions = ""; 
-			questions = ""; 
 		}
 
 		if (this.state.user && (parseInt(this.props.params.userId) === UserStore.user().id )){
@@ -86,7 +89,6 @@ UserProfile = React.createClass({
 			update_user = "" 
 		}
 
-		debugger; 
 		return (
 			<div className="profile-container clearfix">
 				<div className="profile-header"> 
@@ -116,7 +118,7 @@ UserProfile = React.createClass({
 						<div className="profile-statistics-body">
 							<div className="user-profile-questions"> 
 								Questions you have asked: 
-								  <ul> {questions} </ul> 
+								 {questions} 
 								 <br/> 
 							</div> 
 							Questions you have answered: {answered_questions}  <br/> 
