@@ -1,4 +1,5 @@
 UserProfile = React.createClass({
+	mixins: [ReactRouter.History],
 
 	getInitialState: function(){
 		return ({
@@ -24,6 +25,10 @@ UserProfile = React.createClass({
 		});
 	},
 
+	showQuestion: function(id){
+		this.history.pushState(null, '/questions/' + id);
+	},
+
 	render: function(){
 		var picture_url; 
 		var bio;
@@ -31,6 +36,8 @@ UserProfile = React.createClass({
 		var created_at;
 		var display_name; 
 		var update_user;
+		var answered_questions;
+		var questions; 
 
 		if (this.state.user){
 			picture_url = this.state.user.picture_url; 
@@ -38,12 +45,40 @@ UserProfile = React.createClass({
 			tagline = this.state.user.tagline;
 			created_at = this.state.user.created_at;
 			display_name = this.state.user.display_name;
+			answered_questions = this.state.user.answered_questions;
+			debugger;
+			questions = (
+				this.state.user.questions.map(function(question,idx){
+					return
+						(
+						<li key={idx}>
+							{question}
+						</li> 
+						)
+					})
+			); 
+			console.log(questions)
+			answered_questions = (
+			<ul> 
+			
+				{this.state.user.answered_questions.map(function(question){
+					return
+						(<li onClick={this.showQuestion(question.id)}>
+							{question.title} 
+						</li> 
+						)
+					}
+				)}
+			</ul>
+		); 
 		} else { 
 			picture_url = "";
 			bio = "";
 			tagline = "";
 			created_at = "";
 			display_name = ""; 
+			answered_questions = ""; 
+			questions = ""; 
 		}
 
 		if (this.state.user && (parseInt(this.props.params.userId) === UserStore.user().id )){
@@ -81,9 +116,11 @@ UserProfile = React.createClass({
 						</div> 
 						<div className="profile-statistics-body">
 							<div className="user-profile-questions"> 
-								Questions you have asked:   <br/> 
+								Questions you have asked: 
+								  <ul> {questions} </ul> 
+								 <br/> 
 							</div> 
-							Answers you have written: <br/> 
+							Questions you have answered: {answered_questions}  <br/> 
 							Users following you: <br/> 
 							Users you are following: 
 						</div> 

@@ -35,7 +35,7 @@ var NavbarSearchIndex = React.createClass({
 			} 
 
 		return ( 
-			<div> 
+			<div className="search-bar-container"> 
 				<div>
 					<NavbarSearchBar/>
 				</div> 

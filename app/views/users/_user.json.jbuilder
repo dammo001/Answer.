@@ -21,6 +21,11 @@ json.answers do
 	end)
 end
 
+json.answered_questions do 
+	json.array!(user.answered_questions)
+end
+
+
 
 json.tags do 
 	json.array!(user.tags.map{|tag| tag.name})

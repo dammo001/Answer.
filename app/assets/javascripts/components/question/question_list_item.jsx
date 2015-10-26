@@ -8,7 +8,7 @@ QuestionListItem = React.createClass({
 		this.history.pushState(null, '/questions/' + this.props.question.id, {});
 		window.scrollTo(0,0); 
 	},
-
+	
 	showUser: function(){
 		this.history.pushState(null, '/users/' + this.props.question.author.id);
 	},

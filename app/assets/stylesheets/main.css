@@ -78,11 +78,7 @@ table {
 	margin-top: 5px;
 	margin-bottom: 15px ;
 }
-.search-div {
-	position: absolute; 
-	left: 345px;
-	top: 45px;
-}
+
 
 .index-question-box {
 	height: 40px; 
@@ -278,8 +274,8 @@ h4.title-sign-in{
 }
 
 #checked { 
-	background-color: black;
-	color: white; 
+	background-color: #3E88BC;
+	color: ghostwhite; 
 }
 
 #search-holder {
@@ -294,17 +290,26 @@ h4.title-sign-in{
 	margin-bottom: 0;
 	width: 300px; 
 	z-index: 500;
+	background-color: white;
+	color: black;
+	border-color: gray;
 }
 #search-list-item:hover{
-	background-color: black;
-	color: white;
+	background-color: ghostwhite;
+	color: #3E88BC;
+}
+.search-bar-container { 
+	position: relative; 
 
 }
+.search-div {
+	position: absolute; 
+	top: 45px;
+	left: 23%;
+}	
 
 #search { 
 	background: transparent;
-
-
 }
 
 .tags-container { 
