@@ -28,7 +28,7 @@ QuestionModalTags = React.createClass({
 		this.setState({tags: tags });
 	},
 
-	send: function(){
+	send: function(event){
 		event.preventDefault();
 		var tagParams = [];
 		for (var tag in this.state.tags){

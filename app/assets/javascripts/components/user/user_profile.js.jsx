@@ -46,15 +46,14 @@ UserProfile = React.createClass({
 			created_at = this.state.user.created_at;
 			display_name = this.state.user.display_name;
 			answered_questions = this.state.user.answered_questions;
-			debugger;
 			questions = (
 				this.state.user.questions.map(function(question,idx){
 					return
 						(
 						<li key={idx}>
-							{question}
+							{question.title}
 						</li> 
-						)
+						);
 					})
 			); 
 			console.log(questions)
@@ -87,7 +86,7 @@ UserProfile = React.createClass({
 			update_user = "" 
 		}
 
-
+		debugger; 
 		return (
 			<div className="profile-container clearfix">
 				<div className="profile-header"> 

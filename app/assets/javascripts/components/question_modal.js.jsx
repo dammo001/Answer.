@@ -30,11 +30,11 @@ var AskQuestion = React.createClass({
     this.close(); 
   },
 
-  changeTitle: function(){
+  changeTitle: function(event){
     this.setState({title: event.target.value});
   },
 
-  changeBody: function(){
+  changeBody: function(event){
     this.setState({body: event.target.value});
   },
 
