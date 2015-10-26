@@ -1,3 +1,7 @@
+var Modal = ReactBootstrap.Modal;
+var Button = ReactBootstrap.Button; 
+var Panel = ReactBootstrap.Panel; 
+var Input = ReactBootstrap.Input; 
 
 
 var CommentForm = React.createClass({
@@ -7,7 +11,7 @@ var CommentForm = React.createClass({
 	getInitialState: function(){
 		return ({
 			value: "",
-			open: false
+			showModal: false
 		});
 	},
 
@@ -15,10 +19,14 @@ var CommentForm = React.createClass({
 		this.setState({value: event.target.value});
 	},
 
-	flip: function(){
-		this.setState({ open: !this.state.open });
-	},
+	close: function(){
+    	this.setState({ showModal: false });
+  	},
 
+  	open: function(){
+    	this.setState({ showModal: true }); 
+  	},
+  
 
 	submit: function(event) {
 	    event.preventDefault();
@@ -32,7 +40,7 @@ var CommentForm = React.createClass({
 			commentable_type = "Question" ;
 		}
 	    var comment = { comment: { body: this.state.value , commentable_id: commentable_id, commentable_type: commentable_type }};
-	    this.flip; 
+	    this.close();
 	    ApiUtil.Comment.createComment(comment); 
 
 	},
@@ -40,15 +48,20 @@ var CommentForm = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<Button bsSize="small" id="add-comment" onClick={this.flip}>
+				<Button bsSize="small" id="add-comment" onClick={this.open}>
 					Add Comment 
 				</Button> 
-				<Panel collapsible expanded={this.state.open}> 
-					<form onSubmit={this.submit}> 
-						<textarea value={this.state.value} onChange={this.change} placeholder="comment here"></textarea> 
-						<input type="submit"> </input> 
-					</form> 
-				</Panel>
+				<Modal className="comment-modal" show={this.state.showModal} onHide={this.close}>
+					<Modal.Header closeButton>
+						<Modal.Title> Add a comment</Modal.Title> 
+					</Modal.Header> 
+					<Modal.Body>
+						<Input type="textarea" value={this.state.value} onChange={this.change} placeholder="comment here"></Input> 
+					</Modal.Body> 
+					<Modal.Footer>
+						<Button bsSize="large" onClick={this.submit}> Add new comment </Button> 
+					</Modal.Footer>
+				</Modal> 
 			</div> 
 		)
 	}
