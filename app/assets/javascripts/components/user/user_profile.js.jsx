@@ -10,18 +10,22 @@ UserProfile = React.createClass({
 	componentDidMount: function(){
 		ApiUtil.User.showUser(this.props.params.userId); 
 		UserStore.addChangeHandler(this.change);
+	},
+
+	change: function(){
+		
+		this.setState({ 
+			user: UserStore.show()
+		});
+	},
+
+	componentDidUpdate: function(){
 		$('#upload_widget_opener').cloudinary_upload_widget(
 		    { cloud_name: 'djp2nuknn', upload_preset: 'rmy5aved', 
 		      cropping: 'server', 'folder': 'user_photos' },
 		    function(error, result) { 
 		    	if (!error){
 		    	ApiUtil.User.updateUser({user: {id: UserStore.show().id , picture_url: result[0].url}});} 
-		    });
-	},
-
-	change: function(){
-		this.setState({ 
-			user: UserStore.show()
 		});
 	},
 
@@ -38,6 +42,7 @@ UserProfile = React.createClass({
 		var update_user;
 		var answered_questions;
 		var questions; 
+		var picture_id;
 		var that = this;
 		if (this.state.user){ 
 			questions = (
@@ -85,8 +90,10 @@ UserProfile = React.createClass({
 
 		if (this.state.user && (parseInt(this.props.params.userId) === UserStore.user().id )){
 			update_user = <UpdateUser user={this.state.user}/>;
+			picture_link =  <a href="/#/addpicture" id="upload_widget_opener">Upload image</a>
 		} else {
 			update_user = "" 
+			picture_link = ""
 		}
 
 		return (
@@ -97,7 +104,7 @@ UserProfile = React.createClass({
 					<div className="profile-left-div">
 						<div className="profile-picture"> 
 							<image className="profile-picture" src={picture_url}> </image>
-							<div className="profile-upload-widget"> <a href="/#/addpicture" id="upload_widget_opener">Upload image</a> </div> 
+							<div className="profile-upload-widget"> {picture_link} </div> 
 						</div> 
 						<div className="profile-information">
 							<div className="profile-biography"> 

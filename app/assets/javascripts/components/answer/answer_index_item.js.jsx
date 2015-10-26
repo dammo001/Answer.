@@ -66,7 +66,7 @@ AnswerIndexItem = React.createClass({
 					</div>
 					<div className="question-list-side-body"> 
 						<div className="question-list-username"> 
-							<span className="author-name"> {this.props.answer.author.name} </span> , <span className="author-tagline"> user-tagline </span> 
+							<span className="author-name"> {this.props.answer.author.name} </span> , <span className="author-tagline"> {this.props.answer.author.tagline} </span> 
 						</div> 
 						<div className="question-list-time">
 							answered {jQuery.timeago(this.props.answer.updated_at)}
