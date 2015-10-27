@@ -29,11 +29,15 @@ TagIndex = React.createClass({
 
 	var tagsList; 
 	if ( this.state.tags ) {
-		tagsList = ( 
+		if (Object.keys(this.state.tags).length === 0){
+			tagsList = "";
+			this.addTags;
+		} else { 
+		 tagsList = ( 
 			this.state.tags.map(function(tag){
 					return( 
 						<TagItem key={tag} tag={tag}/> 			
-				)}))
+				)}))}
 	} else { 
 		tagsList = "";
 		this.addTags; 

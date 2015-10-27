@@ -1,20 +1,13 @@
 TagListItem = React.createClass({
 
-	getInitialState: function(){ 
-		return ({
-			checked: this.props.value 
-		});
-	},
-
 	change: function(){ 
-		this.setState({ checked: !this.state.checked });
 		this.props.toggle(this.props.tag);
 	},	
 
 	render: function(){
 
 		var checked; 
-		if (this.state.checked){
+		if (this.props.value){
 			checked = "checked";
 		} else { 
 			checked = "" ;

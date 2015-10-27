@@ -457,7 +457,7 @@ text-align: center;
 
 
 li.profile-questions-list {
-	border-bottom: 1px solid gray;
+	
 	font-weight: 400; 
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -467,7 +467,7 @@ li.profile-questions-list {
 }
 
 li.profile-questions-list:hover { 
-	font-weight: 600;
+	text-decoration: underline;
 }
 
 

@@ -25,7 +25,6 @@ var NavbarLeftMenuBar=React.createClass({
                   <li> <a href="" className="dropdown-toggle" data-toggle="dropdown">{this.state.username}<b className="caret"></b></a>
                       <ul className="dropdown-menu">
                           <li><a href={this.state.userlink}>Profile</a></li>
-                          <li><a href={this.state.userlink}>History </a></li>
                       </ul>
                   </li>
              </ul>);

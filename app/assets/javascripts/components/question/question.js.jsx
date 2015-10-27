@@ -104,7 +104,7 @@ Question = React.createClass({
 					</div> 
 				</div>
 			
-				{buttonDelete}{buttonEdit} 
+				{buttonDelete}				
 				<AnswerForm questionId={id}/> <br/> 
 				
 				<h3> Answers</h3> 

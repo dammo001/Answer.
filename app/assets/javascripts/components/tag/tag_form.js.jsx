@@ -70,16 +70,29 @@ TagForm = React.createClass({
 		var tags = this.state.tags;
 		tags[key] = !tags[key]; 
 		this.setState({ tags: tags });
+	},
+
+	componentDidUpdate: function(){
 		console.log(this.state.tags);
+	},
+
+	selectAll: function(){
+		var tags = {}; 
+		TagStore.all() && TagStore.all().forEach(function(tag){
+			tags[tag] = true;
+		});
+
+		this.setState({tags: tags});
 	},
 
 	render: function(){
 		var tags;
 		var that = this; 
-	
+
 		if (Object.keys(this.state.tags)){
 			tagsAll = (
 				Object.keys(this.state.tags).map(function(tag, idx){
+
 					return (
 						<TagListItem key={idx} tag={tag} value={that.state.tags[tag]} toggle={that.toggle}/> 
 						 )
@@ -116,7 +129,8 @@ TagForm = React.createClass({
 			            </Panel> 
 			          </Modal.Body>
 			        <Modal.Footer>
-			          <Button onClick={this.send}>Submit your tags</Button>
+			        	<Button onClick={this.selectAll}> Select All </Button> 
+				        <Button onClick={this.send}>Choose tags</Button>
 			        </Modal.Footer>
 		        </Modal> 
 	     	</div>  
