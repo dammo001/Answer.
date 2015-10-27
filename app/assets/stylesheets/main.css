@@ -209,18 +209,20 @@ button#sign-in{
     color: #428bca;
     left: 60%;
     top: 31%;
+    font-family: 'Verdana';
     display: inline-block;
 }
 
 button#guest-login{
 	color: white; 
+	font-family: 'Verdana';
 	background: #26B9AC;
 
 }
 
 button#sign-up{ 
 	max-height: 100%;
-
+	font-family: 'Verdana';
     left: 68%;
     top: 25%;
     display: inline-block;
@@ -228,7 +230,7 @@ button#sign-up{
 
 h4.title-sign-in{ 
 	
-    font-family: 'Abril Fatface';
+    font-family: 'Verdana';
     color: white;
     top: 36%;
     left: 33%;
