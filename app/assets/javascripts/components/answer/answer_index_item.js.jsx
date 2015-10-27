@@ -31,6 +31,15 @@ AnswerIndexItem = React.createClass({
 	},
 
 	render: function(){ 
+		var voteValue = 0;
+		if (this.props.answer.upvote_value){
+
+			this.props.answer.upvote_value.map(function(value){
+				if ((value === 1) || (value === -1)){
+					voteValue = value; 
+				}
+			});
+		}
 		var that = this; 
 		if (this.props.answer.comments){
 			comments = (
@@ -77,7 +86,7 @@ AnswerIndexItem = React.createClass({
 				</div> 
 				<div className="question-index-comments-holder clearfix">
 				 		<ul className="question-options">  
-					 		<li className="question-options"> <AnswerUpvote question={this.props.questionId} answer={this.props.answer}/> </li> 
+					 		<li className="question-options"> <AnswerUpvote value={voteValue} question={this.props.questionId} answer={this.props.answer}/> </li> 
 					 		<li className="question-options"> <CommentForm answerId={this.props.answer.id} /></li>
 					 		<li className="question-options">{buttonDelete}</li> 
 				 		</ul> 

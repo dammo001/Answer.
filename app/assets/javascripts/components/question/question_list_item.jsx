@@ -19,6 +19,16 @@ QuestionListItem = React.createClass({
 	},
 
 	render: function(){
+		var voteValue = 0;
+		if (this.props.question.upvote_value){
+
+			this.props.question.upvote_value.map(function(value){
+				if ((value === 1) || (value === -1)){
+					voteValue = value; 
+				}
+			});
+		}
+	
 		var tagNames; 
 		var that = this; 
 		if (this.props.question.tags){ 
@@ -79,7 +89,7 @@ QuestionListItem = React.createClass({
 			 	<div className="answer-teaser"> {this.props.question.body} </div>
 				<div className="question-index-comments-holder clearfix">
 			 		<ul className="question-options">  
-				 		<li className="question-options"> <QuestionUpvote question={this.props.question}/> </li> 
+				 		<li className="question-options"> <QuestionUpvote value={voteValue} question={this.props.question}/> </li> 
 				 		<li className="question-options"> <CommentForm questionId={this.props.question.id} /></li>
 			 		</ul> 
 			 		<div className="question-index-comments"> {comments}</div> 

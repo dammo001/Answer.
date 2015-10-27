@@ -227,7 +227,12 @@ button#sign-up{
     top: 25%;
     display: inline-block;
 }
-
+#up {
+	color: blue;
+}
+#down {
+	color: orange;
+}
 h4.title-sign-in{ 
 	
     font-family: 'Verdana';

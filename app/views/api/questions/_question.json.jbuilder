@@ -37,6 +37,13 @@ json.set! :isVoted, question.voters.include?(current_user)
 
 
 
+
+json.upvote_value (question.upvotes.map do |upvote|
+	upvote.value if upvote.user_id == current_user.id
+	end
+)
+
+
 unless question.answers.empty?  
 	json.answer question.answers.first.body 
 end

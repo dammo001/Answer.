@@ -32,6 +32,10 @@ json.upvotes do
 end
 
 
+json.upvote_value (question.upvotes.map do |upvote|
+	upvote.value if upvote.user_id == current_user.id
+	end
+)
 json.set! :isVoted, question.voters.include?(current_user) 
 
 

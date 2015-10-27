@@ -24,11 +24,19 @@ QuestionUpvote = React.createClass({
 			});
 		}
 
+		var upvoted = "";
+		var downvoted ="";  
+		if (this.props.value === 1){
+			upvoted = "up"; 
+		} else if (this.props.value === -1){
+			downvoted = "down"; 
+		} 
+
 		return (
 			<div className="upvote counter">
-			 	<span onClick={this.vote.bind(null, 1)} className="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> 
+			 	<span id={upvoted} onClick={this.vote.bind(null, 1)} className="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> 
 			 	<span className="vote-tally">{voteTally}</span> 
-			 	<span onClick={this.vote.bind(null, -1)} className="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+			 	<span id={downvoted} onClick={this.vote.bind(null, -1)} className="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
 		 	</div> 
 		 )
 	}
