@@ -50,7 +50,7 @@ var UpdateUser = React.createClass({
       <div> 
         <Button
         bsStyle="primary"
-        className="btn btn-default navbar-btn pull-right"
+        className="btn btn-default"
         onClick={this.open}
         id="right-nav-button"
         > Update Info

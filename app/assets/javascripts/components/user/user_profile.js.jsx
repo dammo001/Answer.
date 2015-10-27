@@ -46,12 +46,15 @@ UserProfile = React.createClass({
 		var answered_questions;
 		var questions; 
 		var picture_id;
+		var question_count = 0;
+		var answer_count = 0;
 		var that = this;
 		if (this.state.user){ 
 			questions = (
 				<ul> 
 				{this.state.user.questions.map(function(question, idx){
-					var id = question.id
+					var id = question.id;
+					question_count += 1;
 					return (
 						<li onClick={that.showQuestion.bind(null,id)} key={idx}> {question.title} </li> 
 						)
@@ -66,7 +69,8 @@ UserProfile = React.createClass({
 			answered_questions = (
 				<ul> 
 				{this.state.user.answered_questions.map(function(question, idx){
-					var id = question.id
+					var id = question.id;
+					answer_count += 1;
 					return (
 						<li onClick={that.showQuestion.bind(null,id)} key={idx}> {question.title} </li> 
 						)
@@ -106,36 +110,44 @@ UserProfile = React.createClass({
 				<div className="profile-body"> 
 					<div className="profile-left-div">
 						<div className="profile-picture"> 
-							<image className="profile-picture" src={picture_url}> </image>
-							<div className="profile-upload-widget"> {picture_link} </div> 
+							<image className="profile-picture" src={picture_url}>	<div className="profile-upload-widget"> {picture_link} </div>  </image>
 						</div> 
-						<div className="profile-information">
-							<div className="profile-biography"> 
-								Biography: {bio} 
-							</div> 
+						<div className="profile-information clearfix">
 							<div className="profile-other-details"> 
-								Tagline: {tagline}<br/> 
-								Display name: {display_name}<br/> 
-								User since:  {jQuery.timeago(created_at)}<br/> 
-								{update_user}
+								<h3 className="profile-other-details"> Stats </h3> 
+								Questions: {question_count}<br/>
+								Answers: {answer_count} <br/> 
+								Followers: 0 <br/> 
+								Following: 0
 							</div> 
 						</div> 
 					</div> 
-					<div className="profile-statistics"> 
-						<div className="profile-statistics-header"> 
-							<h2>Your History </h2> 
+					<div className="profile-right-div"> 
+						<div className="profile-right-div-header"> 
+							<h2 className="profile-right-div-header-top"> {display_name} </h2> 
+							<h4 className="profile-right-div-header-top"> {tagline} </h4> 
+							<div className="profile-right-div-header-middle">
+								{bio}
+							</div>
+							<div className="profile-right-div-header-bottom"><br/>
+								<p id="profile-right-div-header-bottom"> user since {jQuery.timeago(created_at)}</p>
+								{update_user} 
+							</div>  
 						</div> 
-						<div className="profile-statistics-body">
+						<div className="profile-right-div-body">
 							<div className="user-profile-questions"> 
-								Questions you have asked: 
+								<h3 className="user-profile-questions-list"> Asked Questions </h3> <br/> 
 								 {questions} 
 								 <br/> 
 							</div> 
-							Questions you have answered: {answered_questions}  <br/> 
-							Users following you: <br/> 
-							Users you are following: 
+							<div className="user-profile-answers"> 
+								<h3 className="user-profile-questions-list"> Answered Questions </h3> <br/> 
+								{answered_questions}  <br/> 
+								Users following you: <br/> 
+								Users you are following: 
+							</div> 
 						</div> 
-						<div className="profile-statistics-footer">
+						<div className="profile-info-footer">
 						</div> 
 					</div> 
 				</div> 
