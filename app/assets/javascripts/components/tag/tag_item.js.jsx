@@ -1,6 +1,7 @@
 TagItem = React.createClass({
 
 	filterByTag: function(event){
+		window.scrollTo(0,0); 
 		ApiUtil.Tag.filterByTag(this.props.tag); 
 	},
 

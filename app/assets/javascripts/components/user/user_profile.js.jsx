@@ -136,12 +136,12 @@ UserProfile = React.createClass({
 						<div className="profile-right-div-body">
 							<div className="user-profile-questions"> 
 								<h3 className="user-profile-questions-list"> Asked Questions </h3> <br/> 
-								 {questions} 
+								 <p className="user-profile-questions"> {questions} </p> 
 								 <br/> 
 							</div> 
 							<div className="user-profile-answers"> 
 								<h3 className="user-profile-questions-list"> Answered Questions </h3> <br/> 
-								{answered_questions}  <br/> 
+								 <p className="user-profile-questions"> {answered_questions} </p>   <br/> 
 							</div> 
 						</div> 
 						<div className="profile-info-footer">

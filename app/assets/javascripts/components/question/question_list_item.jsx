@@ -13,14 +13,20 @@ QuestionListItem = React.createClass({
 		this.history.pushState(null, '/users/' + this.props.question.author.id);
 	},
 
+	filterByTag: function(tag){
+		window.scrollTo(0,0); 
+		ApiUtil.Tag.filterByTag(tag); 
+	},
+
 	render: function(){
 		var tagNames; 
+		var that = this; 
 		if (this.props.question.tags){ 
 			tagNames = (
 				<ul className="tags-list-index"> 
 				{this.props.question.tags.map(function(tag, idx){
 					return (
-						<li key={idx} className="tag-name-list"> {tag} </li> 
+						<li key={idx} onClick={that.filterByTag.bind(null, tag)} className="tag-name-list"> {tag} </li> 
 						)
 				})}
 				<br/> </ul> 
