@@ -25,7 +25,7 @@ var UpdateUser = React.createClass({
   
   updateUser: function(event){
     var params = {user: {id: this.props.user.id, display_name: this.state.display_name , email: this.state.email , bio: this.state.bio , tagline: this.state.tagline}};
-    ApiUtil.User.updateUser(params);
+    ApiUtil.User.updateShowUser(params);
     this.close(); 
   },
 

@@ -17,6 +17,7 @@ UserProfile = React.createClass({
 	},
 
 	change: function(){
+		console.log("this changed")
 		this.setState({ 
 			user: UserStore.show()
 		});
@@ -28,7 +29,7 @@ UserProfile = React.createClass({
 		    { cloud_name: 'djp2nuknn', upload_preset: 'rmy5aved', theme: 'minimal', cropping: 'server', 'folder': 'user_photos' },
 		    function(error, result) { 
 		    	if (!error){
-		    	ApiUtil.User.updateUser({user: {id: UserStore.show().id , picture_url: result[0].url}});} 
+		    	ApiUtil.User.updateShowUser({user: {id: UserStore.show().id , picture_url: result[0].url}});} 
 		});
 		}
 
