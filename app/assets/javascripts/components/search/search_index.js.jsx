@@ -25,9 +25,9 @@ var NavbarSearchIndex = React.createClass({
 
 		if (this.state.results){
 			searchResults = (
-				this.state.results.map(function(result){
+				this.state.results.map(function(result, idx){
 					return (<ul id="search-holder">
-							<SearchIndexItem key={result} result={result} /> </ul> 
+							<SearchIndexItem key={idx} result={result} /> </ul> 
 							);
 				}))
 		} else {

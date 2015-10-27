@@ -56,7 +56,7 @@ UserProfile = React.createClass({
 					var id = question.id;
 					question_count += 1;
 					return (
-						<li onClick={that.showQuestion.bind(null,id)} key={idx}> {question.title} </li> 
+						<li className="profile-questions-list" onClick={that.showQuestion.bind(null,id)} key={idx}> {question.title} </li> 
 						)
 				})}
 				<br/> </ul> 
@@ -72,7 +72,7 @@ UserProfile = React.createClass({
 					var id = question.id;
 					answer_count += 1;
 					return (
-						<li onClick={that.showQuestion.bind(null,id)} key={idx}> {question.title} </li> 
+						<li className="profile-questions-list" onClick={that.showQuestion.bind(null,id)} key={idx}> {question.title} </li> 
 						)
 				})}
 				<br/> </ul> 
@@ -103,6 +103,7 @@ UserProfile = React.createClass({
 			picture_link = ""
 		}
 
+
 		return (
 			<div className="profile-container clearfix">
 				<div className="profile-header"> 
@@ -117,8 +118,6 @@ UserProfile = React.createClass({
 								<h3 className="profile-other-details"> Stats </h3> 
 								Questions: {question_count}<br/>
 								Answers: {answer_count} <br/> 
-								Followers: 0 <br/> 
-								Following: 0
 							</div> 
 						</div> 
 					</div> 
@@ -143,8 +142,6 @@ UserProfile = React.createClass({
 							<div className="user-profile-answers"> 
 								<h3 className="user-profile-questions-list"> Answered Questions </h3> <br/> 
 								{answered_questions}  <br/> 
-								Users following you: <br/> 
-								Users you are following: 
 							</div> 
 						</div> 
 						<div className="profile-info-footer">
