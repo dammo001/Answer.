@@ -79,7 +79,7 @@ QuestionListItem = React.createClass({
 					</div>
 					<div className="question-list-side-body"> 
 						<div className="question-list-username"> 
-							<span className="author-name"> {username}  </span> , <span className="author-tagline"> {this.props.question.author.tagline}</span> 
+							<span className="author-name"> {username}</span>,<span className="author-tagline"> {this.props.question.author.tagline}</span> 
 						</div> 
 						<div className="question-list-time">
 							asked {jQuery.timeago(this.props.question.updated_at)}

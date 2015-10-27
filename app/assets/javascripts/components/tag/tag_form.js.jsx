@@ -71,11 +71,7 @@ TagForm = React.createClass({
 		tags[key] = !tags[key]; 
 		this.setState({ tags: tags });
 	},
-
-	componentDidUpdate: function(){
-		console.log(this.state.tags);
-	},
-
+	
 	selectAll: function(){
 		var tags = {}; 
 		TagStore.all() && TagStore.all().forEach(function(tag){

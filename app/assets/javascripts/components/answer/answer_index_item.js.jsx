@@ -31,6 +31,13 @@ AnswerIndexItem = React.createClass({
 	},
 
 	render: function(){ 
+		var username;
+		if (this.props.answer.author.display_name){
+			username = this.props.answer.author.display_name;
+		} else {
+			username = this.props.answer.author.name ;
+		}
+
 		var voteValue = 0;
 		if (this.props.answer.upvote_value){
 
@@ -75,7 +82,7 @@ AnswerIndexItem = React.createClass({
 					</div>
 					<div className="question-list-side-body"> 
 						<div className="question-list-username"> 
-							<span className="author-name"> {this.props.answer.author.name} </span> , <span className="author-tagline"> {this.props.answer.author.tagline} </span> 
+							<span className="author-name">{username}</span>,<span className="author-tagline"> {this.props.answer.author.tagline} </span> 
 						</div> 
 						<div className="question-list-time">
 							answered {jQuery.timeago(this.props.answer.updated_at)}

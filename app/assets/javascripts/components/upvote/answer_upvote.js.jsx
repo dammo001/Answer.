@@ -25,7 +25,6 @@ AnswerUpvote = React.createClass({
 		}
 			var upvoted = "";
 		var downvoted ="";  
-		console.log("props"+this.props.value)
 		if (this.props.value === 1){
 			upvoted = "up"; 
 		} else if (this.props.value === -1){
