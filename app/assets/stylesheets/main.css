@@ -254,7 +254,7 @@ h4.title-sign-in{
 
 .container-comment{
 	position: relative; 
-	
+	word-wrap: normal;
 	height: 200px;
 	top: 200px;
 	left: 200px;
