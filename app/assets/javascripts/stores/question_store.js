@@ -39,6 +39,11 @@
 
       case QuestionConstants.QUESTION_RECEIVED:
         _questions.push(action.question);
+        console.log(_questions[0].created_at)
+        _questions = _questions.sort(function(a,b){
+          return a.updated_at < b.updated_at; 
+        });
+        console.log(_questions[0].created_at)
         root.QuestionStore.emit(CHANGE_EVENT);
         break; 
 
