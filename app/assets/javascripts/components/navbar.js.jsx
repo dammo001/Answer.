@@ -22,11 +22,7 @@ var NavbarLeftMenuBar=React.createClass({
   render: function() {
 
       return(<ul className="nav navbar-nav">
-                  <li> <a href="" className="dropdown-toggle" data-toggle="dropdown">{this.state.username}<b className="caret"></b></a>
-                      <ul className="dropdown-menu">
-                          <li><a href={this.state.userlink}>Profile</a></li>
-                      </ul>
-                  </li>
+               
              </ul>);
   }
 });

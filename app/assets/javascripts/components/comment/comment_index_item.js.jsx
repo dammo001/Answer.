@@ -16,7 +16,7 @@ CommentIndexItem = React.createClass({
 		};
 
 		return (
-			<li  > 
+			<li className="comment"> 
 				<img id="picture-image-index" src={this.props.comment.user.picture}/>{this.props.comment.user.name} commented {jQuery.timeago(this.props.comment.updated_at)}<br/>
 				{this.props.comment.body}<br/> 
 				{buttonDelete}

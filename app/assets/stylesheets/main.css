@@ -27,7 +27,6 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
 }
 blockquote, q {
 	quotes: none;
@@ -54,7 +53,6 @@ table {
 }
 
 *{
-	list-style-type: none; 
 }
 
 .user-profile-link { 
@@ -285,9 +283,18 @@ h4.title-sign-in{
 .tag-name-list:hover { 
 	border-color: #3E88BC;
 }
+li.tag-name-list {
+	list-style-type: none;
+}
+li.comment {
+	list-style-type: none;
+}
+li.profile-questions-list { 
+	list-style-type: none;
+}
 
 .tags-list-form { 
-
+	list-style-type: none;
 	width: 40% ;
 	text-align: center; 
 }
@@ -324,7 +331,7 @@ h4.title-sign-in{
 .search-div {
 	position: absolute; 
 	top: 45px;
-	left: 23%;
+	left: 179px
 }	
 
 #search { 
@@ -338,6 +345,7 @@ div.question-index-comments{
 	float: left;
 }
 .tags-container { 
+list-style-type: none;
 height: 500px; 
 width: 300px; 
 position: relative; 
@@ -545,7 +553,7 @@ width: 100%;
 margin-top: 15px;
 }
 #main-tags-button { 
-	
+	list-style-type: none;
 	color: #3E88BC; 
 }
 span.vote-tally { 
@@ -639,11 +647,10 @@ h3.profile-other-details {
 }
 
 #answer-form ul{
-	list-style: circle outside none;
+	
 }
 
 #answer-form ol {
-	list-style: decimal outside none;
 }
 .comment-list-panel {
 	display: inline-block;

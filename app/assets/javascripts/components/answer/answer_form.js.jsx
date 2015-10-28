@@ -85,6 +85,14 @@ var AnswerForm = React.createClass({
             			</select>
                 </span>
 
+                <span className="ql-format-group">
+                  <span title="List"
+                  className="ql-format-button ql-list"></span>
+                  <span className="ql-format-separator"></span>
+                  <span title="Bullet"
+                  className="ql-format-button ql-bullet"></span>
+                </span>
+
             		<span className="ql-format-group">
                     <span title="Image" className="ql-format-button ql-image"></span>
                   <span title="Link" className="ql-format-button ql-link"></span>
