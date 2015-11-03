@@ -21,64 +21,65 @@ Answer., built with React on Rails, is conceptually similar to [Quora](https://w
 #### JBuilder
 The most challenging aspect of creating this site was planning out the associations and controllers in such a way to deal with the high level of interconnectivity of the many pieces. I first realized the scope of this issue when dealing with comments. Comments needed to exist for both answers and questions, so I had to make them as a polymorphic association to be accessible to both. However, the site constantly needs to access attributes such as the comment's author's name, the comment's author's picture, and so forth. I used JBuilder to give my returned objects the power and flexibility to wrap all of my necessary assocations and logic into a single return object from the controllers. I realized that the only logical way to organize my site was through top down store->view changes. Since my Feed is based off of questions, that meant that every created comment needed to return a Question regardless of it was created for a Question or an Answer. The difficulty here was two fold. I had to figure out how to create my comments so that they always returned the correct Question, and I needed to figure out how to make my Comment controller return a differnet type of object. To do this, I wrote a custom route for my comments controller: 
 
- def create
-  	@comment = Comment.new(comment_params)
-  	@comment.user_id = current_user.id 
-    type = comment_params[:commentable_type]
-    id = comment_params[:commentable_id] 
+ 	def create
+	  	@comment = Comment.new(comment_params)
+	  	@comment.user_id = current_user.id 
+	    type = comment_params[:commentable_type]
+	    id = comment_params[:commentable_id] 
 
-    if (type == "Answer")
-      @question = Answer.find(id).question
-    else 
-      @question = Question.find(id) 
-    end
+	    if (type == "Answer")
+	      @question = Answer.find(id).question
+	    else 
+	      @question = Question.find(id) 
+	    end
 
-  	if @comment.save 
-  		render template: "api/questions/show" 
-  	else 
-  		render json: @comment.errors.full_messages  
-  	end
+	  	if @comment.save 
+	  		render template: "api/questions/show" 
+	  	else 
+	  		render json: @comment.errors.full_messages  
+	  	end
+	end 
 
 So my comments controller was able to determine if it was of Question or Answer type, then return the corresponding Question with the necessary associations from my JBuilder view. 
 
 #### React Views 
 A problem I dealt with that was surprisingly difficult was getting my React Tags view checkboxes to both be able to be passed their state as props, and to be able to update their parent components state as they are checked. To deal with this, I used the following logic:
 
-TagsList: 
+	TagsList: 
 	
-	toggle: function(tag){
-		var key = tag;
-		var tags = this.state.tags;
-		tags[key] = !tags[key]; 
-		this.setState({ tags: tags });
+		toggle: function(tag){
+			var key = tag;
+			var tags = this.state.tags;
+			tags[key] = !tags[key]; 
+			this.setState({ tags: tags });
 	},
 
 As children are clicked, they change the state of the parent component. 
 
-TagListItem = React.createClass({
+	TagListItem = React.createClass({
 
-	change: function(){ 
-		this.props.toggle(this.props.tag);
-	},	
+		change: function(){ 
+			this.props.toggle(this.props.tag);
+		},	
 
-	render: function(){
+		render: function(){
 
-		var checked; 
-		if (this.props.value){
-			checked = "checked";
-		} else { 
-			checked = "" ;
+			var checked; 
+			if (this.props.value){
+				checked = "checked";
+			} else { 
+				checked = "" ;
+			}
+
+			return 	(
+				<li className="tag-name-list tag-choose" id={checked} onClick={this.change} > 
+					{this.props.tag}
+					&nbsp; <span className="glyphicon glyphicon-tag" aria-hidden="true"></span>
+				</li>
+				); 
 		}
 
-		return 	(
-			<li className="tag-name-list tag-choose" id={checked} onClick={this.change} > 
-				{this.props.tag}
-				&nbsp; <span className="glyphicon glyphicon-tag" aria-hidden="true"></span>
-			</li>
-			); 
-	}
-
-})
+	})
 
 As children are clicked, they both change their "checked" value to change in color, as well as changing the state of the parent by activating the "toggle" function which was passed to them as props. Initially, I gave the children a state as well, which resulted in an infinite feedback loop. The trick here was removing state within the children and passing the children a function as props to modify the state of the parent. 
 
