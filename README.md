@@ -4,8 +4,8 @@
 ![answrlogo]
 
 
-[answrlogo]: ./app/assets/images/answr.jpg 
-[answr]: https://www.answr.xyz
+[answrlogo]: ./app/assets/images/answr.png 
+[answr]: http://www.answr.xyz
 
 ## Description
 Answer., built with React on Rails, is conceptually similar to [Quora](https://www.quora.com), but dramatically different in implementation. While Quora is a traditional site, Answer. is a single page app which leverages the user's hardware by frontloading the vast majority of content in order to deliver an improved user experience with minimal server load. 
