@@ -18,6 +18,7 @@ CommentIndex = React.createClass({
 	},
 
 	change: function(){
+		debugger;
 		this.setState({ open: !this.state.open });
 	},
 
@@ -27,9 +28,11 @@ CommentIndex = React.createClass({
 
 	render: function(){ 
 		var that = this; 
+		var comment_count = (
+			this.props.comments ? this.props.comments.length : "0" )
 		return(
 			<ul>
-				<Button bsSize="small" id="button-index" onClick={this.change}> Show Comments </Button> 
+				<Button bsSize="small" id="button-index" onClick={this.change}> Show Comments ({comment_count})</Button> 
 				<Panel collapsible expanded={this.state.open}> 
 				{this.props.comments && this.props.comments.map(function (comment, idx){
 				return <CommentIndexItem key={idx} questionId={that.props.questionId} comment={comment} /> 
