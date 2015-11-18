@@ -119,12 +119,12 @@ word-wrap: break-word;
 }
 /*why isn't color working*/
 
-.answer-teaser { 
+div .answer-teaser { 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: break-word;
-  max-height: 3.6em;
+  max-height: 5em;
   line-height: 1.8em;
 }
 

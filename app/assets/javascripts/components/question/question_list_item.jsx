@@ -4,6 +4,27 @@ var ButtonToolbar = ReactBootstrap.ButtonToolbar;
 QuestionListItem = React.createClass({
 	mixins: [ReactRouter.History],
 
+	componentDidMount: function(){
+		var a = this.props.question.id;
+		var b = ("#"+a);
+		var c = $(b).get(0);
+		this.setState({editor: new Quill(c)});
+	},
+
+	componentDidUpdate: function(){
+		var answer;
+		if (this.props.question.answer){
+			answer = this.props.question.answer;
+		} else { 
+			answer = {};
+		}; 
+		this.state.editor.setContents(JSON.parse(answer));
+	},
+
+	show: function(){
+		this.state.editor.setContents(JSON.parse(this.props.question.answer));
+	},
+
 	showQuestion: function() {
 		this.history.pushState(null, '/questions/' + this.props.question.id, {});
 		window.scrollTo(0,0); 
@@ -87,7 +108,7 @@ QuestionListItem = React.createClass({
 						</div> 
 					</div> 
 				</div> 
-			 	<div className="answer-teaser"> {this.props.question.body} </div>
+			 	<div className="answer-teaser" id={this.props.question.id}> </div>
 				<div className="question-index-comments-holder clearfix">
 			 		<ul className="question-options">  
 				 		<li className="question-options"> <QuestionUpvote value={voteValue} question={this.props.question}/> </li> 

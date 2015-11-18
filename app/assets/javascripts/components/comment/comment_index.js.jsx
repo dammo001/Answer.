@@ -18,7 +18,6 @@ CommentIndex = React.createClass({
 	},
 
 	change: function(){
-		debugger;
 		this.setState({ open: !this.state.open });
 	},
 
