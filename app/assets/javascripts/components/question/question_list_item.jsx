@@ -11,6 +11,7 @@ QuestionListItem = React.createClass({
 	
 	showUser: function(){
 		this.history.pushState(null, '/users/' + this.props.question.author.id);
+		window.scrollTo(0,0); 
 	},
 
 	filterByTag: function(tag){

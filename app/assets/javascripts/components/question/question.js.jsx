@@ -80,8 +80,6 @@ Question = React.createClass({
 		};
 		var addNewAnswer = <button onClick={this.addAnswer}>Add New Answer!</button>; 
 
-		
-
 		return(
 			<div className="question-main"> 
 				<div className="question-item"> 

@@ -3,7 +3,6 @@
 
   var _questions = [], CHANGE_EVENT = "CHANGE";
 
-
   root.QuestionStore = $.extend({}, EventEmitter.prototype, {
 
     all: function (){
@@ -37,13 +36,25 @@
         root.QuestionStore.emit(CHANGE_EVENT);
         break; 
 
+      case QuestionConstants.SORT_BY_DATE:
+        _questions = _questions.sort(function(a,b){ 
+          return a.updated_at < b.updated_at;
+        });
+        root.QuestionStore.emit(CHANGE_EVENT);
+        break; 
+
+      case QuestionConstants.SORT_BY_RESPONSES:
+        _questions = _questions.sort(function(a,b){
+          return a.answer_count < b.answer+count; 
+        });
+        root.QuestionStore.emit(CHANGE_EVENT);
+        break; 
+
       case QuestionConstants.QUESTION_RECEIVED:
         _questions.push(action.question);
-        console.log(_questions[0].created_at)
         _questions = _questions.sort(function(a,b){
           return a.updated_at < b.updated_at; 
         });
-        console.log(_questions[0].created_at)
         root.QuestionStore.emit(CHANGE_EVENT);
         break; 
 

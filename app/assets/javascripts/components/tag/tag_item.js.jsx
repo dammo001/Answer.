@@ -1,7 +1,9 @@
 TagItem = React.createClass({
+	mixins: [ReactRouter.History],
 
 	filterByTag: function(event){
 		window.scrollTo(0,0); 
+		this.history.pushState(null, "/");
 		ApiUtil.Tag.filterByTag(this.props.tag); 
 	},
 

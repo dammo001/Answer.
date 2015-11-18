@@ -29,7 +29,7 @@ CommentIndex = React.createClass({
 	render: function(){ 
 		var that = this; 
 		var comment_count = (
-			this.props.comments ? this.props.comments.length : "0" )
+			this.props.comments ? this.props.comments.length : "0" );
 		return(
 			<ul>
 				<Button bsSize="small" id="button-index" onClick={this.change}> Show Comments ({comment_count})</Button> 

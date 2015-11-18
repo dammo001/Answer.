@@ -19,7 +19,6 @@ json.comments do
 	end
 end
 
-
 json.author do 
 	json.name question.author.username
 	json.picture question.author.picture_url
@@ -28,26 +27,21 @@ json.author do
 	json.display_name question.author.display_name 
 end
 
-
 json.upvotes do 
 	json.array!(question.upvotes.map {|upvote| upvote.value}) 
 end
 
 json.set! :isVoted, question.voters.include?(current_user) 
 
-
-
-
 json.upvote_value (question.upvotes.map do |upvote|
 	upvote.value if upvote.user_id == current_user.id
 	end
 )
 
-
 unless question.answers.empty?  
-	json.answer question.answers.first.body 
+	json.answer question.answers.first.body
+	json.answer_count question.answers.length 
 end
-
 
 if show_answers
 	json.answers do 

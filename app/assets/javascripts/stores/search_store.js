@@ -31,7 +31,7 @@
         break;
 
       case SearchConstants.CLEAR_SEARCH:
-        _search = [] 
+        _search = [];
         root.SearchStore.emit(CLEAR_EVENT);
         break; 
     }})
